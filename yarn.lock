@@ -3684,15 +3684,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stencil/core@npm:^2.18.0":
-  version: 2.22.3
-  resolution: "@stencil/core@npm:2.22.3"
-  bin:
-    stencil: bin/stencil
-  checksum: b43fd0c0e10c8f6831821635de650f49c8d94eab75aa8e9214b723511cfd1f90fbf1ad33a79b4d2f165ef9ca6bee02839aac7b0a234ec6082b5959f98069f397
-  languageName: node
-  linkType: hard
-
 "@stencil/core@npm:~2.10.0":
   version: 2.10.0
   resolution: "@stencil/core@npm:2.10.0"
@@ -11098,15 +11089,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ionicons@npm:^7.1.0":
-  version: 7.1.0
-  resolution: "ionicons@npm:7.1.0"
-  dependencies:
-    "@stencil/core": ^2.18.0
-  checksum: 66e05b7d7c9625085cad9640ff2e1bb2e7737fa25855911bd2e516b50f1cf441761cec6e894dfbc2a9770e577f1d83d851d1453cb210d6bb0064ad15fa484e9c
-  languageName: node
-  linkType: hard
-
 "ip-regex@npm:^2.1.0":
   version: 2.1.0
   resolution: "ip-regex@npm:2.1.0"
@@ -16636,7 +16618,7 @@ __metadata:
     react-icons: ^4.8.1-snapshot.2
     sass: ^1.55.0
     tiny-skeleton-loader-react: ^1.1.0
-    typescript: ^4.8.4
+    typescript: ^5.0.4
   languageName: unknown
   linkType: soft
 
@@ -17089,7 +17071,6 @@ __metadata:
     find-package: ^1.0.0
     glob: ^8.1.0
     glob-promise: ^5.0.1
-    ionicons: ^7.1.0
     ionicons-5: "npm:ionicons@5"
     lerna: ^3.20.2
     octicons: ^8.5.0
@@ -17232,7 +17213,7 @@ __metadata:
     react-dom: ^18.2.0
     react-icons: ^4.8.1-snapshot.2
     react-scripts: 5.0.1
-    typescript: 4.8.4
+    typescript: ^5.0.4
   languageName: unknown
   linkType: soft
 
@@ -19931,26 +19912,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.8.4":
-  version: 4.8.4
-  resolution: "typescript@npm:4.8.4"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 3e4f061658e0c8f36c820802fa809e0fd812b85687a9a2f5430bc3d0368e37d1c9605c3ce9b39df9a05af2ece67b1d844f9f6ea8ff42819f13bcb80f85629af0
-  languageName: node
-  linkType: hard
-
-"typescript@npm:^4.8.4":
-  version: 4.9.5
-  resolution: "typescript@npm:4.9.5"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: ee000bc26848147ad423b581bd250075662a354d84f0e06eb76d3b892328d8d4440b7487b5a83e851b12b255f55d71835b008a66cbf8f255a11e4400159237db
-  languageName: node
-  linkType: hard
-
 "typescript@npm:^5.0.4":
   version: 5.0.4
   resolution: "typescript@npm:5.0.4"
@@ -19958,26 +19919,6 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 82b94da3f4604a8946da585f7d6c3025fff8410779e5bde2855ab130d05e4fd08938b9e593b6ebed165bda6ad9292b230984f10952cf82f0a0ca07bbeaa08172
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@4.8.4#~builtin<compat/typescript>":
-  version: 4.8.4
-  resolution: "typescript@patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 301459fc3eb3b1a38fe91bf96d98eb55da88a9cb17b4ef80b4d105d620f4d547ba776cc27b44cc2ef58b66eda23fe0a74142feb5e79a6fb99f54fc018a696afa
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@^4.8.4#~builtin<compat/typescript>":
-  version: 4.9.5
-  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=701156"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 2eee5c37cad4390385db5db5a8e81470e42e8f1401b0358d7390095d6f681b410f2c4a0c496c6ff9ebd775423c7785cdace7bcdad76c7bee283df3d9718c0f20
   languageName: node
   linkType: hard
 

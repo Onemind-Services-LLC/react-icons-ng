@@ -58,22 +58,6 @@ export const icons: IconDefinition[] = [
     },
   },
   {
-    id: "io",
-    name: "Ionicons 4",
-    contents: [
-      {
-        files: path.resolve(
-          path.dirname(require.resolve("ionicons")),
-          "collection/icon/svg/*.svg"
-        ),
-        formatter: (name) => `Io${name}`,
-      },
-    ],
-    projectUrl: "https://ionicons.com/",
-    license: "MIT",
-    licenseUrl: "https://github.com/ionic-team/ionicons/blob/master/LICENSE",
-  },
-  {
     id: "io5",
     name: "Ionicons 5",
     contents: [

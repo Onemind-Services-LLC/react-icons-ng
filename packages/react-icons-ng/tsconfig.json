@@ -9,7 +9,9 @@
     "baseUrl": ".",
     "declaration": true,
     "strict": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
   },
   "include": ["src/**/*.tsx"],
   "exclude": ["icons"]
