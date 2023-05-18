@@ -5,9 +5,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        - For ideas, post in [Discussions Ideas Category](https://github.com/react-icons/react-icons/discussions/categories/ideas)
-        - Want new Icon sets, post in [Discussions New Icon Set Category](https://github.com/react-icons/react-icons/discussions/categories/new-icon-set)
-        - Please check if there is already a similar issue. [Issues](https://github.com/react-icons/react-icons/issues)
+        - For ideas, post in [Discussions Ideas Category](https://github.com/Onemind-Services-LLC/react-icons/discussions/categories/ideas)
+        - Want new Icon sets, post in [Discussions New Icon Set Category](https://github.com/Onemind-Services-LLC/react-icons/discussions/categories/new-icon-set)
+        - Please check if there is already a similar issue. [Issues](https://github.com/Onemind-Services-LLC/react-icons/issues)
   - type: textarea
     id: describe
     attributes:

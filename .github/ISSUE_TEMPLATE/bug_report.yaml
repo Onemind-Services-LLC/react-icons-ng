@@ -6,8 +6,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        - For questions, ask in [Discussions](https://github.com/react-icons/react-icons/discussions/categories/q-a)
-        - Please check if there is already a similar issue. [Issues](https://github.com/react-icons/react-icons/issues)
+        - For questions, ask in [Discussions](https://github.com/Onemind-Services-LLC/react-icons/discussions/categories/q-a)
+        - Please check if there is already a similar issue. [Issues](https://github.com/Onemind-Services-LLC/react-icons/issues)
   - type: textarea
     id: describe
     attributes:

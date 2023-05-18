@@ -4,7 +4,7 @@
   "description": "SVG React icons of popular icon packs using ES6 imports",
   "author": "Goran Gajic",
   "contributors": [
-    "kamijin_fanta <kamijin@live.jp>"
+    "Abhimanyu Saharan <asaharan@onemindservices.com>"
   ],
   "license": "MIT",
   "main": "lib/cjs/index.js",
@@ -16,9 +16,9 @@
     "url": "git+ssh://git@github.com:react-icons/react-icons.git"
   },
   "bugs": {
-    "url": "https://github.com/react-icons/react-icons/issues"
+    "url": "https://github.com/Onemind-Services-LLC/react-icons/issues"
   },
-  "homepage": "https://github.com/react-icons/react-icons#readme",
+  "homepage": "https://github.com/Onemind-Services-LLC/react-icons#readme",
   "peerDependencies": {
     "react": "*"
   }

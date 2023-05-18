@@ -248,27 +248,6 @@ export const icons: IconDefinition[] = [
     },
   },
   {
-    id: "di",
-    name: "Devicons",
-    contents: [
-      {
-        files: path.resolve(__dirname, "../../icons/devicons/!SVG/*.svg"),
-        formatter: (name) => `Di${name}`,
-      },
-    ],
-    projectUrl: "https://vorillaz.github.io/devicons/",
-    license: "MIT",
-    licenseUrl: "https://opensource.org/licenses/MIT",
-    source: {
-      type: "git",
-      localName: "devicons",
-      remoteDir: "!SVG/",
-      url: "https://github.com/vorillaz/devicons.git",
-      branch: "master",
-      hash: "ba75593fdf8d66496676a90cbf127d721f73e961",
-    },
-  },
-  {
     id: "ai",
     name: "Ant Design Icons",
     contents: [
