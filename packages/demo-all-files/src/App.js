@@ -3,10 +3,10 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import { IconContext } from "@react-icons-ng/all-files";
-import { FaFolder } from "@react-icons/all-files/fa/FaFolder";
-import { MdAccessibility } from "@react-icons/all-files/md/MdAccessibility";
-import { TiArrowDown } from "@react-icons/all-files/ti/TiArrowDown";
-import { GrGrommet } from "@react-icons/all-files/gr/GrGrommet";
+import { FaFolder } from "@react-icons-ng/all-files/fa/FaFolder";
+import { MdAccessibility } from "@react-icons-ng/all-files/md/MdAccessibility";
+import { TiArrowDown } from "@react-icons-ng/all-files/ti/TiArrowDown";
+import { GrGrommet } from "@react-icons-ng/all-files/gr/GrGrommet";
 
 class App extends Component {
   render() {

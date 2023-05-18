@@ -50,8 +50,8 @@ jobs:
       - name: Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "packages/_react-icons_*/*.tgz"
-          bodyFile: "packages/react-icons/VERSIONS"
+          artifacts: "packages/_react-icons-ng_*/*.tgz"
+          bodyFile: "packages/react-icons-ng/VERSIONS"
           token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: ${{ contains(github.ref, 'snapshot') }}
         if: contains(github.ref, 'tags/')

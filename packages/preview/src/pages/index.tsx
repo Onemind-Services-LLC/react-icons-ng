@@ -28,7 +28,7 @@ export default function HomePage() {
       </p>
       <CodeBlock
         language="bash"
-        code={`npm install @react-icons/all-files --save`}
+        code={`npm install @react-icons-ng/all-files --save`}
       />
 
       <h3>Usage</h3>

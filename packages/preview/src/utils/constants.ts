@@ -5,7 +5,7 @@ export const BRAND_DESCRIPTION =
 export const BRAND_KEYWORDS = "React, Icons, Tree Shaking, SVG";
 
 export const HOME_USAGE = `
-import { FaBeer } from 'react-icons/fa';
+import { FaBeer } from 'react-icons-ng/fa';
 
 class Question extends React.Component {
   render() {
@@ -14,7 +14,7 @@ class Question extends React.Component {
 }`;
 
 export const HOME_USAGE_ALL = `
-import { FaBeer } from "@react-icons/all-files/fa/FaBeer";
+import { FaBeer } from "@react-icons-ng/all-files/fa/FaBeer";
 
 class Question extends React.Component {
   render() {

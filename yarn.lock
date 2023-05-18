@@ -3678,9 +3678,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-icons/all-files@workspace:packages/_react-icons-ng_all-files":
+"@react-icons-ng/all-files@workspace:packages/_react-icons-ng_all-files":
   version: 0.0.0-use.local
-  resolution: "@react-icons/all-files@workspace:packages/_react-icons-ng_all-files"
+  resolution: "@react-icons-ng/all-files@workspace:packages/_react-icons-ng_all-files"
   peerDependencies:
     react: "*"
   languageName: unknown
