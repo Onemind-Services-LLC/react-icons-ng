@@ -1,4 +1,4 @@
-# react-icons preview site
+# react-icons-ng preview site
 
 ## how to develop
 

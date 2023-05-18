@@ -2,12 +2,12 @@
 node_modules
 /dist/
 
-/packages/_react-icons_all
-/packages/_react-icons_all-files
+/packages/_react-icons-ng_all
+/packages/_react-icons-ng_all-files
 
-/packages/react-icons/build
-/packages/react-icons/icons/*
-!/packages/react-icons/icons/index.ts
+/packages/react-icons-ng/build
+/packages/react-icons-ng/icons/*
+!/packages/react-icons-ng/icons/index.ts
 
 /packages/preview/.next
 

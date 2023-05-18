@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-import { IconContext } from "@react-icons/all-files";
+import { IconContext } from "@react-icons-ng/all-files";
 import { FaFolder } from "@react-icons/all-files/fa/FaFolder";
 import { MdAccessibility } from "@react-icons/all-files/md/MdAccessibility";
 import { TiArrowDown } from "@react-icons/all-files/ti/TiArrowDown";

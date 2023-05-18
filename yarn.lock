@@ -3678,9 +3678,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-icons/all-files@workspace:packages/_react-icons_all-files":
+"@react-icons/all-files@workspace:packages/_react-icons-ng_all-files":
   version: 0.0.0-use.local
-  resolution: "@react-icons/all-files@workspace:packages/_react-icons_all-files"
+  resolution: "@react-icons/all-files@workspace:packages/_react-icons-ng_all-files"
   peerDependencies:
     react: "*"
   languageName: unknown
@@ -7682,7 +7682,7 @@ __metadata:
     enzyme-to-json: ^3.4.3
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-icons: ^4.8.1-snapshot.2
+    react-icons-ng: ^4.8.1-snapshot.2
     react-scripts: ^5.0.1
   languageName: unknown
   linkType: soft
@@ -7696,7 +7696,7 @@ __metadata:
     enzyme-to-json: ^3.4.3
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-icons: ^4.8.1-snapshot.2
+    react-icons-ng: ^4.8.1-snapshot.2
     react-scripts: ^5.0.1
   languageName: unknown
   linkType: soft
@@ -15842,7 +15842,7 @@ __metadata:
     prop-types: ^15.7.2
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-icons: ^4.8.1-snapshot.2
+    react-icons-ng: ^4.8.1-snapshot.2
     sass: ^1.55.0
     tiny-skeleton-loader-react: ^1.1.0
     typescript: ^4.8.4
@@ -16208,9 +16208,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-icons-root@workspace:.":
+"react-icons-ng-root@workspace:.":
   version: 0.0.0-use.local
-  resolution: "react-icons-root@workspace:."
+  resolution: "react-icons-ng-root@workspace:."
   dependencies:
     "@typescript-eslint/eslint-plugin": ^5.40.0
     "@typescript-eslint/parser": ^5.40.0
@@ -16221,17 +16221,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"react-icons@^4.8.1-snapshot.2, react-icons@workspace:packages/_react-icons_all":
+"react-icons-ng@^4.8.1-snapshot.2, react-icons-ng@workspace:packages/_react-icons-ng_all":
   version: 0.0.0-use.local
-  resolution: "react-icons@workspace:packages/_react-icons_all"
+  resolution: "react-icons-ng@workspace:packages/_react-icons-ng_all"
   peerDependencies:
     react: "*"
   languageName: unknown
   linkType: soft
 
-"react-icons_builders@workspace:packages/react-icons":
+"react-icons-ng_builders@workspace:packages/react-icons-ng":
   version: 0.0.0-use.local
-  resolution: "react-icons_builders@workspace:packages/react-icons"
+  resolution: "react-icons-ng_builders@workspace:packages/react-icons-ng"
   dependencies:
     "@babel/cli": ^7.19.3
     "@babel/core": ^7.19.3
@@ -16376,7 +16376,7 @@ __metadata:
     "@types/react-dom": ^18.0.6
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-icons: ^4.8.1-snapshot.2
+    react-icons-ng: ^4.8.1-snapshot.2
     react-scripts: 5.0.1
     typescript: 4.8.4
   languageName: unknown
@@ -19636,7 +19636,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "webpack4-test@workspace:packages/webpack4-test"
   dependencies:
-    react-icons: ^4.8.1-snapshot.2
+    react-icons-ng: ^4.8.1-snapshot.2
     webpack: ^5.74.0
     webpack-cli: ^4.10.0
   languageName: unknown

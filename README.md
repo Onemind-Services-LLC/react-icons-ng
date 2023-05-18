@@ -1,26 +1,26 @@
-<img src="https://rawgit.com/gorangajic/react-icons/master/react-icons.svg" width="120" alt="React Icons">
+<img src="https://rawgit.com/Onemind-Services-LLC/react-icons-ng/master/react-icons.svg" width="120" alt="React Icons">
 
-# [React Icons](https://react-icons.github.io/react-icons)
+# [React Icons](https://github.com/Onemind-Services-LLC/react-icons-ng)
 
 [![npm][npm-image]][npm-url]
 
-[npm-image]: https://img.shields.io/npm/v/react-icons.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/react-icons
+[npm-image]: https://img.shields.io/npm/v/react-icons-ng.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/react-icons-ng
 
-Include popular icons in your React projects easily with `react-icons`, which utilizes ES6 imports that allows you to include only the icons that your project is using.
+Include popular icons in your React projects easily with `react-icons-ng`, which utilizes ES6 imports that allows you to include only the icons that your project is using.
 
 ## Installation (for standard modern project)
 
 ```bash
-yarn add react-icons
+yarn add react-icons-ng
 # or
-npm install react-icons --save
+npm install react-icons-ng --save
 ```
 
 example usage
 
 ```jsx
-import { FaBeer } from "react-icons/fa";
+import { FaBeer } from "react-icons-ng/fa";
 
 function Question() {
   return (
@@ -31,9 +31,9 @@ function Question() {
 }
 ```
 
-[View the documentation](https://react-icons.github.io/react-icons) for further usage examples and how to use icons from other packages. _NOTE_: each Icon package has it's own subfolder under `react-icons` you import from.
+_NOTE_: each Icon package has it's own subfolder under `react-icons-ng` you import from.
 
-For example, to use an icon from **Material Design**, your import would be: `import { ICON_NAME } from 'react-icons/md';`
+For example, to use an icon from **Material Design**, your import would be: `import { ICON_NAME } from 'react-icons-ng/md';`
 
 ## Installation (for meteorjs, gatsbyjs, etc)
 
@@ -45,15 +45,15 @@ If your project grows in size, this option is available.
 This method has the trade-off that it takes a long time to install the package.
 
 ```bash
-yarn add @react-icons/all-files
+yarn add @react-icons-ng/all-files
 # or
-npm install @react-icons/all-files --save
+npm install @react-icons-ng/all-files --save
 ```
 
 example usage
 
 ```jsx
-import { FaBeer } from "@react-icons/all-files/fa/FaBeer";
+import { FaBeer } from "@react-icons-ng/all-files/fa/FaBeer";
 
 function Question() {
   return (
@@ -100,12 +100,12 @@ You can add more icons by submitting pull requests or creating issues.
 
 ## Configuration
 
-You can configure react-icons props using [React Context API](https://reactjs.org/docs/context.html).
+You can configure react-icons-ng props using [React Context API](https://reactjs.org/docs/context.html).
 
 _Requires **React 16.3** or higher._
 
 ```jsx
-import { IconContext } from "react-icons";
+import { IconContext } from "react-icons-ng";
 
 <IconContext.Provider value={{ color: "blue", className: "global-class-name" }}>
   <div>
@@ -131,7 +131,7 @@ Import path has changed. You need to rewrite from the old style.
 
 ```jsx
 // OLD IMPORT STYLE
-import FaBeer from "react-icons/lib/fa/beer";
+import FaBeer from "react-icons-ng/lib/fa/beer";
 
 function Question() {
   return (
@@ -144,7 +144,7 @@ function Question() {
 
 ```jsx
 // NEW IMPORT STYLE
-import { FaBeer } from "react-icons/fa";
+import { FaBeer } from "react-icons-ng/fa";
 
 function Question() {
   return (
@@ -172,7 +172,7 @@ From version 3, `vertical-align: middle` is not automatically given. Please use 
 Component
 
 ```tsx
-<IconContext.Provider value={{ className: 'react-icons' }}>
+<IconContext.Provider value={{ className: 'react-icons-ng' }}>
 ```
 
 CSS
@@ -185,18 +185,18 @@ CSS
 
 ### TypeScript native support
 
-Dependencies on `@types/react-icons` can be deleted.
+Dependencies on `@types/react-icons-ng` can be deleted.
 
 #### Yarn
 
 ```bash
-yarn remove @types/react-icons
+yarn remove @types/react-icons-ng
 ```
 
 #### NPM
 
 ```bash
-npm remove @types/react-icons
+npm remove @types/react-icons-ng
 ```
 
 ## Contributing
@@ -207,17 +207,15 @@ npm remove @types/react-icons
 
 ```bash
 yarn
-cd packages/react-icons
+cd packages/react-icons-ng
 yarn fetch  # fetch icon sources
 yarn build
 ```
 
 ### Preview
 
-The preview site is the [`react-icons`](https://react-icons.github.io/react-icons) website, built in [NextJS](https://nextjs.org/).
-
 ```bash
-cd packages/react-icons
+cd packages/react-icons-ng
 yarn fetch
 yarn build
 
@@ -227,10 +225,10 @@ yarn start
 
 ### Demo
 
-The demo is a [Create React App](https://create-react-app.dev/) boilerplate with `react-icons` added as a dependency for easy testing.
+The demo is a [Create React App](https://create-react-app.dev/) boilerplate with `react-icons-ng` added as a dependency for easy testing.
 
 ```bash
-cd packages/react-icons
+cd packages/react-icons-ng
 yarn fetch
 yarn build
 
@@ -240,7 +238,7 @@ yarn start
 
 ## Why React SVG components instead of fonts?
 
-SVG is [supported by all major browsers](http://caniuse.com/#search=svg). With `react-icons`, you can serve only the needed icons instead of one big font file to the users, helping you to recognize which icons are used in your project.
+SVG is [supported by all major browsers](http://caniuse.com/#search=svg). With `react-icons-ng`, you can serve only the needed icons instead of one big font file to the users, helping you to recognize which icons are used in your project.
 
 ## Related Projects
 

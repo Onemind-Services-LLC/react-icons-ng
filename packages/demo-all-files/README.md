@@ -1,4 +1,4 @@
-# react-icons demo
+# react-icons-ng demo
 
 ## how to develop
 
