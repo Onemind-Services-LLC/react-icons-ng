@@ -3579,6 +3579,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-icons-ng/all-files@workspace:packages/_react-icons-ng_all-files":
+  version: 0.0.0-use.local
+  resolution: "@react-icons-ng/all-files@workspace:packages/_react-icons-ng_all-files"
+  peerDependencies:
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
 "@rollup/plugin-babel@npm:^5.2.0":
   version: 5.3.1
   resolution: "@rollup/plugin-babel@npm:5.3.1"
@@ -17055,6 +17063,14 @@ __metadata:
     eslint-plugin-react: latest
     lerna: ^3.22.1
     prettier: ^2.8.8
+  languageName: unknown
+  linkType: soft
+
+"react-icons-ng@workspace:packages/_react-icons-ng_all":
+  version: 0.0.0-use.local
+  resolution: "react-icons-ng@workspace:packages/_react-icons-ng_all"
+  peerDependencies:
+    react: "*"
   languageName: unknown
   linkType: soft
 
