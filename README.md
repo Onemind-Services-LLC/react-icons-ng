@@ -1,4 +1,4 @@
-<img src="https://rawgit.com/Onemind-Services-LLC/react-icons-ng/master/react-icons.svg" width="120" alt="React Icons">
+<img src="https://raw.githubusercontent.com/Onemind-Services-LLC/react-icons-ng/master/react-icons.svg" width="120" alt="React Icons">
 
 # [React Icons](https://github.com/Onemind-Services-LLC/react-icons-ng)
 
