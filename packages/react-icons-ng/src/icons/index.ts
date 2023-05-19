@@ -385,6 +385,27 @@ export const icons: IconDefinition[] = [
     },
   },
   {
+    id: "ic",
+    name: "Iconoir",
+    contents: [
+      {
+        files: path.resolve(__dirname, "../../icons/iconoir/icons/*.svg"),
+        formatter: (name) => `Ic${name}`,
+      },
+    ],
+    projectUrl: "https://iconoir.com/",
+    license: "MIT",
+    licenseUrl: "https://github.com/iconoir-icons/iconoir/blob/main/LICENSE",
+    source: {
+      type: "git",
+      localName: "iconoir",
+      remoteDir: "icons/",
+      url: "https://github.com/iconoir-icons/iconoir.git",
+      branch: "main",
+      hash: "23b582a5bd26173b2efac8a574a270dcd4bc55ed",
+    },
+  },
+  {
     id: "im",
     name: "IcoMoon Free",
     contents: [
