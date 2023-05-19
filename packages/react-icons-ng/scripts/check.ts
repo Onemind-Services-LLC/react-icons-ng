@@ -1,6 +1,5 @@
 import util from "node:util";
 import { execFile as rawExecFile } from "node:child_process";
-import fs from "fs";
 import path from "path";
 import { type IconSetGitSource } from "./_types";
 import { icons } from "../src/icons";
@@ -43,27 +42,35 @@ async function gitDiffCount(
   source: IconSetGitSource,
   ctx: Context
 ): Promise<{ current: string; diffs: number }> {
-  const hashRes = await execFile(
-    "git",
-    ["rev-parse", `origin/${source.branch}`],
-    {
-      cwd: ctx.iconDir(source.localName),
-    }
-  );
-  const currentHash = hashRes.stdout.trim();
+  try {
+    const hashRes = await execFile(
+      "git",
+      ["rev-parse", `origin/${source.branch}`],
+      {
+        cwd: ctx.iconDir(source.localName),
+      }
+    );
+    const currentHash = hashRes.stdout.trim();
 
-  const count = await execFile(
-    "git",
-    ["rev-list", "--count", `${source.hash}..${currentHash}`],
-    {
-      cwd: ctx.iconDir(source.localName),
-    }
-  );
+    const count = await execFile(
+      "git",
+      ["rev-list", "--count", `${source.hash}..${currentHash}`],
+      {
+        cwd: ctx.iconDir(source.localName),
+      }
+    );
 
-  return {
-    current: currentHash,
-    diffs: +count.stdout.trim(),
-  };
+    return {
+      current: currentHash,
+      diffs: +count.stdout.trim(),
+    };
+  } catch (e) {
+    console.error(e);
+    return {
+      current: "error",
+      diffs: 0,
+    };
+  }
 }
 
 main().catch((err) => {

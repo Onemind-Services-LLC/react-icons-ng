@@ -336,7 +336,7 @@ export const icons: IconDefinition[] = [
     ],
     projectUrl: "https://github.com/grommet/grommet-icons",
     license: "Apache License Version 2.0",
-    licenseUrl: "http://www.apache.org/licenses/",
+    licenseUrl: "https://www.apache.org/licenses/",
     source: {
       type: "git",
       localName: "grommet-icons",
@@ -549,7 +549,7 @@ export const icons: IconDefinition[] = [
         processWithSVGO: true,
       },
     ],
-    projectUrl: "http://google.github.io/material-design-icons/",
+    projectUrl: "https://google.github.io/material-design-icons/",
     license: "Apache License Version 2.0",
     licenseUrl:
       "https://github.com/google/material-design-icons/blob/master/LICENSE",
@@ -582,7 +582,7 @@ export const icons: IconDefinition[] = [
       localName: "phosphor-icons",
       remoteDir: "assets/",
       url: "https://github.com/phosphor-icons/core.git",
-      branch: "master",
+      branch: "main",
       hash: "c67d7a849f450be1bfe64fd5820471e4019e5ff0",
     },
   },
@@ -597,7 +597,7 @@ export const icons: IconDefinition[] = [
     ],
     projectUrl: "https://github.com/Remix-Design/RemixIcon",
     license: "Apache License Version 2.0",
-    licenseUrl: "http://www.apache.org/licenses/",
+    licenseUrl: "https://www.apache.org/licenses/",
     source: {
       type: "git",
       localName: "RemixIcon",
@@ -728,7 +728,7 @@ export const icons: IconDefinition[] = [
         formatter: (name) => `Ti${name}`,
       },
     ],
-    projectUrl: "http://s-ings.com/typicons/",
+    projectUrl: "https://s-ings.com/typicons/",
     license: "CC BY-SA 3.0",
     licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
     source: {
@@ -775,7 +775,7 @@ export const icons: IconDefinition[] = [
     ],
     projectUrl: "https://erikflowers.github.io/weather-icons/",
     license: "SIL OFL 1.1",
-    licenseUrl: "http://scripts.sil.org/OFL",
+    licenseUrl: "https://scripts.sil.org/OFL",
     source: {
       type: "git",
       localName: "weather-icons",

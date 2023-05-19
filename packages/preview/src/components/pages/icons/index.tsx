@@ -10,10 +10,21 @@ export default function IconsPageComponent({ iconId }) {
   const icon = getIconById(iconId);
 
   return (
-    <Container title={icon.name}>
-      <IconSetInfo icon={icon} />
-      <IconSetImport iconId={icon.id} />
-      <IconSetViewer icon={icon} />
-    </Container>
+    <>
+      {icon?.name ? (
+        <Container title={icon.name}>
+          <IconSetInfo icon={icon} />
+          <IconSetImport iconId={icon.id} />
+          <IconSetViewer icon={icon} />
+        </Container>
+      ) : (
+        <div>
+          <div className="p3">
+            <h1 className="main">Error 404</h1>
+            Icon does not exist, ID: {iconId}
+          </div>
+        </div>
+      )}
+    </>
   );
 }

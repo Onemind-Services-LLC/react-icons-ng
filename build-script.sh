@@ -2,6 +2,7 @@
 
 time (cd packages/react-icons-ng/ && yarn fetch)
 time (cd packages/react-icons-ng/ && yarn build)
+time (cd packages/react-icons-ng/ && yarn check)
 echo VERSIONS; cat packages/react-icons-ng/VERSIONS
 (cd packages/_react-icons-ng_all/ && npm pack |& tail)
 (cd packages/_react-icons-ng_all-files/ && npm pack |& tail)

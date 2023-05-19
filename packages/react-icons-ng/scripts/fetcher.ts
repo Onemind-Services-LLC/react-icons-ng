@@ -36,7 +36,7 @@ async function main() {
       continue;
     }
     const { source } = icon;
-    queue.add(() => gitCloneIcon(source, ctx));
+    await queue.add(() => gitCloneIcon(source, ctx));
   }
 
   await queue.onIdle();
