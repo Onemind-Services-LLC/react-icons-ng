@@ -568,6 +568,32 @@ export const icons: IconDefinition[] = [
     },
   },
   {
+    id: "md2",
+    name: "Material Design icons 2",
+    contents: [
+      {
+        files: path.resolve(
+          __dirname,
+          "../../icons/material-design-icons-2/svg/*.svg"
+        ),
+        formatter: (name, file) => `Md2${name}`,
+        processWithSVGO: true,
+      },
+    ],
+    projectUrl: "https://materialdesignicons.com/",
+    license: "Apache License Version 2.0",
+    licenseUrl:
+      "https://github.com/Templarian/MaterialDesign/blob/master/LICENSE",
+    source: {
+      type: "git",
+      localName: "material-design-icons-2",
+      remoteDir: "svg/",
+      url: "https://github.com/Templarian/MaterialDesign.git",
+      branch: "master",
+      hash: "e607d030c555e05f8ee911538e2761c0d0e8cf26",
+    },
+  },
+  {
     id: "om",
     name: "Openmoji",
     contents: [
