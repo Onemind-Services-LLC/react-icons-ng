@@ -3578,6 +3578,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-icons-ng/all-files@workspace:packages/_react-icons-ng_all-files":
+  version: 0.0.0-use.local
+  resolution: "@react-icons-ng/all-files@workspace:packages/_react-icons-ng_all-files"
+  peerDependencies:
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
 "@rollup/plugin-babel@npm:^5.2.0":
   version: 5.3.1
   resolution: "@rollup/plugin-babel@npm:5.3.1"
@@ -15996,9 +16004,8 @@ __metadata:
   resolution: "react-icons-ng@workspace:packages/_react-icons-ng_all"
   peerDependencies:
     react: "*"
-  checksum: 61754d3046cefe71274471910291cac4b0ae6fe14e99ad8658c2a255a2fc265c463235d4cbd9418a04dd708593e8184b633ae5da341a00436092edfd5b7cc4c1
-  languageName: node
-  linkType: hard
+  languageName: unknown
+  linkType: soft
 
 "react-icons-ng_builders@workspace:packages/react-icons-ng":
   version: 0.0.0-use.local
