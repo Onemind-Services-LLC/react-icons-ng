@@ -8,7 +8,7 @@ import { svgo } from "./svgo";
 import { IconDefinition } from "./_types";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export async function dirInit({ DIST, LIB, rootDir }) {
+export async function dirInit({ DIST, LIB }) {
   const ignore = (err) => {
     if (err.code === "EEXIST") return;
     throw err;

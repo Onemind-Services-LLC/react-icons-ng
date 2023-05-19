@@ -488,6 +488,7 @@ export const icons: IconDefinition[] = [
       {
         files: path.resolve(__dirname, "../../icons/mingcute/svg/*/*.svg"),
         formatter: (name) => `Mc${name}`,
+        processWithSVGO: true,
       },
     ],
     projectUrl: "https://github.com/Richard9394/MingCute.git",
