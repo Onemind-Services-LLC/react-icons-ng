@@ -726,7 +726,7 @@ export const icons: IconDefinition[] = [
       branch: "master",
       hash: "511eea577b20d2b02ad77477750da1e44c66a52c",
     },
-    {
+  {
     id: "lia",
     name: "Icons8 Line Awesome",
     contents: [
