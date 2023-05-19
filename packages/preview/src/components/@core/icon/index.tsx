@@ -14,7 +14,9 @@ function Icon({ icon, name, highlightPattern = null }) {
     if (highlightPattern)
       return name
         .split(highlightPattern)
-        .map((part, index) => (part.match(highlightPattern) ? <b key={index}>{part}</b> : part));
+        .map((part, index) =>
+          part.match(highlightPattern) ? <b key={index}>{part}</b> : part
+        );
     return name;
   };
 

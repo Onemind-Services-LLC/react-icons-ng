@@ -11,7 +11,7 @@
     "strict": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src/**/*.tsx"],
   "exclude": ["icons"]
