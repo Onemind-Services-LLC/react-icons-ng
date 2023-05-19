@@ -67,7 +67,7 @@ function Question() {
 ## Icons
 
 | Icon Library                                                            | License                                                                                           | Version                                  | Count |
-|-------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|------------------------------------------|------:|
+| ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ---------------------------------------- | ----: |
 | [Ant Design Icons](https://github.com/ant-design/ant-design-icons)      | [MIT](https://opensource.org/licenses/MIT)                                                        | @ant-design/icons-svg@4.0.0-146-g8b44846 |   789 |
 | [BoxIcons](https://github.com/atisawd/boxicons)                         | [CC BY 4.0 License](https://github.com/atisawd/boxicons/blob/master/LICENSE)                      | 9ffa9136e8681886bb7bd2145cd4098717ce1c11 |  1634 |
 | [Bootstrap Icons](https://github.com/twbs/icons)                        | [MIT](https://opensource.org/licenses/MIT)                                                        | v1.10.5-6-g388a10f                       |  2592 |
@@ -96,7 +96,6 @@ function Question() {
 | [Typicons](http://s-ings.com/typicons/)                                 | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)                                   | v2.1.2                                   |   336 |
 | [VS Code Icons](https://github.com/microsoft/vscode-codicons)           | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)                                         | 0.0.31-48-g0609c3d                       |   426 |
 | [Weather Icons](https://erikflowers.github.io/weather-icons/)           | [SIL OFL 1.1](http://scripts.sil.org/OFL)                                                         | 2.0.12-7-gbb80982                        |   219 |
-
 
 You can add more icons by submitting pull requests or creating issues.
 
