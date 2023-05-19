@@ -658,4 +658,25 @@ export const icons: IconDefinition[] = [
       hash: "4b9cdf66bc2a020113614bffa3dc9e61cf2738f1",
     },
   },
+    {
+    id: "lia",
+    name: "Icons8 Line Awesome",
+    contents: [
+      {
+        files: path.resolve(__dirname, "../../icons/line-awesome/svg/*.svg"),
+        formatter: (name) => `Lia${name}`,
+      },
+    ],
+    projectUrl: "https://icons8.com/line-awesome",
+    license: "MIT",
+    licenseUrl: "https://github.com/icons8/line-awesome/blob/master/LICENSE.md",
+    source: {
+      type: "git",
+      localName: "line-awesome",
+      remoteDir: "svg/",
+      url: "https://github.com/icons8/line-awesome.git",
+      branch: "master",
+      hash: "a60f11367584e7df157277b5ab9d1654ec91ae24",
+    },
+  }
 ];
