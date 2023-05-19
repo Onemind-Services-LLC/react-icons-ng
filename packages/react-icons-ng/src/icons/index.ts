@@ -437,6 +437,27 @@ export const icons: IconDefinition[] = [
     licenseUrl: "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
   },
   {
+    id: "mc",
+    name: "MingCute icons",
+    contents: [
+      {
+        files: path.resolve(__dirname, "../../icons/mingcute/svg/*/*.svg"),
+        formatter: (name) => `Mc${name}`,
+      }
+    ],
+    projectUrl: "https://github.com/Richard9394/MingCute.git",
+    license: "Apache License Version 2.0",
+    licenseUrl: "https://github.com/Richard9394/MingCute/blob/main/LICENSE",
+    source: {
+        type: "git",
+        localName: "mingcute",
+        remoteDir: "svg/",
+        url: "https://github.com/Richard9394/MingCute.git",
+        branch: "main",
+        hash: "d5e24a8ed1e6cd1e34603836ee970ce8c9fb77ad"
+    }
+  },
+  {
     id: "md",
     name: "Material Design icons",
     contents: [
