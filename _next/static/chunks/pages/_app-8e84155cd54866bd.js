@@ -23,8 +23,8 @@
       Object.defineProperty(t, "__esModule", { value: !0 }),
         (t.default = void 0);
       var o = n(3903).Z,
-        c = n(5154).Z,
-        i = o(n(2784)),
+        i = n(5154).Z,
+        c = o(n(2784)),
         s = n(2172),
         a = n(7787),
         l = n(950),
@@ -43,7 +43,7 @@
           h[t + "%" + n + (o ? "%" + o : "")] = !0;
         }
       }
-      var b = i.default.forwardRef(function (e, t) {
+      var b = c.default.forwardRef(function (e, t) {
         var n,
           o = e.href,
           b = e.as,
@@ -56,10 +56,10 @@
           C = e.locale,
           w = e.onClick,
           I = e.onMouseEnter,
-          M = e.onTouchStart,
-          E = e.legacyBehavior,
-          U = void 0 === E ? !0 !== Boolean(!1) : E,
-          P = c(e, [
+          E = e.onTouchStart,
+          M = e.legacyBehavior,
+          U = void 0 === M ? !0 !== Boolean(!1) : M,
+          P = i(e, [
             "href",
             "as",
             "children",
@@ -77,53 +77,53 @@
         (n = v),
           !U ||
             ("string" !== typeof n && "number" !== typeof n) ||
-            (n = i.default.createElement("a", null, n));
+            (n = c.default.createElement("a", null, n));
         var _ = !1 !== y,
-          S = i.default.useContext(l.RouterContext),
-          L = i.default.useContext(u.AppRouterContext);
+          S = c.default.useContext(l.RouterContext),
+          L = c.default.useContext(u.AppRouterContext);
         L && (S = L);
         var k,
-          T = i.default.useMemo(
+          T = c.default.useMemo(
             function () {
               var e = s.resolveHref(S, o, !0),
                 t = r(e, 2),
                 n = t[0],
-                c = t[1];
-              return { href: n, as: b ? s.resolveHref(S, b) : c || n };
+                i = t[1];
+              return { href: n, as: b ? s.resolveHref(S, b) : i || n };
             },
             [S, o, b]
           ),
-          R = T.href,
-          N = T.as,
-          A = i.default.useRef(R),
-          B = i.default.useRef(N);
-        U && (k = i.default.Children.only(n));
+          N = T.href,
+          R = T.as,
+          A = c.default.useRef(N),
+          B = c.default.useRef(R);
+        U && (k = c.default.Children.only(n));
         var F = U ? k && "object" === typeof k && k.ref : t,
           z = f.useIntersection({ rootMargin: "200px" }),
           D = r(z, 3),
           Z = D[0],
           H = D[1],
           Q = D[2],
-          q = i.default.useCallback(
+          q = c.default.useCallback(
             function (e) {
-              (B.current === N && A.current === R) ||
-                (Q(), (B.current = N), (A.current = R)),
+              (B.current === R && A.current === N) ||
+                (Q(), (B.current = R), (A.current = N)),
                 Z(e),
                 F &&
                   ("function" === typeof F
                     ? F(e)
                     : "object" === typeof F && (F.current = e));
             },
-            [N, F, R, Q, Z]
+            [R, F, N, Q, Z]
           );
-        i.default.useEffect(
+        c.default.useEffect(
           function () {
-            var e = H && _ && s.isLocalURL(R),
+            var e = H && _ && s.isLocalURL(N),
               t = "undefined" !== typeof C ? C : S && S.locale,
-              n = h[R + "%" + N + (t ? "%" + t : "")];
-            e && !n && m(S, R, N, { locale: t });
+              n = h[N + "%" + R + (t ? "%" + t : "")];
+            e && !n && m(S, N, R, { locale: t });
           },
-          [N, R, H, C, _, S]
+          [R, N, H, C, _, S]
         );
         var W = {
           ref: q,
@@ -134,7 +134,7 @@
                 "function" === typeof k.props.onClick &&
                 k.props.onClick(e),
               e.defaultPrevented ||
-                (function (e, t, n, r, o, c, a, l, u, f) {
+                (function (e, t, n, r, o, i, a, l, u, f) {
                   if (
                     "A" !== e.currentTarget.nodeName.toUpperCase() ||
                     (!(function (e) {
@@ -154,7 +154,7 @@
                     var p = function () {
                       "beforePopState" in t
                         ? t[o ? "replace" : "push"](n, r, {
-                            shallow: c,
+                            shallow: i,
                             locale: l,
                             scroll: a,
                           })
@@ -162,9 +162,9 @@
                             forceOptimisticNavigation: !f,
                           });
                     };
-                    u ? i.default.startTransition(p) : p();
+                    u ? c.default.startTransition(p) : p();
                   }
-                })(e, S, R, N, j, x, O, C, Boolean(L), _);
+                })(e, S, N, R, j, x, O, C, Boolean(L), _);
           },
           onMouseEnter: function (e) {
             U || "function" !== typeof I || I(e),
@@ -172,15 +172,15 @@
                 k.props &&
                 "function" === typeof k.props.onMouseEnter &&
                 k.props.onMouseEnter(e),
-              (!_ && L) || (s.isLocalURL(R) && m(S, R, N, { priority: !0 }));
+              (!_ && L) || (s.isLocalURL(N) && m(S, N, R, { priority: !0 }));
           },
           onTouchStart: function (e) {
-            U || "function" !== typeof M || M(e),
+            U || "function" !== typeof E || E(e),
               U &&
                 k.props &&
                 "function" === typeof k.props.onTouchStart &&
                 k.props.onTouchStart(e),
-              (!_ && L) || (s.isLocalURL(R) && m(S, R, N, { priority: !0 }));
+              (!_ && L) || (s.isLocalURL(N) && m(S, N, R, { priority: !0 }));
           },
         };
         if (!U || g || ("a" === k.type && !("href" in k.props))) {
@@ -188,12 +188,12 @@
             K =
               S &&
               S.isLocaleDomain &&
-              p.getDomainLocale(N, G, S.locales, S.domainLocales);
-          W.href = K || d.addBasePath(a.addLocale(N, G, S && S.defaultLocale));
+              p.getDomainLocale(R, G, S.locales, S.domainLocales);
+          W.href = K || d.addBasePath(a.addLocale(R, G, S && S.defaultLocale));
         }
         return U
-          ? i.default.cloneElement(k, W)
-          : i.default.createElement("a", Object.assign({}, P, W), n);
+          ? c.default.cloneElement(k, W)
+          : c.default.createElement("a", Object.assign({}, P, W), n);
       });
       (t.default = b),
         ("function" === typeof t.default ||
@@ -210,7 +210,7 @@
         (t.useIntersection = function (e) {
           var t = e.rootRef,
             n = e.rootMargin,
-            l = e.disabled || !i,
+            l = e.disabled || !c,
             u = o.useState(!1),
             f = r(u, 2),
             p = f[0],
@@ -221,7 +221,7 @@
             v = m[1];
           o.useEffect(
             function () {
-              if (i) {
+              if (c) {
                 if (l || p) return;
                 if (b && b.tagName) {
                   var e = (function (e, t, n) {
@@ -236,7 +236,7 @@
                           });
                         if (r && (t = s.get(r))) return t;
                         var o = new Map(),
-                          c = new IntersectionObserver(function (e) {
+                          i = new IntersectionObserver(function (e) {
                             e.forEach(function (e) {
                               var t = o.get(e.target),
                                 n = e.isIntersecting || e.intersectionRatio > 0;
@@ -244,21 +244,21 @@
                             });
                           }, e);
                         return (
-                          (t = { id: n, observer: c, elements: o }),
+                          (t = { id: n, observer: i, elements: o }),
                           a.push(n),
                           s.set(n, t),
                           t
                         );
                       })(n),
                       o = r.id,
-                      c = r.observer,
-                      i = r.elements;
+                      i = r.observer,
+                      c = r.elements;
                     return (
-                      i.set(e, t),
-                      c.observe(e),
+                      c.set(e, t),
+                      i.observe(e),
                       function () {
-                        if ((i.delete(e), c.unobserve(e), 0 === i.size)) {
-                          c.disconnect(), s.delete(o);
+                        if ((c.delete(e), i.unobserve(e), 0 === c.size)) {
+                          i.disconnect(), s.delete(o);
                           var t = a.findIndex(function (e) {
                             return e.root === o.root && e.margin === o.margin;
                           });
@@ -276,11 +276,11 @@
                   return e;
                 }
               } else if (!p) {
-                var r = c.requestIdleCallback(function () {
+                var r = i.requestIdleCallback(function () {
                   return d(!0);
                 });
                 return function () {
-                  return c.cancelIdleCallback(r);
+                  return i.cancelIdleCallback(r);
                 };
               }
             },
@@ -292,8 +292,8 @@
           return [v, p, y];
         });
       var o = n(2784),
-        c = n(564),
-        i = "function" === typeof IntersectionObserver,
+        i = n(564),
+        c = "function" === typeof IntersectionObserver,
         s = new Map(),
         a = [];
       ("function" === typeof t.default ||
@@ -307,8 +307,8 @@
       "use strict";
       var r = n(2624),
         o = n(5458),
-        c = n(65),
-        i = n(5034),
+        i = n(65),
+        c = n(5034),
         s = n(2073),
         a = n(8526);
       function l(e) {
@@ -334,7 +334,7 @@
             var o = s(this).constructor;
             n = Reflect.construct(r, arguments, o);
           } else n = r.apply(this, arguments);
-          return i(this, n);
+          return c(this, n);
         };
       }
       Object.defineProperty(t, "__esModule", { value: !0 }),
@@ -388,7 +388,7 @@
         )).apply(this, arguments);
       }
       var m = (function (e) {
-        c(n, e);
+        i(n, e);
         var t = l(n);
         function n() {
           return r(this, n), t.apply(this, arguments);
@@ -429,9 +429,9 @@
             n = void 0 !== t && t,
             r = e.hybrid,
             o = void 0 !== r && r,
-            c = e.hasQuery,
-            i = void 0 !== c && c;
-          return n || (o && i);
+            i = e.hasQuery,
+            c = void 0 !== i && i;
+          return n || (o && c);
         });
     },
     177: function (e, t, n) {
@@ -445,10 +445,10 @@
       var r = (0, n(3903).Z)(n(2784)),
         o = r.default.createContext(null);
       t.AppRouterContext = o;
-      var c = r.default.createContext(null);
-      t.LayoutRouterContext = c;
       var i = r.default.createContext(null);
-      t.GlobalLayoutRouterContext = i;
+      t.LayoutRouterContext = i;
+      var c = r.default.createContext(null);
+      t.GlobalLayoutRouterContext = c;
       var s = r.default.createContext(null);
       t.TemplateContext = s;
     },
@@ -459,19 +459,19 @@
         (t.default = void 0);
       var r = n(9419).Z,
         o = n(3903).Z,
-        c = (0, n(199).Z)(n(2784)),
-        i = o(n(1023)),
+        i = (0, n(199).Z)(n(2784)),
+        c = o(n(1023)),
         s = n(2518),
         a = n(4523),
         l = n(5397);
       n(297);
       function u() {
         var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0],
-          t = [c.default.createElement("meta", { charSet: "utf-8" })];
+          t = [i.default.createElement("meta", { charSet: "utf-8" })];
         return (
           e ||
             t.push(
-              c.default.createElement("meta", {
+              i.default.createElement("meta", {
                 name: "viewport",
                 content: "width=device-width",
               })
@@ -482,9 +482,9 @@
       function f(e, t) {
         return "string" === typeof t || "number" === typeof t
           ? e
-          : t.type === c.default.Fragment
+          : t.type === i.default.Fragment
           ? e.concat(
-              c.default.Children.toArray(t.props.children).reduce(function (
+              i.default.Children.toArray(t.props.children).reduce(function (
                 e,
                 t
               ) {
@@ -510,37 +510,37 @@
                 n = new Set(),
                 r = {};
               return function (o) {
-                var c = !0,
-                  i = !1;
+                var i = !0,
+                  c = !1;
                 if (
                   o.key &&
                   "number" !== typeof o.key &&
                   o.key.indexOf("$") > 0
                 ) {
-                  i = !0;
+                  c = !0;
                   var s = o.key.slice(o.key.indexOf("$") + 1);
-                  e.has(s) ? (c = !1) : e.add(s);
+                  e.has(s) ? (i = !1) : e.add(s);
                 }
                 switch (o.type) {
                   case "title":
                   case "base":
-                    t.has(o.type) ? (c = !1) : t.add(o.type);
+                    t.has(o.type) ? (i = !1) : t.add(o.type);
                     break;
                   case "meta":
                     for (var a = 0, l = p.length; a < l; a++) {
                       var u = p[a];
                       if (o.props.hasOwnProperty(u))
-                        if ("charSet" === u) n.has(u) ? (c = !1) : n.add(u);
+                        if ("charSet" === u) n.has(u) ? (i = !1) : n.add(u);
                         else {
                           var f = o.props[u],
                             d = r[u] || new Set();
-                          ("name" === u && i) || !d.has(f)
+                          ("name" === u && c) || !d.has(f)
                             ? (d.add(f), (r[u] = d))
-                            : (c = !1);
+                            : (i = !1);
                         }
                     }
                 }
-                return c;
+                return i;
               };
             })()
           )
@@ -558,23 +558,23 @@
                 return e.props.href.startsWith(t);
               })
             ) {
-              var i = r({}, e.props || {});
+              var c = r({}, e.props || {});
               return (
-                (i["data-href"] = i.href),
-                (i.href = void 0),
-                (i["data-optimized-fonts"] = !0),
-                c.default.cloneElement(e, i)
+                (c["data-href"] = c.href),
+                (c.href = void 0),
+                (c["data-optimized-fonts"] = !0),
+                i.default.cloneElement(e, c)
               );
             }
-            return c.default.cloneElement(e, { key: o });
+            return i.default.cloneElement(e, { key: o });
           });
       }
       var h = function (e) {
         var t = e.children,
-          n = c.useContext(s.AmpStateContext),
-          r = c.useContext(a.HeadManagerContext);
-        return c.default.createElement(
-          i.default,
+          n = i.useContext(s.AmpStateContext),
+          r = i.useContext(a.HeadManagerContext);
+        return i.default.createElement(
+          c.default,
           {
             reduceComponentsToState: d,
             headManager: r,
@@ -611,7 +611,7 @@
               s();
           }
           return (
-            c(function () {
+            i(function () {
               var n;
               return (
                 null == t ||
@@ -625,7 +625,7 @@
                 }
               );
             }),
-            c(function () {
+            i(function () {
               return (
                 t && (t._pendingUpdate = s),
                 function () {
@@ -633,7 +633,7 @@
                 }
               );
             }),
-            i(function () {
+            c(function () {
               return (
                 t &&
                   t._pendingUpdate &&
@@ -650,15 +650,15 @@
         });
       var r = (0, n(199).Z)(n(2784));
       var o = !1,
-        c = o ? function () {} : r.useLayoutEffect,
-        i = o ? function () {} : r.useEffect;
+        i = o ? function () {} : r.useLayoutEffect,
+        c = o ? function () {} : r.useEffect;
     },
     8715: function (e, t, n) {
       "use strict";
       n.r(t),
         n.d(t, {
           default: function () {
-            return R;
+            return N;
           },
         });
       var r = n(5235);
@@ -666,7 +666,7 @@
         if (!(e instanceof t))
           throw new TypeError("Cannot call a class as a function");
       }
-      function c(e, t) {
+      function i(e, t) {
         for (var n = 0; n < t.length; n++) {
           var r = t[n];
           (r.enumerable = r.enumerable || !1),
@@ -675,14 +675,14 @@
             Object.defineProperty(e, r.key, r);
         }
       }
-      function i(e, t) {
+      function c(e, t) {
         return (
-          (i =
+          (c =
             Object.setPrototypeOf ||
             function (e, t) {
               return (e.__proto__ = t), e;
             }),
-          i(e, t)
+          c(e, t)
         );
       }
       var s = n(4280);
@@ -729,15 +729,15 @@
             var n,
               r,
               o = {},
-              c = Object.keys(e);
-            for (r = 0; r < c.length; r++)
-              (n = c[r]), t.indexOf(n) >= 0 || (o[n] = e[n]);
+              i = Object.keys(e);
+            for (r = 0; r < i.length; r++)
+              (n = i[r]), t.indexOf(n) >= 0 || (o[n] = e[n]);
             return o;
           })(e, t);
         if (Object.getOwnPropertySymbols) {
-          var c = Object.getOwnPropertySymbols(e);
-          for (r = 0; r < c.length; r++)
-            (n = c[r]),
+          var i = Object.getOwnPropertySymbols(e);
+          for (r = 0; r < i.length; r++)
+            (n = i[r]),
               t.indexOf(n) >= 0 ||
                 (Object.prototype.propertyIsEnumerable.call(e, n) &&
                   (o[n] = e[n]));
@@ -783,16 +783,16 @@
             n = e.href,
             r = e.activeClassName,
             o = void 0 === r ? "active" : r,
-            c = b(e, g),
-            i = (0, m.useRouter)(),
+            i = b(e, g),
+            c = (0, m.useRouter)(),
             s = u.Children.only(t),
             a = s.props.className || "";
           return (
-            i.asPath === n && o && (a = "".concat(a, " ").concat(o).trim()),
+            c.asPath === n && o && (a = "".concat(a, " ").concat(o).trim()),
             (0, f.jsx)(
               y(),
               x(
-                x({ href: n }, c),
+                x({ href: n }, i),
                 {},
                 { children: u.cloneElement(s, { className: a }) }
               )
@@ -883,8 +883,8 @@
           })
         );
       }
-      var M = "/search";
-      function E() {
+      var E = "/search";
+      function M() {
         var e = d.Q.sort(function (e, t) {
             return e.name > t.name ? 1 : -1;
           }),
@@ -892,9 +892,9 @@
           n = (0, u.useState)(!1),
           r = n[0],
           o = n[1],
-          c = (0, u.useState)(null),
-          i = c[0],
-          s = c[1],
+          i = (0, u.useState)(null),
+          c = i[0],
+          s = i[1],
           a = u.useContext(h._),
           l = a.query,
           p = a.setQuery,
@@ -914,7 +914,7 @@
                 className: "px2 py1",
                 placeholder: "\ud83d\udd0d Search Icons",
                 onFocus: function (e) {
-                  t.asPath.includes(M) || t.push(M);
+                  t.asPath.includes(E) || t.push(E);
                 },
                 onBlur: function (e) {
                   0 === e.target.value.length &&
@@ -923,13 +923,13 @@
                 },
                 onChange: function (e) {
                   var n = e.target.value.toLowerCase();
-                  t.push({ pathname: M, query: n ? { q: n } : null }),
+                  t.push({ pathname: E, query: n ? { q: n } : null }),
                     v(n),
                     b(function (e) {
                       return {};
                     });
                 },
-                value: null !== i ? i : l,
+                value: null !== c ? c : l,
                 autoComplete: "off",
                 autoCorrect: "off",
                 autoCapitalize: "off",
@@ -1040,7 +1040,7 @@
             (e.prototype = Object.create(t && t.prototype, {
               constructor: { value: e, writable: !0, configurable: !0 },
             })),
-              t && i(e, t);
+              t && c(e, t);
           })(a, e);
           var t,
             n,
@@ -1061,7 +1061,7 @@
                   return (0, f.jsx)(h.z, {
                     children: (0, f.jsxs)(f.Fragment, {
                       children: [
-                        (0, f.jsx)(E, {}),
+                        (0, f.jsx)(M, {}),
                         (0, f.jsx)(_(), {
                           children: (0, f.jsx)("title", { children: C.tH }),
                         }),
@@ -1071,21 +1071,21 @@
                   });
                 },
               },
-            ]) && c(t.prototype, n),
-            r && c(t, r),
+            ]) && i(t.prototype, n),
+            r && i(t, r),
             a
           );
         })(U.default),
-        R = T;
+        N = T;
     },
     9526: function (e, t, n) {
       "use strict";
       n.d(t, {
         IT: function () {
-          return i;
+          return c;
         },
         Qy: function () {
-          return c;
+          return i;
         },
         tH: function () {
           return r;
@@ -1096,9 +1096,9 @@
       });
       var r = "React Icons",
         o = "react-icons-ng",
-        c =
-          "\nimport { FaBeer } from 'react-icons-ng/fa';\n\nclass Question extends React.Component {\n  render() {\n    return <h3> Lets go for a <FaBeer />? </h3>\n  }\n}",
         i =
+          "\nimport { FaBeer } from 'react-icons-ng/fa';\n\nclass Question extends React.Component {\n  render() {\n    return <h3> Lets go for a <FaBeer />? </h3>\n  }\n}",
+        c =
           '\nimport { FaBeer } from "@react-icons-ng/all-files/fa/FaBeer";\n\nclass Question extends React.Component {\n  render() {\n    return <h3> Lets go for a <FaBeer />? </h3>\n  }\n}';
     },
     3947: function (e, t, n) {
@@ -1139,26 +1139,26 @@
             if (null != n) {
               var r,
                 o,
-                c = [],
-                i = !0,
+                i = [],
+                c = !0,
                 s = !1;
               try {
                 for (
                   n = n.call(e);
-                  !(i = (r = n.next()).done) &&
-                  (c.push(r.value), !t || c.length !== t);
-                  i = !0
+                  !(c = (r = n.next()).done) &&
+                  (i.push(r.value), !t || i.length !== t);
+                  c = !0
                 );
               } catch (a) {
                 (s = !0), (o = a);
               } finally {
                 try {
-                  i || null == n.return || n.return();
+                  c || null == n.return || n.return();
                 } finally {
                   if (s) throw o;
                 }
               }
-              return c;
+              return i;
             }
           })(e, t) ||
           (function (e, t) {
@@ -1191,9 +1191,9 @@
           return a;
         },
       });
-      var c = n(2784),
-        i = n(2322),
-        s = c.createContext({
+      var i = n(2784),
+        c = n(2322),
+        s = i.createContext({
           query: "",
           setQuery: function () {},
           results: {},
@@ -1201,13 +1201,13 @@
         }),
         a = function (e) {
           var t = e.children,
-            n = o(c.useState(""), 2),
+            n = o(i.useState(""), 2),
             r = n[0],
             a = n[1],
-            l = o(c.useState({}), 2),
+            l = o(i.useState({}), 2),
             u = l[0],
             f = l[1];
-          return (0, i.jsx)(s.Provider, {
+          return (0, c.jsx)(s.Provider, {
             value: { query: r, setQuery: a, results: u, setResults: f },
             children: t,
           });
@@ -1345,6 +1345,14 @@
             licenseUrl: "https://opensource.org/licenses/MIT",
           },
           {
+            id: "ic",
+            name: "Iconoir",
+            projectUrl: "https://iconoir.com/",
+            license: "MIT",
+            licenseUrl:
+              "https://github.com/iconoir-icons/iconoir/blob/main/LICENSE",
+          },
+          {
             id: "im",
             name: "IcoMoon Free",
             projectUrl: "https://github.com/Keyamoon/IcoMoon-Free",
@@ -1466,14 +1474,14 @@
           },
         ],
         o = n(2784),
-        c = {
+        i = {
           color: void 0,
           size: void 0,
           className: void 0,
           style: void 0,
           attr: void 0,
         },
-        i = o.createContext && o.createContext(c),
+        c = o.createContext && o.createContext(i),
         s = function () {
           return (
             (s =
@@ -1519,10 +1527,10 @@
         var t = function (t) {
           var n,
             r = e.attr,
-            c = e.size,
-            i = e.title,
+            i = e.size,
+            c = e.title,
             l = a(e, ["attr", "size", "title"]),
-            u = c || t.size || "1em";
+            u = i || t.size || "1em";
           return (
             t.className && (n = t.className),
             e.className && (n = (n ? n + " " : "") + e.className),
@@ -1545,16 +1553,16 @@
                   xmlns: "http://www.w3.org/2000/svg",
                 }
               ),
-              i && o.createElement("title", null, i),
+              c && o.createElement("title", null, c),
               e.children
             )
           );
         };
-        return void 0 !== i
-          ? o.createElement(i.Consumer, null, function (e) {
+        return void 0 !== c
+          ? o.createElement(c.Consumer, null, function (e) {
               return t(e);
             })
-          : t(c);
+          : t(i);
       }
     },
     5235: function (e, t, n) {

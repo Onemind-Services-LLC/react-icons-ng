@@ -628,6 +628,8 @@
               return n.e(174).then(n.t.bind(n, 2174, 19));
             case "hi":
               return n.e(249).then(n.t.bind(n, 1249, 19));
+            case "ic":
+              return n.e(595).then(n.t.bind(n, 595, 19));
             case "im":
               return n.e(637).then(n.t.bind(n, 6637, 19));
             case "io5":

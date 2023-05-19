@@ -1,30 +1,30 @@
 if (!self.define) {
   let e,
-    n = {};
-  const s = (s, c) => (
-    (s = new URL(s + ".js", c).href),
-    n[s] ||
-      new Promise((n) => {
+    c = {};
+  const n = (n, s) => (
+    (n = new URL(n + ".js", s).href),
+    c[n] ||
+      new Promise((c) => {
         if ("document" in self) {
           const e = document.createElement("script");
-          (e.src = s), (e.onload = n), document.head.appendChild(e);
-        } else (e = s), importScripts(s), n();
+          (e.src = n), (e.onload = c), document.head.appendChild(e);
+        } else (e = n), importScripts(n), c();
       }).then(() => {
-        let e = n[s];
-        if (!e) throw new Error(`Module ${s} didn’t register its module`);
+        let e = c[n];
+        if (!e) throw new Error(`Module ${n} didn’t register its module`);
         return e;
       })
   );
-  self.define = (c, i) => {
+  self.define = (s, i) => {
     const a =
       e ||
       ("document" in self ? document.currentScript.src : "") ||
       location.href;
-    if (n[a]) return;
+    if (c[a]) return;
     let t = {};
-    const r = (e) => s(e, a),
+    const r = (e) => n(e, a),
       o = { module: { uri: a }, exports: t, require: r };
-    n[a] = Promise.all(c.map((e) => o[e] || r(e))).then((e) => (i(...e), t));
+    c[a] = Promise.all(s.map((e) => o[e] || r(e))).then((e) => (i(...e), t));
   };
 }
 define(["./workbox-c5ed321c"], function (e) {
@@ -34,6 +34,14 @@ define(["./workbox-c5ed321c"], function (e) {
     e.clientsClaim(),
     e.precacheAndRoute(
       [
+        {
+          url: "/react-icons-ng/_next/static/DP-bU9ODeal_PZ6n5D2oJ/_buildManifest.js",
+          revision: "d712e5d111a952af09fb2764cb0c3384",
+        },
+        {
+          url: "/react-icons-ng/_next/static/DP-bU9ODeal_PZ6n5D2oJ/_ssgManifest.js",
+          revision: "b6652df95db52feb4daf4eca35380933",
+        },
         {
           url: "/react-icons-ng/_next/static/chunks/12.3fe4254cbb368888.js",
           revision: "3fe4254cbb368888",
@@ -97,6 +105,10 @@ define(["./workbox-c5ed321c"], function (e) {
         {
           url: "/react-icons-ng/_next/static/chunks/472.38f406a81083d9de.js",
           revision: "38f406a81083d9de",
+        },
+        {
+          url: "/react-icons-ng/_next/static/chunks/595.5e8c8b7d75b6345c.js",
+          revision: "5e8c8b7d75b6345c",
         },
         {
           url: "/react-icons-ng/_next/static/chunks/605.2e76472e54adb546.js",
@@ -163,44 +175,36 @@ define(["./workbox-c5ed321c"], function (e) {
           revision: "b598c888f8d9717d",
         },
         {
-          url: "/react-icons-ng/_next/static/chunks/pages/_app-e34f90c4023327e3.js",
-          revision: "e34f90c4023327e3",
+          url: "/react-icons-ng/_next/static/chunks/pages/_app-8e84155cd54866bd.js",
+          revision: "8e84155cd54866bd",
         },
         {
           url: "/react-icons-ng/_next/static/chunks/pages/_error-ab557634fd13a70c.js",
           revision: "ab557634fd13a70c",
         },
         {
-          url: "/react-icons-ng/_next/static/chunks/pages/icons-520391f69f1fb4b2.js",
-          revision: "520391f69f1fb4b2",
+          url: "/react-icons-ng/_next/static/chunks/pages/icons-1a394d6579a3cc0d.js",
+          revision: "1a394d6579a3cc0d",
         },
         {
           url: "/react-icons-ng/_next/static/chunks/pages/index-888d493155896b23.js",
           revision: "888d493155896b23",
         },
         {
-          url: "/react-icons-ng/_next/static/chunks/pages/search-7f98c54c256f1077.js",
-          revision: "7f98c54c256f1077",
+          url: "/react-icons-ng/_next/static/chunks/pages/search-cc9a2e35f80375ce.js",
+          revision: "cc9a2e35f80375ce",
         },
         {
           url: "/react-icons-ng/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
           revision: "837c0df77fd5009c9e46d446188ecfd0",
         },
         {
-          url: "/react-icons-ng/_next/static/chunks/webpack-9248900697f1e12a.js",
-          revision: "9248900697f1e12a",
+          url: "/react-icons-ng/_next/static/chunks/webpack-c3227dbed30f0133.js",
+          revision: "c3227dbed30f0133",
         },
         {
           url: "/react-icons-ng/_next/static/css/85ab309e24e7dbb1.css",
           revision: "85ab309e24e7dbb1",
-        },
-        {
-          url: "/react-icons-ng/_next/static/iAy2Yqss3TMWLnEIf1X1s/_buildManifest.js",
-          revision: "596dcf8604d128926ae2603a23d6d2e5",
-        },
-        {
-          url: "/react-icons-ng/_next/static/iAy2Yqss3TMWLnEIf1X1s/_ssgManifest.js",
-          revision: "b6652df95db52feb4daf4eca35380933",
         },
         {
           url: "/react-icons-ng/brand-icon.svg",
@@ -262,17 +266,17 @@ define(["./workbox-c5ed321c"], function (e) {
           {
             cacheWillUpdate: async ({
               request: e,
-              response: n,
-              event: s,
-              state: c,
+              response: c,
+              event: n,
+              state: s,
             }) =>
-              n && "opaqueredirect" === n.type
-                ? new Response(n.body, {
+              c && "opaqueredirect" === c.type
+                ? new Response(c.body, {
                     status: 200,
                     statusText: "OK",
-                    headers: n.headers,
+                    headers: c.headers,
                   })
-                : n,
+                : c,
           },
         ],
       }),
@@ -393,8 +397,8 @@ define(["./workbox-c5ed321c"], function (e) {
     e.registerRoute(
       ({ url: e }) => {
         if (!(self.origin === e.origin)) return !1;
-        const n = e.pathname;
-        return !n.startsWith("/api/auth/") && !!n.startsWith("/api/");
+        const c = e.pathname;
+        return !c.startsWith("/api/auth/") && !!c.startsWith("/api/");
       },
       new e.NetworkFirst({
         cacheName: "apis",

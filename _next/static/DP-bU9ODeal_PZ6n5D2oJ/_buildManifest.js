@@ -1,10 +1,10 @@
-(self.__BUILD_MANIFEST = (function (s, a, c) {
+(self.__BUILD_MANIFEST = (function (s, c, e) {
   return {
     __rewrites: { beforeFiles: [], afterFiles: [], fallback: [] },
-    "/": [s, a, "static/chunks/pages/index-888d493155896b23.js"],
+    "/": [s, c, "static/chunks/pages/index-888d493155896b23.js"],
     "/_error": ["static/chunks/pages/_error-ab557634fd13a70c.js"],
-    "/icons": [s, c, a, "static/chunks/pages/icons-520391f69f1fb4b2.js"],
-    "/search": [c, "static/chunks/pages/search-7f98c54c256f1077.js"],
+    "/icons": [s, e, c, "static/chunks/pages/icons-1a394d6579a3cc0d.js"],
+    "/search": [e, "static/chunks/pages/search-cc9a2e35f80375ce.js"],
     sortedPages: ["/", "/_app", "/_error", "/icons", "/search"],
   };
 })(

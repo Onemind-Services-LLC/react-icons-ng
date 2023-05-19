@@ -201,6 +201,8 @@
               return t.e(174).then(t.t.bind(t, 2174, 19));
             case "hi":
               return t.e(249).then(t.t.bind(t, 1249, 19));
+            case "ic":
+              return t.e(595).then(t.t.bind(t, 595, 19));
             case "im":
               return t.e(637).then(t.t.bind(t, 6637, 19));
             case "io5":
