@@ -1335,7 +1335,7 @@
             name: "Grommet-Icons",
             projectUrl: "https://github.com/grommet/grommet-icons",
             license: "Apache License Version 2.0",
-            licenseUrl: "http://www.apache.org/licenses/",
+            licenseUrl: "https://www.apache.org/licenses/",
           },
           {
             id: "hi",
@@ -1395,7 +1395,7 @@
           {
             id: "md",
             name: "Material Design icons",
-            projectUrl: "http://google.github.io/material-design-icons/",
+            projectUrl: "https://google.github.io/material-design-icons/",
             license: "Apache License Version 2.0",
             licenseUrl:
               "https://github.com/google/material-design-icons/blob/master/LICENSE",
@@ -1413,7 +1413,7 @@
             name: "Remix Icon",
             projectUrl: "https://github.com/Remix-Design/RemixIcon",
             license: "Apache License Version 2.0",
-            licenseUrl: "http://www.apache.org/licenses/",
+            licenseUrl: "https://www.apache.org/licenses/",
           },
           {
             id: "rx",
@@ -1454,7 +1454,7 @@
           {
             id: "ti",
             name: "Typicons",
-            projectUrl: "http://s-ings.com/typicons/",
+            projectUrl: "https://s-ings.com/typicons/",
             license: "CC BY-SA 3.0",
             licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
           },
@@ -1470,7 +1470,7 @@
             name: "Weather Icons",
             projectUrl: "https://erikflowers.github.io/weather-icons/",
             license: "SIL OFL 1.1",
-            licenseUrl: "http://scripts.sil.org/OFL",
+            licenseUrl: "https://scripts.sil.org/OFL",
           },
         ],
         o = n(2784),

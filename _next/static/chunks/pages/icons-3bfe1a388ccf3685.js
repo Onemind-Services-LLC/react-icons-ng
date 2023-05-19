@@ -66,7 +66,7 @@
           ],
         });
       }
-      function u(n) {
+      function d(n) {
         var e = n.icon,
           t = e.licenseUrl,
           r = e.license,
@@ -105,7 +105,7 @@
           }),
         });
       }
-      var d = t(9063),
+      var u = t(9063),
         h = t(164),
         o = t(843),
         l = t(1139);
@@ -120,7 +120,7 @@
             }),
         });
       }
-      function f(n) {
+      function x(n) {
         var e = n.icon,
           t = h.ZP.lib(function () {
             return (0, o.w)(e.id);
@@ -135,7 +135,7 @@
                 return (0, s.jsx)("div", {
                   className: "icons",
                   children: Object.keys(e).map(function (n) {
-                    return (0, s.jsx)(d.Z, { icon: e[n], name: n }, n);
+                    return (0, s.jsx)(u.Z, { icon: e[n], name: n }, n);
                   }),
                 });
               },
@@ -143,23 +143,40 @@
           ],
         });
       }
-      function x(n) {
+      function f(n) {
         var e = n.iconId,
           t = (0, i.a)(e);
-        return (0, s.jsxs)(r.Z, {
-          title: t.name,
-          children: [
-            (0, s.jsx)(u, { icon: t }),
-            (0, s.jsx)(a, { iconId: t.id }),
-            (0, s.jsx)(f, { icon: t }),
-          ],
+        return (0, s.jsx)(s.Fragment, {
+          children:
+            null !== t && void 0 !== t && t.name
+              ? (0, s.jsxs)(r.Z, {
+                  title: t.name,
+                  children: [
+                    (0, s.jsx)(d, { icon: t }),
+                    (0, s.jsx)(a, { iconId: t.id }),
+                    (0, s.jsx)(x, { icon: t }),
+                  ],
+                })
+              : (0, s.jsx)("div", {
+                  children: (0, s.jsxs)("div", {
+                    className: "p3",
+                    children: [
+                      (0, s.jsx)("h1", {
+                        className: "main",
+                        children: "Error 404",
+                      }),
+                      "Icon does not exist, ID: ",
+                      e,
+                    ],
+                  }),
+                }),
         });
       }
       var j = t(5632);
       function m() {
         var n = (0, j.useRouter)().query.name;
         return (0, s.jsx)(s.Fragment, {
-          children: n && (0, s.jsx)(x, { iconId: n }),
+          children: n && (0, s.jsx)(f, { iconId: n }),
         });
       }
     },

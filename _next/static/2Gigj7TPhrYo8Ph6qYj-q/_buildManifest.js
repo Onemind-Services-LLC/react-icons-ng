@@ -3,7 +3,7 @@
     __rewrites: { beforeFiles: [], afterFiles: [], fallback: [] },
     "/": [s, c, "static/chunks/pages/index-888d493155896b23.js"],
     "/_error": ["static/chunks/pages/_error-ab557634fd13a70c.js"],
-    "/icons": [s, e, c, "static/chunks/pages/icons-1a394d6579a3cc0d.js"],
+    "/icons": [s, e, c, "static/chunks/pages/icons-3bfe1a388ccf3685.js"],
     "/search": [e, "static/chunks/pages/search-cc9a2e35f80375ce.js"],
     sortedPages: ["/", "/_app", "/_error", "/icons", "/search"],
   };

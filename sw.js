@@ -35,11 +35,11 @@ define(["./workbox-c5ed321c"], function (e) {
     e.precacheAndRoute(
       [
         {
-          url: "/react-icons-ng/_next/static/GLhZ33gcitDSfkdUQMdOO/_buildManifest.js",
-          revision: "d712e5d111a952af09fb2764cb0c3384",
+          url: "/react-icons-ng/_next/static/2Gigj7TPhrYo8Ph6qYj-q/_buildManifest.js",
+          revision: "7631e7c07e5eae03e494b21c6bb0d73d",
         },
         {
-          url: "/react-icons-ng/_next/static/GLhZ33gcitDSfkdUQMdOO/_ssgManifest.js",
+          url: "/react-icons-ng/_next/static/2Gigj7TPhrYo8Ph6qYj-q/_ssgManifest.js",
           revision: "b6652df95db52feb4daf4eca35380933",
         },
         {
@@ -175,16 +175,16 @@ define(["./workbox-c5ed321c"], function (e) {
           revision: "b598c888f8d9717d",
         },
         {
-          url: "/react-icons-ng/_next/static/chunks/pages/_app-8e84155cd54866bd.js",
-          revision: "8e84155cd54866bd",
+          url: "/react-icons-ng/_next/static/chunks/pages/_app-dda564edbcf8b314.js",
+          revision: "dda564edbcf8b314",
         },
         {
           url: "/react-icons-ng/_next/static/chunks/pages/_error-ab557634fd13a70c.js",
           revision: "ab557634fd13a70c",
         },
         {
-          url: "/react-icons-ng/_next/static/chunks/pages/icons-1a394d6579a3cc0d.js",
-          revision: "1a394d6579a3cc0d",
+          url: "/react-icons-ng/_next/static/chunks/pages/icons-3bfe1a388ccf3685.js",
+          revision: "3bfe1a388ccf3685",
         },
         {
           url: "/react-icons-ng/_next/static/chunks/pages/index-888d493155896b23.js",
