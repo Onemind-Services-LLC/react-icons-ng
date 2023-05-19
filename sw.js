@@ -35,11 +35,11 @@ define(["./workbox-c5ed321c"], function (e) {
     e.precacheAndRoute(
       [
         {
-          url: "/react-icons-ng/_next/static/3zrpfFx8Vy2UxIsKCXjop/_buildManifest.js",
+          url: "/react-icons-ng/_next/static/Oq-ISog6bLAwrnhfGAhRx/_buildManifest.js",
           revision: "13017d1b25dfb3e7341ed9a4cf2fe4ca",
         },
         {
-          url: "/react-icons-ng/_next/static/3zrpfFx8Vy2UxIsKCXjop/_ssgManifest.js",
+          url: "/react-icons-ng/_next/static/Oq-ISog6bLAwrnhfGAhRx/_ssgManifest.js",
           revision: "b6652df95db52feb4daf4eca35380933",
         },
         {
@@ -87,8 +87,8 @@ define(["./workbox-c5ed321c"], function (e) {
           revision: "1dee20a893612543",
         },
         {
-          url: "/react-icons-ng/_next/static/chunks/391.38d6db77e155bc8b.js",
-          revision: "38d6db77e155bc8b",
+          url: "/react-icons-ng/_next/static/chunks/391.3769afcf91869215.js",
+          revision: "3769afcf91869215",
         },
         {
           url: "/react-icons-ng/_next/static/chunks/412.c7d66859ebd964fb.js",
@@ -199,8 +199,8 @@ define(["./workbox-c5ed321c"], function (e) {
           revision: "837c0df77fd5009c9e46d446188ecfd0",
         },
         {
-          url: "/react-icons-ng/_next/static/chunks/webpack-1319a21a91eb479a.js",
-          revision: "1319a21a91eb479a",
+          url: "/react-icons-ng/_next/static/chunks/webpack-f4a58bb179ef2848.js",
+          revision: "f4a58bb179ef2848",
         },
         {
           url: "/react-icons-ng/_next/static/css/85ab309e24e7dbb1.css",
