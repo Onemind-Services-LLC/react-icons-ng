@@ -470,10 +470,7 @@ export const icons: IconDefinition[] = [
     name: "Lucide",
     contents: [
       {
-        files: path.resolve(
-          path.dirname(require.resolve("lucide-static")),
-          "../icons/*.svg"
-        ),
+        files: path.resolve(__dirname, "../../icons/lucide/icons/*.svg"),
         formatter: (name) => `Lu${name}`,
       },
     ],

@@ -13472,13 +13472,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-static@npm:^0.219.0":
-  version: 0.219.0
-  resolution: "lucide-static@npm:0.219.0"
-  checksum: 63973e64901d6f68b6e7821feac5a51e950779aac0ff7a64e5c6cdc464eea3c5d817ebad65295eb21311d42fb8d8c6278451a1b4d8702be3298eeafb4e53293e
-  languageName: node
-  linkType: hard
-
 "macos-release@npm:^2.2.0":
   version: 2.5.1
   resolution: "macos-release@npm:2.5.1"
@@ -17133,7 +17126,6 @@ __metadata:
     glob-promise: ^5.0.1
     ionicons-5: "npm:ionicons@5"
     lerna: ^3.20.2
-    lucide-static: ^0.219.0
     p-queue: ^7.3.4
     prettier: ^2.8.8
     svgo: ^1.3.2
