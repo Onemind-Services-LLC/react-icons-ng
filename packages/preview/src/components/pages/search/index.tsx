@@ -9,7 +9,7 @@ export default function SearchPageComponent() {
 
   const { query } = React.useContext(Context);
 
-  if (query.length > 2) {
+  if (query.length >= 2) {
     const hightlightPattern = new RegExp(`(${query})`, "i");
     return (
       <>
@@ -30,5 +30,5 @@ export default function SearchPageComponent() {
       </>
     );
   }
-  return <h2>Please enter at least 3 characters to search...</h2>;
+  return <h2>Please enter at least 2 characters to search...</h2>;
 }
