@@ -88,9 +88,10 @@ function Question() {
 | [IcoMoon Free](https://github.com/Keyamoon/IcoMoon-Free)                 | [CC BY 4.0 License](https://github.com/Keyamoon/IcoMoon-Free/blob/master/License.txt)             | d006795ede82361e1bac1ee76f215cf1dc51e4ca |   491 |
 | [Ionicons 5](https://ionicons.com/)                                      | [MIT](https://github.com/ionic-team/ionicons/blob/master/LICENSE)                                 | 5.5.4                                    |  1332 |
 | [Icons8 Line Awesome](https://icons8.com/line-awesome)                   | [MIT](https://github.com/icons8/line-awesome/blob/master/LICENSE.md)                              | v1.2.1-10-g78a1012                       |  1544 |
-| [Lucide](https://lucide.dev/)                                            | [ISC](https://github.com/lucide-icons/lucide/blob/main/LICENSE)                                   | v4.8.2-14-g824f088c                      |  1094 |
+| [Lucide](https://lucide.dev/)                                            | [ISC](https://github.com/lucide-icons/lucide/blob/main/LICENSE)                                   | v4.8.2-15-g2382bfee                      |  1094 |
 | [MingCute icons](https://github.com/Richard9394/MingCute.git)            | [Apache License Version 2.0](https://github.com/Richard9394/MingCute/blob/main/LICENSE)           | v2.84                                    |  2212 |
 | [Material Design icons](https://google.github.io/material-design-icons/) | [Apache License Version 2.0](https://github.com/google/material-design-icons/blob/master/LICENSE) | 4.0.0-67-g3912baecc9                     |  4341 |
+| [Openmoji](https://openmoji.org/)                                        | [CC BY-SA 4.0](https://github.com/hfg-gmuend/openmoji/blob/master/LICENSE.txt)                    | 14.0.0-197-g44c0249                      |  4090 |
 | [Phosphor Icons](https://github.com/phosphor-icons/core)                 | [MIT](https://github.com/phosphor-icons/core/blob/main/LICENSE)                                   | v2.0.2-2-gc67d7a8                        |  7488 |
 | [Remix Icon](https://github.com/Remix-Design/RemixIcon)                  | [Apache License Version 2.0](https://www.apache.org/licenses/)                                    | v3.3.0                                   |  2481 |
 | [Radix Icons](https://icons.radix-ui.com)                                | [MIT](https://github.com/radix-ui/icons/blob/master/LICENSE)                                      | @radix-ui/react-icons@1.3.0              |   318 |
@@ -102,7 +103,7 @@ function Question() {
 | [VS Code Icons](https://github.com/microsoft/vscode-codicons)            | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)                                         | 0.0.31-48-g0609c3d                       |   426 |
 | [Weather Icons](https://erikflowers.github.io/weather-icons/)            | [SIL OFL 1.1](https://scripts.sil.org/OFL)                                                        | 2.0.12-7-gbb80982                        |   219 |
 
-Total Count of Icons: 47307
+Total Count of Icons: 51397
 
 [//]: # END_VERSION
 

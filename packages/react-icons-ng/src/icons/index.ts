@@ -563,6 +563,29 @@ export const icons: IconDefinition[] = [
     },
   },
   {
+    id: "om",
+    name: "Openmoji",
+    contents: [
+      {
+        files: path.resolve(__dirname, "../../icons/openmoji/black/svg/*.svg"),
+        formatter: (name) => `Om${name}`,
+        processWithSVGO: true,
+      },
+    ],
+    projectUrl: "https://openmoji.org/",
+    license: "CC BY-SA 4.0",
+    licenseUrl:
+      "https://github.com/hfg-gmuend/openmoji/blob/master/LICENSE.txt",
+    source: {
+      type: "git",
+      localName: "openmoji",
+      remoteDir: "black/svg/",
+      url: "https://github.com/hfg-gmuend/openmoji.git",
+      branch: "master",
+      hash: "44c02495e040c52fbea0bfb1cba89aa24754f9a8",
+    },
+  },
+  {
     id: "pi",
     name: "Phosphor Icons",
     contents: [
