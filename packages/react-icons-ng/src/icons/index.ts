@@ -658,7 +658,7 @@ export const icons: IconDefinition[] = [
       hash: "4b9cdf66bc2a020113614bffa3dc9e61cf2738f1",
     },
   },
-    {
+  {
     id: "lia",
     name: "Icons8 Line Awesome",
     contents: [
@@ -678,5 +678,5 @@ export const icons: IconDefinition[] = [
       branch: "master",
       hash: "a60f11367584e7df157277b5ab9d1654ec91ae24",
     },
-  }
+  },
 ];
