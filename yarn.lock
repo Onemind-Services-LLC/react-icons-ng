@@ -7790,7 +7790,7 @@ __metadata:
     enzyme-to-json: ^3.4.3
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-icons: ^4.8.1-snapshot.2
+    react-icons-ng: ^4.8.1-snapshot.2
     react-scripts: ^5.0.1
   languageName: unknown
   linkType: soft
@@ -7804,7 +7804,7 @@ __metadata:
     enzyme-to-json: ^3.4.3
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-icons: ^4.8.1-snapshot.2
+    react-icons-ng: ^4.8.1-snapshot.2
     react-scripts: ^5.0.1
   languageName: unknown
   linkType: soft
@@ -13444,6 +13444,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lucide-static@npm:^0.219.0":
+  version: 0.219.0
+  resolution: "lucide-static@npm:0.219.0"
+  checksum: 63973e64901d6f68b6e7821feac5a51e950779aac0ff7a64e5c6cdc464eea3c5d817ebad65295eb21311d42fb8d8c6278451a1b4d8702be3298eeafb4e53293e
+  languageName: node
+  linkType: hard
+
 "macos-release@npm:^2.2.0":
   version: 2.5.1
   resolution: "macos-release@npm:2.5.1"
@@ -16615,7 +16622,7 @@ __metadata:
     prop-types: ^15.7.2
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-icons: ^4.8.1-snapshot.2
+    react-icons-ng: ^4.8.1-snapshot.2
     sass: ^1.55.0
     tiny-skeleton-loader-react: ^1.1.0
     typescript: ^5.0.4
@@ -17048,7 +17055,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"react-icons-ng@workspace:packages/_react-icons-ng_all":
+"react-icons-ng@^4.8.1-snapshot.2, react-icons-ng@workspace:packages/_react-icons-ng_all":
   version: 0.0.0-use.local
   resolution: "react-icons-ng@workspace:packages/_react-icons-ng_all"
   peerDependencies:
@@ -17073,6 +17080,7 @@ __metadata:
     glob-promise: ^5.0.1
     ionicons-5: "npm:ionicons@5"
     lerna: ^3.20.2
+    lucide-static: ^0.219.0
     octicons: ^8.5.0
     p-queue: ^7.3.4
     prettier: ^2.8.8
@@ -17082,15 +17090,6 @@ __metadata:
     react: "*"
   languageName: unknown
   linkType: soft
-
-"react-icons@npm:^4.8.1-snapshot.2":
-  version: 4.8.1-snapshot.2
-  resolution: "react-icons@npm:4.8.1-snapshot.2"
-  peerDependencies:
-    react: "*"
-  checksum: ece41a1ce925f5304996854e0a8df83530470a7658f8261c1e6cc62de52f30ab8867e66d3c589c5840d30ef41ac97826b4e16485e95c3baa3fe238fbbbb61a70
-  languageName: node
-  linkType: hard
 
 "react-is@npm:^16.12.0, react-is@npm:^16.13.1, react-is@npm:^16.7.0, react-is@npm:^16.8.6":
   version: 16.13.1
@@ -17211,7 +17210,7 @@ __metadata:
     "@types/react-dom": ^18.0.6
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-icons: ^4.8.1-snapshot.2
+    react-icons-ng: ^4.8.1-snapshot.2
     react-scripts: 5.0.1
     typescript: ^5.0.4
   languageName: unknown
@@ -20568,7 +20567,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "webpack4-test@workspace:packages/webpack4-test"
   dependencies:
-    react-icons: ^4.8.1-snapshot.2
+    react-icons-ng: ^4.8.1-snapshot.2
     webpack: ^5.74.0
     webpack-cli: ^4.10.0
   languageName: unknown
