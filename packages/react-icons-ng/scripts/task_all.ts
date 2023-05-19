@@ -57,7 +57,9 @@ export async function dirInit({ DIST, LIB, rootDir }) {
   }
 }
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export async function writeIconModule(icon, { DIST, LIB, rootDir }) {
+export async function writeIconModule(icon, { DIST }) {
+  console.log(`writeIconModule: ${icon.id} ${icon.name} ...`);
+
   const exists = new Set(); // for remove duplicate
   for (const content of icon.contents) {
     const files = await getIconFiles(content);

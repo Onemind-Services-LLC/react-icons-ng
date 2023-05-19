@@ -156,6 +156,30 @@ export const icons: IconDefinition[] = [
     },
   },
   {
+    id: "co",
+    name: "Coolicons",
+    contents: [
+      {
+        files: path.resolve(
+          __dirname,
+          "../../icons/coolicons/coolicons SVG/*/*.svg"
+        ),
+        formatter: (name) => `Co${name}`,
+      },
+    ],
+    projectUrl: "https://github.com/krystonschwarze/coolicons",
+    license: "CC BY 4.0 License",
+    licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
+    source: {
+      type: "git",
+      localName: "coolicons",
+      remoteDir: "coolicons SVG/",
+      url: "https://github.com/krystonschwarze/coolicons.git",
+      branch: "master",
+      hash: "1a92717b6050b8256465e09a285238a9fa4a1b45",
+    },
+  },
+  {
     id: "fa",
     name: "Font Awesome 5",
     contents: [
