@@ -480,6 +480,14 @@ export const icons: IconDefinition[] = [
     projectUrl: "https://lucide.dev/",
     license: "ISC",
     licenseUrl: "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+    source: {
+      type: "git",
+      localName: "lucide",
+      remoteDir: "icons/",
+      url: "https://github.com/lucide-icons/lucide.git",
+      branch: "main",
+      hash: "bde11234ea16a43c35eaf9420022399d459604ff",
+    },
   },
   {
     id: "mc",
