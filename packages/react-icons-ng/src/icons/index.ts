@@ -160,10 +160,10 @@ export const icons: IconDefinition[] = [
     contents: [
       {
         files: path.resolve(
-          path.dirname(require.resolve("octicons")),
-          "build/svg/*.svg"
+          path.dirname(require.resolve("@primer/octicons")),
+          "build/svg/*-24.svg"
         ),
-        formatter: (name) => `Go${name}`,
+        formatter: (name) => `Go${name}`.replace("24", ""),
       },
     ],
     projectUrl: "https://octicons.github.com/",
@@ -442,6 +442,13 @@ export const icons: IconDefinition[] = [
         ),
         formatter: (name) => `HiOutline${name}`,
       },
+      {
+        files: path.resolve(
+          __dirname,
+          "../../icons/heroicons-2/optimized/20/solid/*.svg"
+        ),
+        formatter: (name) => `HiMini${name}`,
+      },
     ],
     projectUrl: "https://github.com/tailwindlabs/heroicons",
     license: "MIT",
@@ -452,7 +459,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "optimized/",
       url: "https://github.com/tailwindlabs/heroicons.git",
       branch: "master",
-      hash: "1ef549d0b7eaba7224b3db9654894fad12364f7f",
+      hash: "857ba1b04f8017a36c7c0fd6e2738fef37492f18",
     },
   },
   {
@@ -533,6 +540,14 @@ export const icons: IconDefinition[] = [
         ),
         formatter: (name) => `Bi${name.replace("Bx", "")}`,
       },
+      {
+        files: path.resolve(__dirname, "../../icons/boxicons/svg/solid/*.svg"),
+        formatter: (name) => `BiSolid${name.replace("Bxs", "")}`,
+      },
+      {
+        files: path.resolve(__dirname, "../../icons/boxicons/svg/logos/*.svg"),
+        formatter: (name) => `BiLogo${name.replace("Bxl", "")}`,
+      },
     ],
     projectUrl: "https://github.com/atisawd/boxicons",
     license: "CC BY 4.0 License",
@@ -540,7 +555,7 @@ export const icons: IconDefinition[] = [
     source: {
       type: "git",
       localName: "boxicons",
-      remoteDir: "svg/regular/",
+      remoteDir: "svg/",
       url: "https://github.com/atisawd/boxicons.git",
       branch: "master",
       hash: "9ffa9136e8681886bb7bd2145cd4098717ce1c11",
@@ -710,6 +725,26 @@ export const icons: IconDefinition[] = [
       url: "https://github.com/google/material-design-icons.git",
       branch: "master",
       hash: "511eea577b20d2b02ad77477750da1e44c66a52c",
+    },
+    {
+    id: "lia",
+    name: "Icons8 Line Awesome",
+    contents: [
+      {
+        files: path.resolve(__dirname, "../../icons/line-awesome/svg/*.svg"),
+        formatter: (name) => `Lia${name}`,
+      },
+    ],
+    projectUrl: "https://icons8.com/line-awesome",
+    license: "MIT",
+    licenseUrl: "https://github.com/icons8/line-awesome/blob/master/LICENSE.md",
+    source: {
+      type: "git",
+      localName: "line-awesome",
+      remoteDir: "svg/",
+      url: "https://github.com/icons8/line-awesome.git",
+      branch: "master",
+      hash: "a60f11367584e7df157277b5ab9d1654ec91ae24",
     },
   },
 ];
