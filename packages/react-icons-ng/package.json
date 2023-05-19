@@ -35,7 +35,7 @@
     "feather-icons": "^4.29.0",
     "find-package": "^1.0.0",
     "glob": "^9.3.5",
-    "glob-promise": "^6.0.2",
+    "glob-promise": "^5.0.1",
     "ionicons-5": "npm:ionicons@5",
     "lerna": "^3.20.2",
     "lucide-static": "^0.219.0",
