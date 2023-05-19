@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/Onemind-Services-LLC/react-icons-ng/master/react-icons.svg" width="120" alt="React Icons">
 
-# [React Icons](https://github.com/Onemind-Services-LLC/react-icons-ng)
+# [React Icons](https://onemind-services-llc.github.io/react-icons-ng/)
 
 [![npm][npm-image]][npm-url]
 
