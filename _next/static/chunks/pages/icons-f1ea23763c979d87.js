@@ -1,0 +1,280 @@
+(self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
+  [912],
+  {
+    9063: function (e, n, t) {
+      "use strict";
+      var r = t(3908),
+        i = t(381),
+        c = t.n(i),
+        s = (t(2784), t(2322));
+      n.Z = function (e) {
+        var n = e.icon,
+          t = e.name,
+          i = e.highlightPattern,
+          a = void 0 === i ? null : i;
+        return (0, s.jsxs)(
+          "div",
+          {
+            className: "item",
+            tabIndex: 0,
+            onClick: function () {
+              c()(t),
+                r.Z.success("Copied '".concat(t, "' to clipboard"), {
+                  position: "bottom-center",
+                });
+            },
+            children: [
+              (0, s.jsx)("div", {
+                className: "icon h2",
+                children: "function" === typeof n && n(),
+              }),
+              (0, s.jsx)("div", {
+                className: "name",
+                children: a
+                  ? t.split(a).map(function (e, n) {
+                      return e.match(a)
+                        ? (0, s.jsx)("b", { children: e }, n)
+                        : e;
+                    })
+                  : t,
+              }),
+            ],
+          },
+          t
+        );
+      };
+    },
+    5059: function (e, n, t) {
+      "use strict";
+      t.r(n),
+        t.d(n, {
+          default: function () {
+            return m;
+          },
+        });
+      var r = t(8694),
+        i = t(3947),
+        c = (t(2784), t(4794)),
+        s = t(2322);
+      function a(e) {
+        var n = e.iconId,
+          t = 'import { IconName } from "react-icons-ng/'.concat(n, '";');
+        return (0, s.jsxs)(s.Fragment, {
+          children: [
+            (0, s.jsx)("h2", { children: "Import" }),
+            (0, s.jsx)(c.Z, { language: "jsx", code: t }),
+          ],
+        });
+      }
+      function d(e) {
+        var n = e.icon,
+          t = n.licenseUrl,
+          r = n.license,
+          i = n.projectUrl;
+        return (0, s.jsx)("table", {
+          className: "iconset--info",
+          children: (0, s.jsxs)("tbody", {
+            children: [
+              (0, s.jsxs)("tr", {
+                children: [
+                  (0, s.jsx)("th", { children: "License" }),
+                  (0, s.jsx)("td", {
+                    children: (0, s.jsx)("a", {
+                      href: t,
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                      children: r,
+                    }),
+                  }),
+                ],
+              }),
+              (0, s.jsxs)("tr", {
+                children: [
+                  (0, s.jsx)("th", { children: "Project" }),
+                  (0, s.jsx)("td", {
+                    children: (0, s.jsx)("a", {
+                      href: i,
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                      children: i,
+                    }),
+                  }),
+                ],
+              }),
+            ],
+          }),
+        });
+      }
+      var u = t(9063),
+        h = t(164),
+        o = t(843),
+        l = t(1139);
+      function b() {
+        return (0, s.jsx)("div", {
+          className: "icons",
+          children: Array(100)
+            .fill(null)
+            .map(function (e, n) {
+              return (0,
+              s.jsxs)("div", { className: "item", children: [(0, s.jsx)(l.Z, { height: "60px" }), (0, s.jsx)("div", { className: "name", children: (0, s.jsx)(l.Z, { height: "15px" }) })] }, n);
+            }),
+        });
+      }
+      function x(e) {
+        var n = e.icon,
+          t = h.ZP.lib(function () {
+            return (0, o.w)(n.id);
+          });
+        return (0, s.jsxs)(s.Fragment, {
+          children: [
+            (0, s.jsx)("h2", { children: "Icons" }),
+            (0, s.jsx)(t, {
+              fallback: (0, s.jsx)(b, {}),
+              children: function (e) {
+                var n = e.default;
+                return (0, s.jsx)("div", {
+                  className: "icons",
+                  children: Object.keys(n).map(function (e) {
+                    return (0, s.jsx)(u.Z, { icon: n[e], name: e }, e);
+                  }),
+                });
+              },
+            }),
+          ],
+        });
+      }
+      function f(e) {
+        var n = e.iconId,
+          t = (0, i.a)(n);
+        return (0, s.jsx)(s.Fragment, {
+          children:
+            null !== t && void 0 !== t && t.name
+              ? (0, s.jsxs)(r.Z, {
+                  title: t.name,
+                  children: [
+                    (0, s.jsx)(d, { icon: t }),
+                    (0, s.jsx)(a, { iconId: t.id }),
+                    (0, s.jsx)(x, { icon: t }),
+                  ],
+                })
+              : (0, s.jsx)("div", {
+                  children: (0, s.jsxs)("div", {
+                    className: "p3",
+                    children: [
+                      (0, s.jsx)("h1", {
+                        className: "main",
+                        children: "Error 404",
+                      }),
+                      "Icon does not exist, ID: ",
+                      n,
+                    ],
+                  }),
+                }),
+        });
+      }
+      var j = t(5632);
+      function m() {
+        var e = (0, j.useRouter)().query.name;
+        return (0, s.jsx)(s.Fragment, {
+          children: e && (0, s.jsx)(f, { iconId: e }),
+        });
+      }
+    },
+    843: function (e, n, t) {
+      "use strict";
+      t.d(n, {
+        w: function () {
+          return r;
+        },
+      });
+      function r(e) {
+        return (function (e) {
+          switch (e) {
+            case "ai":
+              return t.e(12).then(t.t.bind(t, 6012, 19));
+            case "bi":
+              return t.e(713).then(t.t.bind(t, 8713, 19));
+            case "bs":
+              return t.e(605).then(t.t.bind(t, 2605, 19));
+            case "cg":
+              return t.e(35).then(t.t.bind(t, 9035, 19));
+            case "ci":
+              return t.e(412).then(t.t.bind(t, 412, 19));
+            case "co":
+              return t.e(441).then(t.t.bind(t, 3441, 19));
+            case "fa":
+              return t.e(942).then(t.t.bind(t, 942, 19));
+            case "fa6":
+              return t.e(62).then(t.t.bind(t, 1062, 19));
+            case "fc":
+              return t.e(973).then(t.t.bind(t, 973, 19));
+            case "fi":
+              return t.e(300).then(t.t.bind(t, 9300, 19));
+            case "go":
+              return t.e(370).then(t.t.bind(t, 4370, 19));
+            case "gi":
+              return t.e(106).then(t.t.bind(t, 9106, 19));
+            case "gr":
+              return t.e(174).then(t.t.bind(t, 2174, 19));
+            case "hi":
+              return t.e(249).then(t.t.bind(t, 1249, 19));
+            case "ic":
+              return t.e(595).then(t.t.bind(t, 595, 19));
+            case "im":
+              return t.e(637).then(t.t.bind(t, 6637, 19));
+            case "io5":
+              return t.e(206).then(t.t.bind(t, 7206, 19));
+            case "lia":
+              return t.e(275).then(t.t.bind(t, 1275, 19));
+            case "lu":
+              return t.e(391).then(t.t.bind(t, 6391, 19));
+            case "mc":
+              return t.e(792).then(t.t.bind(t, 2792, 19));
+            case "md":
+              return t.e(741).then(t.t.bind(t, 4741, 19));
+            case "md2":
+              return t.e(705).then(t.t.bind(t, 6705, 19));
+            case "om":
+              return t.e(661).then(t.t.bind(t, 6062, 19));
+            case "pi":
+              return t.e(358).then(t.t.bind(t, 6358, 19));
+            case "ri":
+              return t.e(693).then(t.t.bind(t, 4693, 19));
+            case "rx":
+              return t.e(989).then(t.t.bind(t, 3989, 19));
+            case "si":
+              return t.e(241).then(t.t.bind(t, 4241, 19));
+            case "sl":
+              return t.e(850).then(t.t.bind(t, 4850, 19));
+            case "tfi":
+              return t.e(791).then(t.t.bind(t, 8791, 19));
+            case "tb":
+              return t.e(525).then(t.t.bind(t, 4525, 19));
+            case "ti":
+              return t.e(472).then(t.t.bind(t, 3472, 19));
+            case "vsc":
+              return t.e(82).then(t.t.bind(t, 1082, 19));
+            case "wi":
+              return t.e(281).then(t.t.bind(t, 8281, 19));
+          }
+        })(e);
+      }
+    },
+    3025: function (e, n, t) {
+      (window.__NEXT_P = window.__NEXT_P || []).push([
+        "/icons",
+        function () {
+          return t(5059);
+        },
+      ]);
+    },
+  },
+  function (e) {
+    e.O(0, [736, 622, 268, 774, 888, 179], function () {
+      return (n = 3025), e((e.s = n));
+      var n;
+    });
+    var n = e.O();
+    _N_E = n;
+  },
+]);

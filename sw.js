@@ -1,17 +1,17 @@
 if (!self.define) {
   let e,
-    n = {};
-  const c = (c, s) => (
-    (c = new URL(c + ".js", s).href),
-    n[c] ||
-      new Promise((n) => {
+    c = {};
+  const n = (n, s) => (
+    (n = new URL(n + ".js", s).href),
+    c[n] ||
+      new Promise((c) => {
         if ("document" in self) {
           const e = document.createElement("script");
-          (e.src = c), (e.onload = n), document.head.appendChild(e);
-        } else (e = c), importScripts(c), n();
+          (e.src = n), (e.onload = c), document.head.appendChild(e);
+        } else (e = n), importScripts(n), c();
       }).then(() => {
-        let e = n[c];
-        if (!e) throw new Error(`Module ${c} didn’t register its module`);
+        let e = c[n];
+        if (!e) throw new Error(`Module ${n} didn’t register its module`);
         return e;
       })
   );
@@ -20,11 +20,11 @@ if (!self.define) {
       e ||
       ("document" in self ? document.currentScript.src : "") ||
       location.href;
-    if (n[i]) return;
+    if (c[i]) return;
     let t = {};
-    const r = (e) => c(e, i),
+    const r = (e) => n(e, i),
       o = { module: { uri: i }, exports: t, require: r };
-    n[i] = Promise.all(s.map((e) => o[e] || r(e))).then((e) => (a(...e), t));
+    c[i] = Promise.all(s.map((e) => o[e] || r(e))).then((e) => (a(...e), t));
   };
 }
 define(["./workbox-c5ed321c"], function (e) {
@@ -34,14 +34,6 @@ define(["./workbox-c5ed321c"], function (e) {
     e.clientsClaim(),
     e.precacheAndRoute(
       [
-        {
-          url: "/react-icons-ng/_next/static/Oq-ISog6bLAwrnhfGAhRx/_buildManifest.js",
-          revision: "13017d1b25dfb3e7341ed9a4cf2fe4ca",
-        },
-        {
-          url: "/react-icons-ng/_next/static/Oq-ISog6bLAwrnhfGAhRx/_ssgManifest.js",
-          revision: "b6652df95db52feb4daf4eca35380933",
-        },
         {
           url: "/react-icons-ng/_next/static/chunks/12.3fe4254cbb368888.js",
           revision: "3fe4254cbb368888",
@@ -175,36 +167,44 @@ define(["./workbox-c5ed321c"], function (e) {
           revision: "b598c888f8d9717d",
         },
         {
-          url: "/react-icons-ng/_next/static/chunks/pages/_app-8e1a5435d56780d6.js",
-          revision: "8e1a5435d56780d6",
+          url: "/react-icons-ng/_next/static/chunks/pages/_app-7f5746cd7cecee0b.js",
+          revision: "7f5746cd7cecee0b",
         },
         {
           url: "/react-icons-ng/_next/static/chunks/pages/_error-ab557634fd13a70c.js",
           revision: "ab557634fd13a70c",
         },
         {
-          url: "/react-icons-ng/_next/static/chunks/pages/icons-0529fcae129809a0.js",
-          revision: "0529fcae129809a0",
+          url: "/react-icons-ng/_next/static/chunks/pages/icons-f1ea23763c979d87.js",
+          revision: "f1ea23763c979d87",
         },
         {
-          url: "/react-icons-ng/_next/static/chunks/pages/index-888d493155896b23.js",
-          revision: "888d493155896b23",
+          url: "/react-icons-ng/_next/static/chunks/pages/index-3b5aaa74bc779bed.js",
+          revision: "3b5aaa74bc779bed",
         },
         {
-          url: "/react-icons-ng/_next/static/chunks/pages/search-4fc92a7aa24c7a15.js",
-          revision: "4fc92a7aa24c7a15",
+          url: "/react-icons-ng/_next/static/chunks/pages/search-cb7167d5a6cf45e4.js",
+          revision: "cb7167d5a6cf45e4",
         },
         {
           url: "/react-icons-ng/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
           revision: "837c0df77fd5009c9e46d446188ecfd0",
         },
         {
-          url: "/react-icons-ng/_next/static/chunks/webpack-f4a58bb179ef2848.js",
-          revision: "f4a58bb179ef2848",
+          url: "/react-icons-ng/_next/static/chunks/webpack-a28d26470aa207db.js",
+          revision: "a28d26470aa207db",
         },
         {
-          url: "/react-icons-ng/_next/static/css/85ab309e24e7dbb1.css",
-          revision: "85ab309e24e7dbb1",
+          url: "/react-icons-ng/_next/static/css/9858009d16bc8317.css",
+          revision: "9858009d16bc8317",
+        },
+        {
+          url: "/react-icons-ng/_next/static/dl_5YOtiDZh2bfZcrQSvP/_buildManifest.js",
+          revision: "ff733ca0bd1887ca4ccc0660b34dfa7f",
+        },
+        {
+          url: "/react-icons-ng/_next/static/dl_5YOtiDZh2bfZcrQSvP/_ssgManifest.js",
+          revision: "b6652df95db52feb4daf4eca35380933",
         },
         {
           url: "/react-icons-ng/brand-icon.svg",
@@ -266,17 +266,17 @@ define(["./workbox-c5ed321c"], function (e) {
           {
             cacheWillUpdate: async ({
               request: e,
-              response: n,
-              event: c,
+              response: c,
+              event: n,
               state: s,
             }) =>
-              n && "opaqueredirect" === n.type
-                ? new Response(n.body, {
+              c && "opaqueredirect" === c.type
+                ? new Response(c.body, {
                     status: 200,
                     statusText: "OK",
-                    headers: n.headers,
+                    headers: c.headers,
                   })
-                : n,
+                : c,
           },
         ],
       }),
@@ -397,8 +397,8 @@ define(["./workbox-c5ed321c"], function (e) {
     e.registerRoute(
       ({ url: e }) => {
         if (!(self.origin === e.origin)) return !1;
-        const n = e.pathname;
-        return !n.startsWith("/api/auth/") && !!n.startsWith("/api/");
+        const c = e.pathname;
+        return !c.startsWith("/api/auth/") && !!c.startsWith("/api/");
       },
       new e.NetworkFirst({
         cacheName: "apis",
