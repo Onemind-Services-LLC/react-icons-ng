@@ -15,7 +15,7 @@ export default function HomePage() {
       </p>
 
       <h2>Installation (for standard modern project)</h2>
-      <CodeBlock language="bash" code={`npm install react-icons --save`} />
+      <CodeBlock language="bash" code={`npm install react-icons-ng --save`} />
 
       <h3>Usage</h3>
       <CodeBlock language="jsx" code={HOME_USAGE_ALL} />
