@@ -46,7 +46,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./packages/preview/out
-        if: github.ref == 'refs/heads/master'
+        if: contains(github.ref, 'tags/')
       - name: Release
         uses: ncipollo/release-action@v1
         with:
