@@ -66,6 +66,7 @@ For example, to use an icon from **Material Design**, your import would be: `imp
 | [Material Design icons 2](https://materialdesignicons.com/)              | [Apache License Version 2.0](https://github.com/Templarian/MaterialDesign/blob/master/LICENSE)    | e607d030c555e05f8ee911538e2761c0d0e8cf26 |  7334 |
 | [Openmoji](https://openmoji.org/)                                        | [CC BY-SA 4.0](https://github.com/hfg-gmuend/openmoji/blob/master/LICENSE.txt)                    | 14.0.0-197-g44c0249                      |  4090 |
 | [Phosphor Icons](https://github.com/phosphor-icons/core)                 | [MIT](https://github.com/phosphor-icons/core/blob/main/LICENSE)                                   | v2.0.2-2-gc67d7a8                        |  7488 |
+| [Polaris](https://polaris.shopify.com/)                                  | [MIT](https://github.com/Shopify/polaris/blob/main/LICENSE.md)                                    | @shopify/polaris-cli@0.1.36-37-gf7f160d  |   492 |
 | [Remix Icon](https://github.com/Remix-Design/RemixIcon)                  | [Apache License Version 2.0](https://www.apache.org/licenses/)                                    | v3.3.0                                   |  2481 |
 | [Radix Icons](https://icons.radix-ui.com)                                | [MIT](https://github.com/radix-ui/icons/blob/master/LICENSE)                                      | @radix-ui/react-icons@1.3.0              |   318 |
 | [Simple Icons](https://simpleicons.org/)                                 | [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)                           | 4.14.0-1254-g4ae63bc                     |  2459 |
@@ -76,7 +77,7 @@ For example, to use an icon from **Material Design**, your import would be: `imp
 | [VS Code Icons](https://github.com/microsoft/vscode-codicons)            | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)                                         | 0.0.31-48-g0609c3d                       |   426 |
 | [Weather Icons](https://erikflowers.github.io/weather-icons/)            | [SIL OFL 1.1](https://scripts.sil.org/OFL)                                                        | 2.0.12-7-gbb80982                        |   219 |
 
-Total Count of Icons: 58887
+Total Count of Icons: 59379
 
 [//]: # END_VERSION
 

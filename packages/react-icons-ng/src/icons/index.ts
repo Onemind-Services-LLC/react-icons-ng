@@ -662,6 +662,31 @@ export const icons: IconDefinition[] = [
     },
   },
   {
+    id: "po",
+    name: "Polaris",
+    contents: [
+      {
+        files: path.resolve(
+          __dirname,
+          "../../icons/polaris/polaris-icons/icons/*.svg"
+        ),
+        formatter: (name) => `Po${name}`,
+        processWithSVGO: true,
+      },
+    ],
+    projectUrl: "https://polaris.shopify.com/",
+    license: "MIT",
+    licenseUrl: "https://github.com/Shopify/polaris/blob/main/LICENSE.md",
+    source: {
+      type: "git",
+      localName: "polaris",
+      remoteDir: "polaris-icons/icons/",
+      url: "https://github.com/Shopify/polaris.git",
+      branch: "main",
+      hash: "f7f160d0f83090d1eac50de4b92b1fab4f9326b2",
+    },
+  },
+  {
     id: "ri",
     name: "Remix Icon",
     contents: [
