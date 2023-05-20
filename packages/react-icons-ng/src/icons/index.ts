@@ -180,6 +180,30 @@ export const icons: IconDefinition[] = [
     },
   },
   {
+    id: "cu",
+    name: "CoreUI Icons",
+    contents: [
+      {
+        files: path.resolve(
+          __dirname,
+          "../../icons/coreui-icons/svg/free/*.svg"
+        ),
+        formatter: (name) => `Cu${name}`,
+      },
+    ],
+    projectUrl: "https://github.com/coreui/coreui-icons",
+    license: "MIT",
+    licenseUrl: "https://github.com/coreui/coreui-icons/blob/main/LICENSE",
+    source: {
+      type: "git",
+      localName: "coreui-icons",
+      remoteDir: "svg/",
+      url: "https://github.com/coreui/coreui-icons.git",
+      branch: "main",
+      hash: "4b1f3877b43304d4faea45f805d0eb3c65596501",
+    },
+  },
+  {
     id: "eos",
     name: "EOS Icons",
     contents: [
