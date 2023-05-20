@@ -7791,7 +7791,7 @@ __metadata:
     enzyme-to-json: ^3.4.3
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-icons-ng: ^4.8.3-snapshot.0
+    react-icons-ng: ^4.8.3
     react-scripts: ^5.0.1
   languageName: unknown
   linkType: soft
@@ -7805,7 +7805,7 @@ __metadata:
     enzyme-to-json: ^3.4.3
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-icons-ng: ^4.8.3-snapshot.0
+    react-icons-ng: ^4.8.3
     react-scripts: ^5.0.1
   languageName: unknown
   linkType: soft
@@ -16659,7 +16659,7 @@ __metadata:
     prop-types: ^15.7.2
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-icons-ng: ^4.8.3-snapshot.0
+    react-icons-ng: ^4.8.3
     sass: ^1.55.0
     tiny-skeleton-loader-react: ^1.1.0
     typescript: ^5.0.4
@@ -17092,7 +17092,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"react-icons-ng@^4.8.3-snapshot.0, react-icons-ng@workspace:packages/_react-icons-ng_all":
+"react-icons-ng@^4.8.3, react-icons-ng@workspace:packages/_react-icons-ng_all":
   version: 0.0.0-use.local
   resolution: "react-icons-ng@workspace:packages/_react-icons-ng_all"
   peerDependencies:
@@ -17246,7 +17246,7 @@ __metadata:
     "@types/react-dom": ^18.0.6
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-icons-ng: ^4.8.3-snapshot.0
+    react-icons-ng: ^4.8.3
     react-scripts: 5.0.1
     typescript: ^5.0.4
   languageName: unknown
@@ -20603,7 +20603,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "webpack4-test@workspace:packages/webpack4-test"
   dependencies:
-    react-icons-ng: ^4.8.3-snapshot.0
+    react-icons-ng: ^4.8.3
     webpack: ^5.74.0
     webpack-cli: ^4.10.0
   languageName: unknown
