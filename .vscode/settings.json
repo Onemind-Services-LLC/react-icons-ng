@@ -1,8 +1,7 @@
 {
   "search.exclude": {
     "**/packages/react-icons-ng/icons/*/**": true,
-    "**/packages/_react-icons-ng_all/*/**": true,
-    "**/packages/_react-icons-ng_all-files/*/**": true
+    "**/packages/_react-icons-ng_all/*/**": true
   },
   "editor.codeActionsOnSave": {
     "source.fixAll": true

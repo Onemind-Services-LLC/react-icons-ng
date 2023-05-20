@@ -35,35 +35,6 @@ _NOTE_: each Icon package has it's own subfolder under `react-icons-ng` you impo
 
 For example, to use an icon from **Material Design**, your import would be: `import { ICON_NAME } from 'react-icons-ng/md';`
 
-## Installation (for meteorjs, gatsbyjs, etc)
-
-> **Note**
-> This option has not had a new release for some time.
-> More info https://github.com/react-icons/react-icons/issues/593
-
-If your project grows in size, this option is available.
-This method has the trade-off that it takes a long time to install the package.
-
-```bash
-yarn add @react-icons-ng/all-files
-# or
-npm install @react-icons-ng/all-files --save
-```
-
-example usage
-
-```jsx
-import { FaBeer } from "@react-icons-ng/all-files/fa/FaBeer";
-
-function Question() {
-  return (
-    <h3>
-      Lets go for a <FaBeer />?
-    </h3>
-  );
-}
-```
-
 ## Icons
 
 [//]: # START_VERSION

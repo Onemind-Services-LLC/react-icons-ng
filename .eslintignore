@@ -11,4 +11,3 @@ packages/react-icons-ng/build/
 packages/react-icons-ng/icons/*
 !packages/react-icons-ng/icons/index.js
 packages/_react-icons-ng_all/
-packages/_react-icons-ng_all-files/

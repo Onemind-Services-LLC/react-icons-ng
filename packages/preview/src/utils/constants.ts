@@ -14,7 +14,7 @@ class Question extends React.Component {
 }`;
 
 export const HOME_USAGE_ALL = `
-import { FaBeer } from "@react-icons-ng/all-files/fa/FaBeer";
+import { FaBeer } from "@react-icons-ng/fa/FaBeer";
 
 class Question extends React.Component {
   render() {

@@ -3,12 +3,12 @@ node_modules
 /dist/
 
 /packages/_react-icons-ng_all
-/packages/_react-icons-ng_all-files
 
 /packages/react-icons-ng/build
 /packages/react-icons-ng/icons/*
 !/packages/react-icons-ng/icons/index.ts
 
+/packages/preview/out
 /packages/preview/.next
 
 /lerna.json
