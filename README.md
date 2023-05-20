@@ -47,6 +47,7 @@ For example, to use an icon from **Material Design**, your import would be: `imp
 | [css.gg](https://github.com/astrit/css.gg)                               | [MIT](https://opensource.org/licenses/MIT)                                                        | 2.0.0                                    |   704 |
 | [Circum Icons](https://circumicons.com/)                                 | [MPL-2.0 license](https://github.com/Klarr-Agency/Circum-Icons/blob/main/LICENSE)                 | v2.0.1-20-gfb3e0a9                       |   288 |
 | [Coolicons](https://github.com/krystonschwarze/coolicons)                | [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/)                                 | v4.1-1-g1a92717                          |   442 |
+| [EOS Icons](https://eos-icons.com/)                                      | [MIT](https://gitlab.com/SUSE-UIUX/eos-icons/-/blob/master/LICENSE)                               | v5.4.0-4-ga21c4b9                        |   156 |
 | [Font Awesome 5](https://fontawesome.com/)                               | [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/)                                 | 5.15.4-3-gafecf2a                        |  1612 |
 | [Font Awesome 6](https://fontawesome.com/)                               | [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/)                                 | 6.4.0                                    |  2020 |
 | [Flat Color Icons](https://github.com/icons8/flat-color-icons)           | [MIT](https://opensource.org/licenses/MIT)                                                        | v1.0.2-27-g8eccbbb                       |   329 |
@@ -75,7 +76,7 @@ For example, to use an icon from **Material Design**, your import would be: `imp
 | [VS Code Icons](https://github.com/microsoft/vscode-codicons)            | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)                                         | 0.0.31-48-g0609c3d                       |   426 |
 | [Weather Icons](https://erikflowers.github.io/weather-icons/)            | [SIL OFL 1.1](https://scripts.sil.org/OFL)                                                        | 2.0.12-7-gbb80982                        |   219 |
 
-Total Count of Icons: 58731
+Total Count of Icons: 58887
 
 [//]: # END_VERSION
 

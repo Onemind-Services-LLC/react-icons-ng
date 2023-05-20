@@ -180,6 +180,27 @@ export const icons: IconDefinition[] = [
     },
   },
   {
+    id: "eos",
+    name: "EOS Icons",
+    contents: [
+      {
+        files: path.resolve(__dirname, "../../icons/eos-icons/svg/*.svg"),
+        formatter: (name) => `Ei${name}`,
+      },
+    ],
+    projectUrl: "https://eos-icons.com/",
+    license: "MIT",
+    licenseUrl: "https://gitlab.com/SUSE-UIUX/eos-icons/-/blob/master/LICENSE",
+    source: {
+      type: "git",
+      localName: "eos-icons",
+      remoteDir: "svg/",
+      url: "https://gitlab.com/SUSE-UIUX/eos-icons.git",
+      branch: "master",
+      hash: "a21c4b9ba5667f103abc620975fec5ec98078d85",
+    },
+  },
+  {
     id: "fa",
     name: "Font Awesome 5",
     contents: [
