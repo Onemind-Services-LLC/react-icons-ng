@@ -28,14 +28,22 @@ async function main() {
     }
     const diff = await gitDiffCount(icon.source, ctx);
     console.log("diff ", icon.name, diff.diffs, diff.current);
-    diffs.push({
-      id: icon.id,
-      name: icon.name,
-      diffs: diff.diffs,
-      current: diff.current,
-    });
+    if (diff.diffs > 0) {
+      diffs.push({
+        id: icon.id,
+        name: icon.name,
+        diffs: diff.diffs,
+        current: diff.current,
+      });
+    }
   }
-  console.table(diffs);
+
+  if (diffs.length > 0) {
+    console.log("Found diffs: ", diffs.length);
+    console.log(diffs);
+  } else {
+    console.log("No diffs found");
+  }
 }
 
 async function gitDiffCount(

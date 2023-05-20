@@ -70,15 +70,15 @@ For example, to use an icon from **Material Design**, your import would be: `imp
 | [Polaris](https://polaris.shopify.com/)                                  | [MIT](https://github.com/Shopify/polaris/blob/main/LICENSE.md)                                    | @shopify/polaris-cli@0.1.36-37-gf7f160d  |   492 |
 | [Remix Icon](https://github.com/Remix-Design/RemixIcon)                  | [Apache License Version 2.0](https://www.apache.org/licenses/)                                    | v3.3.0                                   |  2481 |
 | [Radix Icons](https://icons.radix-ui.com)                                | [MIT](https://github.com/radix-ui/icons/blob/master/LICENSE)                                      | @radix-ui/react-icons@1.3.0              |   318 |
-| [Simple Icons](https://simpleicons.org/)                                 | [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)                           | 4.14.0-1254-g4ae63bc                     |  2459 |
+| [Simple Icons](https://simpleicons.org/)                                 | [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)                           | 4.14.0-1257-ged22f47                     |  2461 |
 | [Simple Line Icons](https://thesabbir.github.io/simple-line-icons/)      | [MIT](https://opensource.org/licenses/MIT)                                                        | v2.5.5                                   |   189 |
 | [Themify Icons](https://github.com/lykmapipo/themify-icons)              | [MIT](https://github.com/thecreation/standard-icons/blob/master/modules/themify-icons/LICENSE)    | v0.1.2-2-g9600186                        |   352 |
 | [Tabler Icons](https://github.com/tabler/tabler-icons)                   | [MIT](https://opensource.org/licenses/MIT)                                                        | v2.19.0                                  |  4176 |
 | [Typicons](https://s-ings.com/typicons/)                                 | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)                                   | v2.1.2                                   |   336 |
-| [VS Code Icons](https://github.com/microsoft/vscode-codicons)            | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)                                         | 0.0.31-48-g0609c3d                       |   426 |
+| [VS Code Icons](https://github.com/microsoft/vscode-codicons)            | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)                                         | 0.0.31-55-g86736b4                       |   426 |
 | [Weather Icons](https://erikflowers.github.io/weather-icons/)            | [SIL OFL 1.1](https://scripts.sil.org/OFL)                                                        | 2.0.12-7-gbb80982                        |   219 |
 
-Total Count of Icons: 59935
+Total Count of Icons: 59937
 
 [//]: # END_VERSION
 

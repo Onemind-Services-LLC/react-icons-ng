@@ -773,7 +773,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "icons/",
       url: "https://github.com/simple-icons/simple-icons.git",
       branch: "develop",
-      hash: "4ae63bc2e50725eb1500ec95b543a67101bf3bbb",
+      hash: "ed22f476f063c71b718d9bbc2611ed93758b7d2e",
     },
   },
   {
@@ -885,7 +885,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "src/icons/",
       url: "https://github.com/microsoft/vscode-codicons.git",
       branch: "main",
-      hash: "0609c3dfbdb746ebaff26046deb851d01c720fa6",
+      hash: "86736b4b18142657f898cb13a57b1eb5e03e9067",
     },
   },
   {
