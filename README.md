@@ -109,40 +109,6 @@ import { IconContext } from "react-icons-ng";
 | `attr`      | `undefined`           | Overwritten by other attributes    |
 | `title`     | `undefined`           | Icon description for accessibility |
 
-## Migrating from version 2 -> 3
-
-### Change import style
-
-Import path has changed. You need to rewrite from the old style.
-
-```jsx
-// OLD IMPORT STYLE
-import FaBeer from "react-icons-ng/lib/fa/beer";
-
-function Question() {
-  return (
-    <h3>
-      Lets go for a <FaBeer />?
-    </h3>
-  );
-}
-```
-
-```jsx
-// NEW IMPORT STYLE
-import { FaBeer } from "react-icons-ng/fa";
-
-function Question() {
-  return (
-    <h3>
-      Lets go for a <FaBeer />?
-    </h3>
-  );
-}
-```
-
-Ending up with a large JS bundle? Check out [this issue](https://github.com/react-icons/react-icons/issues/154).
-
 ### Adjustment CSS
 
 From version 3, `vertical-align: middle` is not automatically given. Please use IconContext to specify className or specify an inline style.
@@ -229,6 +195,7 @@ SVG is [supported by all major browsers](http://caniuse.com/#search=svg). With `
 ## Related Projects
 
 - [react-svg-morph](https://github.com/gorangajic/react-svg-morph/)
+- [react-icons](https://github.com/react-icons/react-icons)
 
 ## Licence
 
