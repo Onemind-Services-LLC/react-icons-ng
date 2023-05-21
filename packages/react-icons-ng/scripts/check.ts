@@ -40,7 +40,7 @@ async function main() {
 
   if (diffs.length > 0) {
     console.log("Found diffs: ", diffs.length);
-    console.log(diffs);
+    console.table(diffs);
   } else {
     console.log("No diffs found");
   }

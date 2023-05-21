@@ -326,6 +326,48 @@ export const icons: IconDefinition[] = [
     projectUrl: "https://feathericons.com/",
     license: "MIT",
     licenseUrl: "https://github.com/feathericons/feather/blob/master/LICENSE",
+    source: {
+      type: "git",
+      localName: "feather-icons",
+      remoteDir: "icons/",
+      url: "https://github.com/feathericons/feather.git",
+      branch: "master",
+      hash: "db2364f996e407cb933a37b6cafc96659debf771",
+    },
+  },
+  {
+    id: "fl",
+    name: "Fluent System Icons",
+    contents: [
+      {
+        files: path.resolve(
+          __dirname,
+          "../../icons/fluentui-system-icons/assets/*/SVG/*_24_regular.svg"
+        ),
+        formatter: (name) => `Fl${name}`,
+        processWithSVGO: true,
+      },
+      {
+        files: path.resolve(
+          __dirname,
+          "../../icons/fluentui-system-icons/assets/*/SVG/*_24_filled.svg"
+        ),
+        formatter: (name) => `FlFill${name}`,
+        processWithSVGO: true,
+      },
+    ],
+    projectUrl: "https://developer.microsoft.com/en-us/fluentui",
+    license: "MIT",
+    licenseUrl:
+      "https://github.com/microsoft/fluentui-system-icons/blob/master/LICENSE",
+    source: {
+      type: "git",
+      localName: "fluentui-system-icons",
+      remoteDir: "assets/",
+      url: "https://github.com/microsoft/fluentui-system-icons",
+      branch: "master",
+      hash: "a11bf704ea6bd27bdc577d3fa319952b562d0778",
+    },
   },
   {
     id: "go",
