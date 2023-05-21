@@ -371,16 +371,21 @@ export const icons: IconDefinition[] = [
     name: "Github Octicons icons",
     contents: [
       {
-        files: path.resolve(
-          path.dirname(require.resolve("@primer/octicons")),
-          "build/svg/*-24.svg"
-        ),
+        files: path.resolve(__dirname, "../../icons/octicons/icons/*-24.svg"),
         formatter: (name) => `Go${name}`.replace("24", ""),
       },
     ],
     projectUrl: "https://octicons.github.com/",
     license: "MIT",
     licenseUrl: "https://github.com/primer/octicons/blob/master/LICENSE",
+    source: {
+      type: "git",
+      localName: "octicons",
+      remoteDir: "icons/",
+      url: "https://github.com/primer/octicons.git",
+      branch: "main",
+      hash: "16b1cd272563ac01fa16b4cfe985b6e304132b6e",
+    },
   },
   {
     id: "gi",
