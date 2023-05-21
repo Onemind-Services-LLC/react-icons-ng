@@ -316,10 +316,7 @@ export const icons: IconDefinition[] = [
     name: "Feather",
     contents: [
       {
-        files: path.resolve(
-          path.dirname(require.resolve("feather-icons")),
-          "icons/*.svg"
-        ),
+        files: path.resolve(__dirname, "../../icons/feather-icons/icons/*.svg"),
         formatter: (name) => `Fi${name}`,
       },
     ],
