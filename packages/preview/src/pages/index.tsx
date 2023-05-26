@@ -1,7 +1,7 @@
 import CodeBlock from "@components/@core/code-block";
 import Container from "@components/@core/container";
 import Badges from "@components/pages/home/badges";
-import { BRAND_TITLE, HOME_USAGE, HOME_USAGE_ALL } from "@utils/constants";
+import { BRAND_TITLE, HOME_USAGE_ALL } from "@utils/constants";
 import React from "react";
 
 export default function HomePage() {
