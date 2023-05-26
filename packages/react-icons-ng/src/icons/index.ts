@@ -665,7 +665,7 @@ export const icons: IconDefinition[] = [
           __dirname,
           "../../icons/material-design-icons-2/svg/*.svg"
         ),
-        formatter: (name, file) => `Md2${name}`,
+        formatter: (name) => `Md2${name}`,
         processWithSVGO: true,
       },
     ],

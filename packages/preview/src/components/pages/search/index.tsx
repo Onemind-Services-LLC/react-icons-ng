@@ -10,7 +10,7 @@ export default function SearchPageComponent() {
   const { q: query } = router.query;
 
   if (query?.length >= 2) {
-    const hightlightPattern = new RegExp(`(${query})`, "i");
+    const highlightPattern = new RegExp(`(${query})`, "i");
     return (
       <>
         <h2>
@@ -22,7 +22,7 @@ export default function SearchPageComponent() {
               key={icon.id}
               icon={icon}
               query={query}
-              highlightPattern={hightlightPattern}
+              highlightPattern={highlightPattern}
             />
           ))}
         </div>

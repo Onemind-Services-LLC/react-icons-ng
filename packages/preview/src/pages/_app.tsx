@@ -8,7 +8,7 @@ import Head from "next/head";
 import React from "react";
 
 interface Props {
-  pageProps: any;
+  pageProps: unknown;
 }
 
 class App extends NextApp<Props> {
