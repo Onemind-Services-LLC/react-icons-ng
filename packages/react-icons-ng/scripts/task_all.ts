@@ -12,75 +12,76 @@ export async function dirInit({ DIST, LIB }) {
     throw err;
   };
 
+  const dirsToCreate = [
+    DIST,
+    LIB,
+    path.resolve(LIB, "esm"),
+    path.resolve(LIB, "cjs"),
+  ];
+
   await rmDirRecursive(DIST);
-  await fs.mkdir(DIST, { recursive: true }).catch(ignore);
-  await fs.mkdir(LIB).catch(ignore);
-  await fs.mkdir(path.resolve(LIB, "esm")).catch(ignore);
-  await fs.mkdir(path.resolve(LIB, "cjs")).catch(ignore);
+
+  for (const dir of dirsToCreate) {
+    await fs.mkdir(dir, { recursive: true }).catch(ignore);
+  }
 
   const write = (filePath, str) =>
-    fs.writeFile(path.resolve(DIST, ...filePath), str, "utf8").catch(ignore);
+    fs
+      .writeFile(path.resolve(DIST, ...filePath), `${str}\n`, "utf8")
+      .catch(ignore);
+
+  const AUTO_GEN_STR = "// THIS FILE IS AUTO GENERATED\n";
 
   const initFiles = ["index.d.ts", "index.esm.js", "index.js"];
 
-  // Arrays to hold the import lines for each icon folder
+  const fileContents = {
+    "index.js": `${AUTO_GEN_STR}var GenIcon = require('../lib').GenIcon`,
+    "index.esm.js": `${AUTO_GEN_STR}import { GenIcon } from '../lib';`,
+    "index.d.ts": `${AUTO_GEN_STR}import { IconTree, IconType } from '../lib'`,
+  };
+
   const allImports = [];
 
   for (const icon of icons) {
     await fs.mkdir(path.resolve(DIST, icon.id)).catch(ignore);
 
-    await write(
-      [icon.id, "index.js"],
-      "// THIS FILE IS AUTO GENERATED\nvar GenIcon = require('../lib').GenIcon\n"
-    );
-    await write(
-      [icon.id, "index.esm.js"],
-      "// THIS FILE IS AUTO GENERATED\nimport { GenIcon } from '../lib';\n"
-    );
-    await write(
-      [icon.id, "index.d.ts"],
-      "// THIS FILE IS AUTO GENERATED\nimport { IconTree, IconType } from '../lib'\n"
-    );
-    await write(
-      [icon.id, "package.json"],
-      JSON.stringify(
-        {
-          sideEffects: false,
-          module: "./index.esm.js",
-          types: "./index.d.ts",
-          exports: {
-            ".": {
-              types: "./index.d.ts",
-              import: "./index.esm.js",
-              require: "./index.js",
-            },
-            "./package.json": "./package.json",
+    for (const [file, content] of Object.entries(fileContents)) {
+      await write([icon.id, file], content);
+    }
+
+    const pkgContent = JSON.stringify(
+      {
+        sideEffects: false,
+        module: "./index.esm.js",
+        types: "./index.d.ts",
+        exports: {
+          ".": {
+            types: "./index.d.ts",
+            import: "./index.esm.js",
+            require: "./index.js",
           },
+          "./package.json": "./package.json",
         },
-        null,
-        2
-      ) + "\n"
+      },
+      null,
+      2
     );
 
-    // Add the import lines to the 'allImports' and 'allTypes' arrays
+    await write([icon.id, "package.json"], pkgContent);
+
     allImports.push(`export * from './${icon.id}';`);
   }
 
   for (const file of initFiles) {
-    await write([file], "// THIS FILE IS AUTO GENERATED\n");
+    await write([file], AUTO_GEN_STR);
   }
 
-  // Write the 'all.js' file
-  await write(
-    ["all.js"],
-    `// THIS FILE IS AUTO GENERATED\n${allImports.join("\n")}\n`
-  );
+  const allFiles = ["all.js", "all.d.ts"];
+  const allFilesContent = `${AUTO_GEN_STR}${allImports.join("\n")}`;
 
-  // Write the 'all.d.ts' file
-  await write(
-    ["all.d.ts"],
-    `// THIS FILE IS AUTO GENERATED\n${allImports.join("\n")}\n`
-  );
+  for (const file of allFiles) {
+    await write([file], allFilesContent);
+  }
 }
 
 export async function writeIconModule(icon, { DIST }) {
