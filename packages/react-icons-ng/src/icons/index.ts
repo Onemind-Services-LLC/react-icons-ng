@@ -388,6 +388,27 @@ export const icons: IconDefinition[] = [
     },
   },
   {
+    id: "gov",
+    name: "US Government Icons",
+    contents: [
+      {
+        files: path.resolve(__dirname, "../../icons/govicons/raw-svg/*.svg"),
+        formatter: (name) => `Gov${name}`,
+      },
+    ],
+    projectUrl: "http://govicons.io/",
+    license: "SIL OFL 1.1",
+    licenseUrl: "https://github.com/540co/govicons/blob/develop/LICENSE.md",
+    source: {
+      type: "git",
+      localName: "govicons",
+      remoteDir: "raw-svg/",
+      url: "https://github.com/540co/govicons.git",
+      branch: "develop",
+      hash: "1d9f4673de0d3f7b4a9d300c2359e806730f196b",
+    },
+  },
+  {
     id: "gi",
     name: "Game Icons",
     contents: [
