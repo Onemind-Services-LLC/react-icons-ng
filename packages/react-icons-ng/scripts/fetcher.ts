@@ -44,7 +44,7 @@ async function main() {
 
 async function gitCloneIcon(source: IconSetGitSource, ctx: Context) {
   console.log(
-    `start clone icon: ${source.url}/${source.remoteDir}@${source.branch}`
+    `Cloning icon from: ${source.url}/${source.remoteDir} at branch: ${source.branch}`
   );
   await execFile(
     "git",
