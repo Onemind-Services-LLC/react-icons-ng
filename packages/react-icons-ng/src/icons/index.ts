@@ -555,6 +555,27 @@ export const icons: IconDefinition[] = [
     licenseUrl: "https://github.com/ionic-team/ionicons/blob/master/LICENSE",
   },
   {
+    id: "ji",
+    name: "Jam Icons",
+    contents: [
+      {
+        files: path.resolve(__dirname, "../../icons/jam-icons/icons/*.svg"),
+        formatter: (name) => `Ji${name}`,
+      },
+    ],
+    projectUrl: "https://github.com/michaelampr/jam",
+    license: "MIT",
+    licenseUrl: "https://github.com/michaelampr/jam/blob/master/LICENSE",
+    source: {
+      type: "git",
+      localName: "jam-icons",
+      remoteDir: "icons/",
+      url: "https://github.com/michaelampr/jam.git",
+      branch: "master",
+      hash: "c8501b14e0480c8becac58a626e72502bca90084",
+    },
+  },
+  {
     id: "lia",
     name: "Icons8 Line Awesome",
     contents: [
