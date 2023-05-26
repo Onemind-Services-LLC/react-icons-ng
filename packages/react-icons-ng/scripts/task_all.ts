@@ -6,7 +6,6 @@ import { iconRowTemplate } from "./templates";
 import { getIconFiles, convertIconData, rmDirRecursive } from "./logics";
 import { svgo } from "./svgo";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function dirInit({ DIST, LIB }) {
   const ignore = (err) => {
     if (err.code === "EEXIST") return;
@@ -23,6 +22,9 @@ export async function dirInit({ DIST, LIB }) {
     fs.writeFile(path.resolve(DIST, ...filePath), str, "utf8").catch(ignore);
 
   const initFiles = ["index.d.ts", "index.esm.js", "index.js"];
+
+  // Arrays to hold the import lines for each icon folder
+  const allImports = [];
 
   for (const icon of icons) {
     await fs.mkdir(path.resolve(DIST, icon.id)).catch(ignore);
@@ -59,13 +61,28 @@ export async function dirInit({ DIST, LIB }) {
         2
       ) + "\n"
     );
+
+    // Add the import lines to the 'allImports' and 'allTypes' arrays
+    allImports.push(`export * from './${icon.id}';`);
   }
 
   for (const file of initFiles) {
     await write([file], "// THIS FILE IS AUTO GENERATED\n");
   }
+
+  // Write the 'all.js' file
+  await write(
+    ["all.js"],
+    `// THIS FILE IS AUTO GENERATED\n${allImports.join("\n")}\n`
+  );
+
+  // Write the 'all.d.ts' file
+  await write(
+    ["all.d.ts"],
+    `// THIS FILE IS AUTO GENERATED\n${allImports.join("\n")}\n`
+  );
 }
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 export async function writeIconModule(icon, { DIST }) {
   console.log(`writeIconModule: ${icon.id} ${icon.name} ...`);
 
