@@ -27,7 +27,6 @@ async function main() {
       continue;
     }
     const diff = await gitDiffCount(icon.source, ctx);
-    console.log("diff ", icon.name, diff.diffs, diff.current);
     if (diff.diffs > 0) {
       diffs.push({
         id: icon.id,

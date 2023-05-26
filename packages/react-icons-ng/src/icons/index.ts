@@ -39,7 +39,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "packages/icons-svg/svg/",
       url: "https://github.com/ant-design/ant-design-icons.git",
       branch: "master",
-      hash: "8b4484603907e6935dca4876f47a6c10b794fcfd",
+      hash: "49a8c618c3bed3d85115f3eafe349e74ca984bf0",
     },
   },
   {
@@ -362,7 +362,7 @@ export const icons: IconDefinition[] = [
       localName: "fluentui-system-icons",
       remoteDir: "assets/",
       url: "https://github.com/microsoft/fluentui-system-icons",
-      branch: "master",
+      branch: "main",
       hash: "a11bf704ea6bd27bdc577d3fa319952b562d0778",
     },
   },
@@ -384,7 +384,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "icons/",
       url: "https://github.com/primer/octicons.git",
       branch: "main",
-      hash: "16b1cd272563ac01fa16b4cfe985b6e304132b6e",
+      hash: "ea81ec17f0d3d8e74d53e484f551166339af3a17",
     },
   },
   {
@@ -572,7 +572,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "icons/",
       url: "https://github.com/lucide-icons/lucide.git",
       branch: "main",
-      hash: "bde11234ea16a43c35eaf9420022399d459604ff",
+      hash: "f4d887339eef15faa931853e2ae378031d33220b",
     },
   },
   {
@@ -702,7 +702,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "black/svg/",
       url: "https://github.com/hfg-gmuend/openmoji.git",
       branch: "master",
-      hash: "44c02495e040c52fbea0bfb1cba89aa24754f9a8",
+      hash: "04941aa17f1b5b1ac8dac50d6bb8ec80ec30c3c3",
     },
   },
   {
@@ -751,7 +751,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "polaris-icons/icons/",
       url: "https://github.com/Shopify/polaris.git",
       branch: "main",
-      hash: "f7f160d0f83090d1eac50de4b92b1fab4f9326b2",
+      hash: "920e62ed65ed65c5e454abdcf05d826cd6129c44",
     },
   },
   {
@@ -817,7 +817,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "icons/",
       url: "https://github.com/simple-icons/simple-icons.git",
       branch: "develop",
-      hash: "ed22f476f063c71b718d9bbc2611ed93758b7d2e",
+      hash: "10a590f2531e32c8f3526358fa6a0f9247088350",
     },
   },
   {
@@ -884,7 +884,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "icons/",
       url: "https://github.com/tabler/tabler-icons.git",
       branch: "master",
-      hash: "81f25c2b96e65379821db381bfa9188e91f908d5",
+      hash: "2c960e70bdd1df03bc048fd1b4556778462a84c4",
     },
   },
   {
