@@ -39,7 +39,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "packages/icons-svg/svg/",
       url: "https://github.com/ant-design/ant-design-icons.git",
       branch: "master",
-      hash: "49a8c618c3bed3d85115f3eafe349e74ca984bf0",
+      hash: "8ec7ced9f03aae16a60b9fc6accd7db122920013",
     },
   },
   {
@@ -614,7 +614,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "icons/",
       url: "https://github.com/lucide-icons/lucide.git",
       branch: "main",
-      hash: "f4d887339eef15faa931853e2ae378031d33220b",
+      hash: "53109037ec41a38ea326366bd4f6b2779d4ffe94",
     },
   },
   {
@@ -793,7 +793,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "polaris-icons/icons/",
       url: "https://github.com/Shopify/polaris.git",
       branch: "main",
-      hash: "920e62ed65ed65c5e454abdcf05d826cd6129c44",
+      hash: "a7569b7f5ac44acf35ead6f128a09d96e2a11433",
     },
   },
   {
@@ -859,7 +859,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "icons/",
       url: "https://github.com/simple-icons/simple-icons.git",
       branch: "develop",
-      hash: "10a590f2531e32c8f3526358fa6a0f9247088350",
+      hash: "a77fee9075b16e2cb7c88e37279303cb6171607f",
     },
   },
   {
@@ -887,6 +887,27 @@ export const icons: IconDefinition[] = [
     },
   },
   {
+    id: "tb",
+    name: "Tabler Icons",
+    contents: [
+      {
+        files: path.resolve(__dirname, "../../icons/tabler-icons/icons/*.svg"),
+        formatter: (name) => `Tb${name}`,
+      },
+    ],
+    projectUrl: "https://github.com/tabler/tabler-icons",
+    license: "MIT",
+    licenseUrl: "https://opensource.org/licenses/MIT",
+    source: {
+      type: "git",
+      localName: "tabler-icons",
+      remoteDir: "icons/",
+      url: "https://github.com/tabler/tabler-icons.git",
+      branch: "master",
+      hash: "2c960e70bdd1df03bc048fd1b4556778462a84c4",
+    },
+  },
+  {
     id: "tfi",
     name: "Themify Icons",
     contents: [
@@ -906,27 +927,6 @@ export const icons: IconDefinition[] = [
       url: "https://github.com/lykmapipo/themify-icons.git",
       branch: "master",
       hash: "9600186b24a7242f0e1e0a186983e6253301bb5d",
-    },
-  },
-  {
-    id: "tb",
-    name: "Tabler Icons",
-    contents: [
-      {
-        files: path.resolve(__dirname, "../../icons/tabler-icons/icons/*.svg"),
-        formatter: (name) => `Tb${name}`,
-      },
-    ],
-    projectUrl: "https://github.com/tabler/tabler-icons",
-    license: "MIT",
-    licenseUrl: "https://opensource.org/licenses/MIT",
-    source: {
-      type: "git",
-      localName: "tabler-icons",
-      remoteDir: "icons/",
-      url: "https://github.com/tabler/tabler-icons.git",
-      branch: "master",
-      hash: "2c960e70bdd1df03bc048fd1b4556778462a84c4",
     },
   },
   {
