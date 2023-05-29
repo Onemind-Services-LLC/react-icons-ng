@@ -3,14 +3,16 @@ import React from "react";
 
 import SearchIconSet from "./search-iconset";
 import { useRouter } from "next/router";
+import escapeRegExp from "lodash/escapeRegExp";
 
 export default function SearchPageComponent() {
   const allIcons = ALL_ICONS;
   const router = useRouter();
   const { q: query } = router.query;
+  const sanitizedQuery = escapeRegExp(query);
 
   if (query?.length >= 2) {
-    const highlightPattern = new RegExp(`(${query})`, "i");
+    const highlightPattern = new RegExp(`(${sanitizedQuery})`, "i");
     return (
       <>
         <h2>
