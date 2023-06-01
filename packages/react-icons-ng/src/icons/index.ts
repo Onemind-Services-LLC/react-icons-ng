@@ -614,7 +614,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "icons/",
       url: "https://github.com/lucide-icons/lucide.git",
       branch: "main",
-      hash: "53109037ec41a38ea326366bd4f6b2779d4ffe94",
+      hash: "ac08bb92c169eecd62bcc6b17a0f7d46529d08e3",
     },
   },
   {
@@ -859,7 +859,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "icons/",
       url: "https://github.com/simple-icons/simple-icons.git",
       branch: "develop",
-      hash: "a77fee9075b16e2cb7c88e37279303cb6171607f",
+      hash: "7330e01f85b2fc670075baaaad2f0af59408f6f1",
     },
   },
   {
