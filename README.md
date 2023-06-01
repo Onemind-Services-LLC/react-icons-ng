@@ -7,7 +7,11 @@
 [npm-image]: https://img.shields.io/npm/v/react-icons-ng.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/react-icons-ng
 
-Include popular icons in your React projects easily with `react-icons-ng`, which utilizes ES6 imports that allows you to include only the icons that your project is using.
+Elevate your React projects to new heights with `react-icons-ng`, an enhanced icon library derived from 
+`react-icons/react-icons`. With a substantial addition of over 60,000 icons, our forked version surpasses the original 
+repository in terms of versatility and variety. Leveraging the convenience of ES6 imports, `react-icons-ng` empowers 
+you to effortlessly integrate only the icons that align with your project's needs. Embrace a seamless development 
+experience and unlock the full potential of React icons with our impressive solution.
 
 ## Installation (for standard modern project)
 
