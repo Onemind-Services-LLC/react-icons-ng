@@ -645,14 +645,14 @@ export const icons: IconDefinition[] = [
     contents: [
       {
         files: async () => {
-          const normal = await glob(
+          const normal = await glob.glob(
             path.resolve(
               __dirname,
               "../../icons/material-design-icons/src/*/*/materialicons/24px.svg",
             ),
           );
 
-          const twotone = await glob(
+          const twotone = await glob.glob(
             path.resolve(
               __dirname,
               "../../icons/material-design-icons/src/*/*/materialiconstwotone/24px.svg",
