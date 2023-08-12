@@ -48,7 +48,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cp packages/_react-icons-ng*/*.tgz react-ng-icons.tgz
-          cp packages/_react-icons-ng-pack/*.tgz react-ng-icons-pack.tgz
-          npm publish react-ng-icons.tgz
-          npm publish react-ng-icons-pack.tgz
+          npm publish packages/_react-icons-ng*/*.tgz
+          npm publish packages/_react-icons-ng-pack/*.tgz
