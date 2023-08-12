@@ -23,6 +23,6 @@
     "version": "yarn install && git add .",
     "lerna": "lerna",
     "clean": "rm -rfv node_modules && rm -rfv packages/*/node_modules",
-    "vercel-build": "cd packages/preview && yarn build"
+    "vercel-build": "cd packages/preview && yarn install && yarn build"
   }
 }
