@@ -11,9 +11,6 @@ module.exports = withPWA({
   scope: "/",
   runtimeCaching,
 })({
-  experimental: {
-    publicDirectory: true,
-  },
   webpack: (config, { isServer }) => {
     // Fixes npm packages that depend on fs module, see github.com/zeit/next.js/issues/7755
     if (!isServer) {

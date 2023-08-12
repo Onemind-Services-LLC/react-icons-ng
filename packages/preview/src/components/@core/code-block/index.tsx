@@ -1,7 +1,6 @@
 import toast from "cogo-toast";
 import copy from "copy-to-clipboard";
-import Highlight, { defaultProps } from "prism-react-renderer";
-import PrismTheme from "prism-react-renderer/themes/nightOwl";
+import {Highlight, themes} from "prism-react-renderer";
 import React from "react";
 import { IoClipboard } from "react-icons-ng/io5";
 
@@ -15,8 +14,7 @@ export default function CodeBlock({ code, language }) {
 
   return (
     <Highlight
-      {...defaultProps}
-      theme={PrismTheme}
+      theme={themes.nightOwl}
       code={code.trim()}
       language={language}
     >

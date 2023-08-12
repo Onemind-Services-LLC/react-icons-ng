@@ -19,7 +19,7 @@ const ActiveLink = ({
   }
 
   return (
-    <Link href={href} {...props}>
+    <Link href={href} {...props} legacyBehavior>
       {React.cloneElement(child, { className })}
     </Link>
   );
