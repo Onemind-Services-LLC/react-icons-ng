@@ -10568,11 +10568,6 @@ react-error-overlay@^6.0.11:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.11.tgz#92835de5841c5cf08ba00ddd2d677b6d17ff9adb"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
-react-icons-ng@^4.8.5-snapshot.0:
-  version "4.8.5"
-  resolved "https://registry.yarnpkg.com/react-icons-ng/-/react-icons-ng-4.8.5.tgz#2c17005260168ce0d27237386a116686a65b5f70"
-  integrity sha512-D5IB2IWBqKpYvcZzNwXrzftnpIL7DiBpCxaagmQRogYBMI3nHjZaHDTAm1Bw1YRctaWp8HccT87SNzBBm1lLZQ==
-
 react-is@^16.12.0, react-is@^16.13.1, react-is@^16.7.0, react-is@^16.8.6:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"

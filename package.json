@@ -22,6 +22,6 @@
     "version-snapshot": "lerna version --no-push --no-git-tag-version --yes --preid snapshot prepatch --force-publish",
     "version": "yarn install && git add .",
     "lerna": "lerna",
-    "clean": "rm -rfv node_modules && rm -rfv packages/*/node_modules && rm -rfv packages/*/{build,dist,lib} && rm -rfv yarn.lock"
+    "clean": "rm -rfv node_modules && rm -rfv packages/*/node_modules"
   }
 }

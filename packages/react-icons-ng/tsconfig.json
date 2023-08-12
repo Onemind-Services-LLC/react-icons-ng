@@ -9,8 +9,7 @@
     "baseUrl": ".",
     "declaration": true,
     "strict": true,
-    "noImplicitAny": true,
-    "noEmit": true
+    "noImplicitAny": true
   },
   "include": ["src/**/*.tsx"],
   "exclude": ["icons"]
