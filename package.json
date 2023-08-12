@@ -6,13 +6,13 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^20.2.1",
-    "@typescript-eslint/eslint-plugin": "^5.59.6",
-    "@typescript-eslint/parser": "^5.59.6",
-    "eslint": "^8.40.0",
+    "@types/node": "^20.4.8",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "eslint": "^8.46.0",
     "eslint-plugin-react": "latest",
-    "lerna": "^3.22.1",
-    "prettier": "^2.8.8"
+    "lerna": "^7.1.5",
+    "prettier": "^3.0.1"
   },
   "scripts": {
     "lint": "yarn eslint .",
