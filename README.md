@@ -2,10 +2,10 @@
 
 # [React Icons](https://onemind-services-llc.github.io/react-icons-ng/)
 
-[![npm][npm-image]][npm-url]
+[![Node.js CI](https://github.com/Onemind-Services-LLC/react-icons-ng/actions/workflows/nodejs.yml/badge.svg)](https://github.com/Onemind-Services-LLC/react-icons-ng/actions/workflows/nodejs.yml)
+![Package Version](https://img.shields.io/github/lerna-json/v/Onemind-Services-LLC/react-icons-ng/master?label=Version)
 
-[npm-image]: https://img.shields.io/npm/v/react-icons-ng.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/react-icons-ng
+
 
 Elevate your React projects to new heights with `react-icons-ng`, an enhanced icon library derived from
 `react-icons/react-icons`. With a substantial addition of over 60,000 icons, our forked version surpasses the original
@@ -24,7 +24,7 @@ npm install react-icons-ng --save
 example usage
 
 ```jsx
-import { FaBeer } from "react-icons-ng/fa";
+import { FaBeer } from "@onemind-services-llc/react-icons-ng/fa";
 
 function Question() {
   return (
@@ -98,7 +98,7 @@ You can configure react-icons-ng props using [React Context API](https://reactjs
 _Requires **React 16.3** or higher._
 
 ```jsx
-import { IconContext } from "react-icons-ng";
+import { IconContext } from "@onemind-services-llc/react-icons-ng";
 
 <IconContext.Provider value={{ color: "blue", className: "global-class-name" }}>
   <div>

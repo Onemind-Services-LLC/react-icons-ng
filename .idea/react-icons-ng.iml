@@ -10,9 +10,9 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/ts-test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/packages/webpack5-test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/node_modules" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/_react-icons-ng_all" />
       <excludeFolder url="file://$MODULE_DIR$/packages/react-icons-ng/build" />
       <excludeFolder url="file://$MODULE_DIR$/packages/react-icons-ng/icons" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/_react-icons-ng" />
       <excludeFolder url="file://$MODULE_DIR$/packages/_react-icons-ng-pack" />
     </content>
     <orderEntry type="inheritedJdk" />

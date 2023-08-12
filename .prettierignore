@@ -2,7 +2,7 @@
 node_modules
 /dist/
 
-/packages/_react-icons-ng_all
+/packages/_react-icons-ng
 /packages/_react-icons-ng-pack
 
 /packages/react-icons-ng/build

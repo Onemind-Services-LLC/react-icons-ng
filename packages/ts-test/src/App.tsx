@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import { IconContext } from "react-icons-ng";
-import { FaBeer } from "react-icons-ng/fa";
+import { IconContext } from "@onemind-services-llc/react-icons-ng";
+import { FaBeer } from "@onemind-services-llc/react-icons-ng/fa";
 
 const App: React.FC = () => {
   return (

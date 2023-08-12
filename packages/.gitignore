@@ -1,4 +1,4 @@
-_react-icons-ng_all/*
+_react-icons-ng/*
 _react-icons-ng-pack/*
-!_react-icons-ng_all/package.json
+!_react-icons-ng/package.json
 !_react-icons-ng-pack/package.json

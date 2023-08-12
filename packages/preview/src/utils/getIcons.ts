@@ -1,11 +1,11 @@
 import codegen from "babel-plugin-codegen/macro";
 
 const fn = codegen`
-const { IconsManifest } = require("react-icons-ng/lib/cjs");
+const { IconsManifest } = require("@onemind-services-llc/react-icons-ng/lib/cjs");
 
 let codes = "(function (id) { switch (id) {";
 IconsManifest.forEach(icon => {
-  codes += 'case "' + icon.id + '":\\nreturn import("react-icons-ng/' + icon.id +'/index");\\n'
+  codes += 'case "' + icon.id + '":\\nreturn import("@onemind-services-llc/react-icons-ng/' + icon.id +'/index");\\n'
 })
 codes += '}})';
 

@@ -1,4 +1,4 @@
-import * as RiLib from "react-icons-ng/lib";
+import * as RiLib from "@onemind-services-llc/react-icons-ng/lib";
 
 export const ALL_ICONS = RiLib["IconsManifest"];
 
