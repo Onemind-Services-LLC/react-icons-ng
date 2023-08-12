@@ -13,3 +13,4 @@ module
 !.yarn/sdks
 !.yarn/versions
 packages/react-icons-ng/VERSIONS
+.vercel

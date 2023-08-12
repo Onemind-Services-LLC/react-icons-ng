@@ -22,6 +22,7 @@
     "version-snapshot": "lerna version --no-push --no-git-tag-version --yes --preid snapshot prepatch --force-publish",
     "version": "yarn install && git add .",
     "lerna": "lerna",
-    "clean": "rm -rfv node_modules && rm -rfv packages/*/node_modules"
+    "clean": "rm -rfv node_modules && rm -rfv packages/*/node_modules",
+    "vercel-build": "cd packages/preview && yarn build"
   }
 }
