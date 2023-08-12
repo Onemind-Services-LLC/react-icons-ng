@@ -5,6 +5,7 @@ import path from "path";
 import { type IconSetGitSource } from "./_types";
 import { icons } from "../src/icons";
 import PQueue from "p-queue";
+import os from "os";
 const execFile = util.promisify(rawExecFile);
 
 interface Context {
@@ -30,13 +31,13 @@ async function main() {
     recursive: true,
   });
 
-  const queue = new PQueue({ concurrency: 10 });
+  const queue = new PQueue({ concurrency: os.cpus().length });
   for (const icon of icons) {
     if (!icon.source) {
       continue;
     }
     const { source } = icon;
-    await queue.add(() => gitCloneIcon(source, ctx));
+    queue.add(() => gitCloneIcon(source, ctx));
   }
 
   await queue.onIdle();

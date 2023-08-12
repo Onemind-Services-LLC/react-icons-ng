@@ -17,13 +17,13 @@ async function task(name, fn) {
 
 async function main() {
   try {
-    // @react-icons-ng/all
+    // react-icons-ng/all
     const allOpt = {
       rootDir: _rootDir,
       DIST: path.resolve(_rootDir, "../_react-icons-ng_all"),
       LIB: path.resolve(_rootDir, "../_react-icons-ng_all/lib"),
     };
-    await task("@react-icons-ng/all initialize", async () => {
+    await task("react-icons-ng/all initialize", async () => {
       await taskAll.dirInit(allOpt);
       await taskCommon.writeEntryPoints(allOpt);
       await taskCommon.writeIconsManifest(allOpt);
@@ -31,9 +31,32 @@ async function main() {
       await taskCommon.writePackageJson({ name: "react-icons-ng" }, allOpt);
       await taskCommon.copyReadme(allOpt);
     });
-    await task("@react-icons-ng/all write icons", async () => {
+    await task("react-icons-ng/all write icons", async () => {
       for (const icon of icons) {
         await taskAll.writeIconModule(icon, allOpt);
+      }
+    });
+
+    // react-icons-ng/all-files
+    const filesOpt = {
+      rootDir: _rootDir,
+      DIST: path.resolve(_rootDir, "../_react-icons-ng_all-files"),
+      LIB: path.resolve(_rootDir, "../_react-icons-ng_all-files/lib"),
+    };
+    await task("react-icons-ng/all-files initialize", async () => {
+      await taskAll.dirInit(filesOpt);
+      await taskCommon.writeEntryPoints(filesOpt);
+      await taskCommon.writeIconsManifest(filesOpt);
+      await taskCommon.writeLicense(filesOpt);
+      await taskCommon.writePackageJson(
+        { name: "react-icons-ng/all-files" },
+        filesOpt,
+      );
+      await taskCommon.copyReadme(filesOpt);
+    });
+    await task("react-icons-ng/all-files write icons", async () => {
+      for (const icon of icons) {
+        await taskAll.writeIconModuleFiles(icon, filesOpt);
       }
     });
 
