@@ -5,7 +5,8 @@
 # [React Icons](https://onemind-services-llc.github.io/react-icons-ng/)
   
 [![Node.js CI](https://github.com/Onemind-Services-LLC/react-icons-ng/actions/workflows/nodejs.yml/badge.svg)](https://github.com/Onemind-Services-LLC/react-icons-ng/actions/workflows/nodejs.yml)
-![Package Version](https://img.shields.io/github/lerna-json/v/Onemind-Services-LLC/react-icons-ng/master?label=Version)
+![react-icons-ng](https://img.shields.io/github/lerna-json/v/Onemind-Services-LLC/react-icons-ng/master?label=react-icons-ng)
+![react-icons-ng-pack](https://img.shields.io/github/lerna-json/v/Onemind-Services-LLC/react-icons-ng/master?label=react-icons-ng-pack)
 
 </div>
 
