@@ -1,6 +1,6 @@
 import { ALL_ICONS } from "@utils/icon";
 import { useRouter } from "next/router";
-import React, { useState, useCallback, useMemo, useEffect } from "react";
+import React, {useState, useCallback, useMemo, useEffect, useRef} from "react";
 
 import ActiveLink from "../active-link";
 import Heading from "../heading";
@@ -16,6 +16,7 @@ export default function Sidebar() {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [inputQuery, setInputQuery] = useState("");
+  const searchRef = useRef<HTMLInputElement>(null);
 
   // search input stays in sync with the url query
   useEffect(() => {
@@ -36,6 +37,29 @@ export default function Sidebar() {
     debounceOnSearch(query);
   };
 
+  useEffect(() => {
+    const searchNode = searchRef.current;
+
+    const onKeyPress = (e: KeyboardEvent) => {
+      const activeElement = document.activeElement;
+
+      // To avoid switching focus when the user is typing in input fields
+      const isInputElement =
+        activeElement instanceof HTMLInputElement ||
+        activeElement instanceof HTMLTextAreaElement;
+
+      if (!isInputElement && e.key === "/") {
+        searchNode?.focus();
+      }
+    };
+
+    document.addEventListener("keyup", onKeyPress);
+
+    return () => {
+      document.removeEventListener("keyup", onKeyPress);
+    };
+  }, []);
+
   return (
     <div className="sidebar pt3">
       <Heading isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -45,8 +69,9 @@ export default function Sidebar() {
           type="text"
           aria-label="search"
           className="px2 py1"
-          placeholder="🔍 Search Icons"
+          placeholder="🔍 Search Icons (/)"
           onChange={onSearch}
+          ref={searchRef}
           value={inputQuery}
           autoComplete="off"
           autoCorrect="off"
