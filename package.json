@@ -6,10 +6,10 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^20.4.8",
+    "@types/node": "^20.4.10",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.3.0",
-    "eslint": "^8.46.0",
+    "eslint": "^8.47.0",
     "eslint-plugin-react": "latest",
     "lerna": "^7.1.5",
     "prettier": "^3.0.1"
@@ -22,6 +22,5 @@
     "version-snapshot": "lerna version --no-push --no-git-tag-version --yes --preid snapshot prepatch --force-publish",
     "version": "yarn install && git add .",
     "lerna": "lerna"
-  },
-  "packageManager": "yarn@3.2.4"
+  }
 }
