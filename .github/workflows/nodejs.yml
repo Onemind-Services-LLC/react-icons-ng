@@ -28,7 +28,7 @@ jobs:
         run: BASE_PATH=/react-icons-ng ./build-script.sh
       - uses: actions/upload-artifact@v3
         with:
-          path: packages/_react-icons-ng_*/*.tgz
+          path: packages/_react-icons-ng*/*.tgz
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -38,7 +38,7 @@ jobs:
       - name: Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "packages/_react-icons-ng_*/*.tgz"
+          artifacts: "packages/_react-icons-ng*/*.tgz"
           bodyFile: "packages/react-icons-ng/VERSIONS"
           token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: ${{ contains(github.ref, 'snapshot') }}
