@@ -3,8 +3,15 @@ import React from "react";
 function Badges() {
   return (
     <p>
-      <a href="https://www.npmjs.com/package/react-icons-ng" rel="nofollow">
-        <img src="https://img.shields.io/npm/v/react-icons-ng.svg" alt="npm" />
+      <a
+        href="https://github.com/Onemind-Services-LLC/react-icons-ng/pkgs/npm/react-icons-ng"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <img
+          src="https://img.shields.io/github/lerna-json/v/Onemind-Services-LLC/react-icons-ng/master?label=Version"
+          alt="package version"
+        />
       </a>
       &emsp;
     </p>

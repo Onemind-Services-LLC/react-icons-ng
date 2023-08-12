@@ -7,8 +7,7 @@ function Icon({ icon, name, highlightPattern = null }) {
     const pattern = /[A-Z][a-z]{1,3}/g;
     const iconType = name.match(pattern);
 
-    const copyToClipboardValue = `import { ${name} } from "react-icons/${iconType[0].toLowerCase()}"`;
-    // console.log(copyToClipboardValue);
+    const copyToClipboardValue = `import { ${name} } from "@onemind-services-llc/react-icons-ng/${iconType[0].toLowerCase()}"`;
     copy(copyToClipboardValue);
     toast.success(`Copied '${name}' to clipboard`, {
       position: "bottom-center",

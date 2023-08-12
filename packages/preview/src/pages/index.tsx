@@ -1,7 +1,7 @@
 import CodeBlock from "@components/@core/code-block";
 import Container from "@components/@core/container";
 import Badges from "@components/pages/home/badges";
-import { BRAND_TITLE, HOME_USAGE_ALL } from "@utils/constants";
+import { BRAND_TITLE, HOME_USAGE, HOME_USAGE_PACK } from "@utils/constants";
 import React from "react";
 
 export default function HomePage() {
@@ -15,18 +15,31 @@ export default function HomePage() {
       </p>
 
       <h2>Installation (for standard modern project)</h2>
-      <CodeBlock language="bash" code={`npm install react-icons-ng --save`} />
+      <CodeBlock
+        language="bash"
+        code={`npm install @onemind-services-llc/react-icons-ng --save`}
+      />
 
       <h3>Usage</h3>
-      <CodeBlock language="jsx" code={HOME_USAGE_ALL} />
+      <CodeBlock language="jsx" code={HOME_USAGE} />
+
+      <h2>Installation (for meteorjs, gatsbyjs, etc)</h2>
+      <p>
+        If your project grows in size, this option is available. This method has
+        the trade-off that it takes a long time to install the package. Suitable
+        for MeteorJS, Gatsbyjs etc.
+      </p>
+      <CodeBlock
+        language="bash"
+        code={`npm install @onemind-services-llc/react-icons-ng-pack --save`}
+      />
+
+      <h3>Usage</h3>
+      <CodeBlock language="jsx" code={HOME_USAGE_PACK} />
 
       <h2>More info</h2>
       <p>
-        <a
-          href="https://github.com/Onemind-Services-LLC/react-icons"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://github.com/Onemind-Services-LLC/react-icons-ng">
           GitHub &#8599;
         </a>
       </p>

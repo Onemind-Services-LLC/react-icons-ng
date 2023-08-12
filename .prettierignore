@@ -13,3 +13,4 @@ node_modules
 /packages/preview/.next
 
 /lerna.json
+README.md
