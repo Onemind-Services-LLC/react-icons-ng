@@ -7,8 +7,7 @@ import App from "./App";
 it("renders without crashing", () => {
   const div = document.createElement("div");
   const container = createRoot(div);
-  const root = container.render(<App />);
-  root.unmount();
+  container.render(<App />);
 });
 
 it("snapshot test", () => {
