@@ -36,10 +36,9 @@ export async function dirInit({ DIST, LIB, rootDir }) {
     await write([file], "// THIS FILE IS AUTO GENERATED\n");
   }
 }
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function writeIconModuleFiles(
   icon: IconDefinition,
-  { DIST, LIB, rootDir },
+  { DIST, LIB, rootDir }, // eslint-disable-line @typescript-eslint/no-unused-vars
 ) {
   console.log(`writeIconModuleFiles: ${icon.id} ${icon.name} ...`);
 
