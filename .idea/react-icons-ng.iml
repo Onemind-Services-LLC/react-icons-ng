@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module version="4">
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/packages/preview/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/react-icons-ng/plugin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/react-icons-ng/scripts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/react-icons-ng/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/react-icons-ng" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/ts-test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/webpack5-test" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/react-icons-ng/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/react-icons-ng/icons" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/_react-icons-ng" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/_react-icons-ng-pack" />
+    </content>
+    <orderEntry type="jdk" jdkName="Python 3.10" jdkType="Python SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_FOLDERS">
       <list>
