@@ -11,9 +11,6 @@ module.exports = withPWA({
   scope: "/",
   runtimeCaching,
 })({
-  experimental: {
-    publicDirectory: true,
-  },
   webpack: (config, { isServer }) => {
     // Fixes npm packages that depend on fs module, see github.com/zeit/next.js/issues/7755
     if (!isServer) {
@@ -25,7 +22,7 @@ module.exports = withPWA({
     }
     config.resolve.alias["@components"] = path.join(
       __dirname,
-      `src/components`
+      `src/components`,
     );
     config.resolve.alias["@pages"] = path.join(__dirname, `src/pages`);
     config.resolve.alias["@styles"] = path.join(__dirname, `src/styles`);

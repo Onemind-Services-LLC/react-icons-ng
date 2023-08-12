@@ -16,7 +16,7 @@ plugins:
   - react
   - "@typescript-eslint"
 rules:
-  "@typescript-eslint/no-var-requires": 0 # todo remove
+  "@typescript-eslint/no-var-requires": 0
   "react/prop-types": 0
 settings:
   react:

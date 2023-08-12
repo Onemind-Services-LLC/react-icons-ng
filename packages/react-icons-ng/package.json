@@ -24,27 +24,27 @@
     "react": "*"
   },
   "devDependencies": {
-    "@babel/cli": "^7.21.5",
-    "@babel/core": "^7.21.8",
-    "@types/react": "^18.2.6",
-    "camelcase": "^7.0.1",
+    "@babel/cli": "^7.22.10",
+    "@babel/core": "^7.22.10",
+    "@types/react": "^18.2.20",
+    "camelcase": "^8.0.0",
     "cheerio": "^1.0.0-rc.12",
-    "esbuild": "^0.17.19",
+    "esbuild": "^0.19.1",
     "esbuild-register": "^3.4.2",
     "find-package": "^1.0.0",
-    "glob": "^9.3.5",
-    "glob-promise": "^5.0.1",
+    "glob": "^10.3.3",
+    "glob-promise": "^6.0.3",
     "ionicons-5": "npm:ionicons@5",
-    "lerna": "^3.20.2",
+    "lerna": "^7.1.5",
     "p-queue": "^7.3.4",
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.1",
     "svgo": "^1.3.2",
-    "typescript": "^5.0.4"
+    "typescript": "^5.1.6"
   },
   "scripts": {
     "ts": "node -r esbuild-register",
     "build": "yarn ts ./scripts/build.ts",
     "fetch": "yarn ts ./scripts/fetcher.ts",
-    "check": "yarn ts ./scripts/check.ts"
+    "diff": "yarn ts ./scripts/check.ts"
   }
 }

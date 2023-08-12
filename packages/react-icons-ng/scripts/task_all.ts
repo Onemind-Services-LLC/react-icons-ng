@@ -64,7 +64,7 @@ export async function dirInit({ DIST, LIB }) {
         },
       },
       null,
-      2
+      2,
     );
 
     await write([icon.id, "package.json"], pkgContent);
@@ -112,19 +112,19 @@ export async function writeIconModule(icon, { DIST }) {
       await fs.appendFile(
         path.resolve(DIST, icon.id, "index.esm.js"),
         modRes,
-        "utf8"
+        "utf8",
       );
       const comRes = iconRowTemplate(icon, name, iconData, "common");
       await fs.appendFile(
         path.resolve(DIST, icon.id, "index.js"),
         comRes,
-        "utf8"
+        "utf8",
       );
       const dtsRes = iconRowTemplate(icon, name, iconData, "dts");
       await fs.appendFile(
         path.resolve(DIST, icon.id, "index.d.ts"),
         dtsRes,
-        "utf8"
+        "utf8",
       );
 
       exists.add(file);
