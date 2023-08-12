@@ -29,12 +29,6 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           path: packages/_react-icons-ng_*/*.tgz
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./packages/preview/out
-        if: contains(github.ref, 'tags/')
       - name: Release
         uses: ncipollo/release-action@v1
         with:
