@@ -1,7 +1,7 @@
 import path from "path";
 import camelcase from "camelcase";
 import { type IconDefinition } from "../../scripts/_types";
-import { glob } from "../../scripts/glob";
+import { glob } from "glob-promise";
 
 export const icons: IconDefinition[] = [
   {

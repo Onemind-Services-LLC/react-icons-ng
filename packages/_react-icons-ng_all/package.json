@@ -1,0 +1,25 @@
+{
+  "name": "react-icons-ng",
+  "version": "4.8.5-snapshot.0",
+  "description": "SVG React icons of popular icon packs using ES6 imports",
+  "author": "Abhimanyu Saharan",
+  "contributors": [
+    "Abhimanyu Saharan <asaharan@onemindservices.com>"
+  ],
+  "license": "MIT",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/esm/index.d.ts",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:Onemind-Services-LLC/react-icons-ng.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Onemind-Services-LLC/react-icons-ng/issues"
+  },
+  "homepage": "https://github.com/Onemind-Services-LLC/react-icons-ng#readme",
+  "peerDependencies": {
+    "react": "*"
+  }
+}
