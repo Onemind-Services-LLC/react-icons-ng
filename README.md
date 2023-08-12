@@ -1,50 +1,82 @@
-<img src="https://raw.githubusercontent.com/Onemind-Services-LLC/react-icons-ng/master/react-icons.svg" width="120" alt="React Icons">
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/Onemind-Services-LLC/react-icons-ng/master/react-icons.svg" width="120" alt="React Icons" align="center">
 
 # [React Icons](https://onemind-services-llc.github.io/react-icons-ng/)
+  
+[![Node.js CI](https://github.com/Onemind-Services-LLC/react-icons-ng/actions/workflows/nodejs.yml/badge.svg)](https://github.com/Onemind-Services-LLC/react-icons-ng/actions/workflows/nodejs.yml)
+![react-icons-ng](https://img.shields.io/github/lerna-json/v/Onemind-Services-LLC/react-icons-ng/master?label=react-icons-ng)
+![react-icons-ng-pack](https://img.shields.io/github/lerna-json/v/Onemind-Services-LLC/react-icons-ng/master?label=react-icons-ng-pack)
 
-[![npm][npm-image]][npm-url]
+</div>
 
-[npm-image]: https://img.shields.io/npm/v/react-icons-ng.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/react-icons-ng
+---
 
-Elevate your React projects to new heights with `react-icons-ng`, an enhanced icon library derived from
-`react-icons/react-icons`. With a substantial addition of over 60,000 icons, our forked version surpasses the original
-repository in terms of versatility and variety. Leveraging the convenience of ES6 imports, `react-icons-ng` empowers
-you to effortlessly integrate only the icons that align with your project's needs. Embrace a seamless development
-experience and unlock the full potential of React icons with our impressive solution.
+Redefine the visual elegance of your React projects with [react-icons-ng](https://github.com/Onemind-Services-LLC/react-icons-ng). Stemming from the prestigious legacy of [react-icons/react-icons](https://github.com/react-icons/react-icons), our forked library enriches your design experience by offering an astounding collection of over 60,000 icons. This vast addition ensures we outshine the original repository in diversity and adaptability. 
 
-## Installation (for standard modern project)
+Harness the power of ES6 imports and embed into your projects only the icons that resonate with your vision. With [react-icons-ng](https://github.com/Onemind-Services-LLC/react-icons-ng), not only do you get unparalleled icon variety but also a streamlined development workflow. Dive into the dynamic world of React icons and make your applications visually captivating.
+
+## 🚀 Installation (for Modern Projects)
+
+Before proceeding, please note that the NPM registry for this package is hosted on GitHub. You need to configure your NPM client to use GitHub Packages registry for this package. For more information, see "[Configuring npm for use with GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#installing-a-package)".
 
 ```bash
-yarn add react-icons-ng
+yarn add @onemind-services-llc/react-icons-ng
 # or
-npm install react-icons-ng --save
+npm install @onemind-services-llc/react-icons-ng --save
 ```
 
-example usage
+### How to Use? 
 
 ```jsx
-import { FaBeer } from "react-icons-ng/fa";
+import { FaBeer } from "@onemind-services-llc/react-icons-ng/fa";
 
 function Question() {
   return (
     <h3>
-      Lets go for a <FaBeer />?
+      How about a <FaBeer />?
     </h3>
   );
 }
 ```
 
-_NOTE_: each Icon package has it's own subfolder under `react-icons-ng` you import from.
+⚠️ **NOTE**: Each icon package resides in its dedicated subfolder under `@onemind-services-llc/react-icons-ng`.
 
-For example, to use an icon from **Material Design**, your import would be: `import { ICON_NAME } from 'react-icons-ng/md';`
+For instance, if you wish to employ an icon from **Material Design**, your import should be: 
+```jsx
+import { ICON_NAME } from '@onemind-services-llc/react-icons-ng/md';
+```
+
+## 🚀 Installation (for MeteorJS, GatsbyJS, etc.)
+
+Opt for this if your project scales up significantly. Bear in mind, though, this approach might prolong the installation time.
+
+```bash
+yarn add @onemind-services-llc/react-icons-ng-pack
+# or
+npm install @onemind-services-llc/react-icons-ng-pack --save
+```
+
+### How to Use? 
+
+```jsx
+import { FaBeer } from "@onemind-services-llc/react-icons-ng-pack/fa/FaBeer";
+
+function Question() {
+  return (
+    <h3>
+      Fancy a <FaBeer />?
+    </h3>
+  );
+}
+```
 
 ## Icons
 
 [//]: # START_VERSION
 
 | Icon Library                                                             | License                                                                                           | Version                                  | Count |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- | ---------------------------------------- | ----: |
+|--------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|------------------------------------------|------:|
 | [Ant Design Icons](https://github.com/ant-design/ant-design-icons)       | [MIT](https://opensource.org/licenses/MIT)                                                        | @ant-design/icons-svg@4.0.0-168-g6db0ecb |   789 |
 | [BoxIcons](https://github.com/atisawd/boxicons)                          | [MIT](https://github.com/atisawd/boxicons/blob/master/LICENSE)                                    | 9ffa9136e8681886bb7bd2145cd4098717ce1c11 |  1634 |
 | [Bootstrap Icons](https://github.com/twbs/icons)                         | [MIT](https://opensource.org/licenses/MIT)                                                        | v1.10.5-30-gc83e870                      |  2592 |
@@ -91,14 +123,14 @@ Total Count of Icons: 66235
 
 You can add more icons by submitting pull requests or creating issues.
 
-## Configuration
+## 🔧 Configuration
 
-You can configure react-icons-ng props using [React Context API](https://reactjs.org/docs/context.html).
+Easily customize `react-icons-ng` properties utilizing the [React Context API](https://reactjs.org/docs/context.html).
 
-_Requires **React 16.3** or higher._
+> **Prerequisite**: Ensure you have **React 16.3** or a later version.
 
 ```jsx
-import { IconContext } from "react-icons-ng";
+import { IconContext } from "@onemind-services-llc/react-icons-ng";
 
 <IconContext.Provider value={{ color: "blue", className: "global-class-name" }}>
   <div>
@@ -107,71 +139,55 @@ import { IconContext } from "react-icons-ng";
 </IconContext.Provider>;
 ```
 
-| Key         | Default               | Notes                              |
-| ----------- | --------------------- | ---------------------------------- |
-| `color`     | `undefined` (inherit) |                                    |
-| `size`      | `1em`                 |                                    |
-| `className` | `undefined`           |                                    |
-| `style`     | `undefined`           | Can overwrite size and color       |
-| `attr`      | `undefined`           | Overwritten by other attributes    |
-| `title`     | `undefined`           | Icon description for accessibility |
+| Key         | Default               | Description                                    |
+|-------------|-----------------------|------------------------------------------------|
+| `color`     | `undefined` (inherit) | Icon color                                     |
+| `size`      | `1em`                 | Icon size                                      |
+| `className` | `undefined`           | Add custom classes                             |
+| `style`     | `undefined`           | Inline styles, can override size and color     |
+| `attr`      | `undefined`           | Extra attributes, may be overwritten by others |
+| `title`     | `undefined`           | Describes the icon for accessibility purposes  |
 
-### Adjustment CSS
+### 🎨 CSS Adjustments
 
-From version 3, `vertical-align: middle` is not automatically given. Please use IconContext to specify className or specify an inline style.
+Icons no longer come with the `vertical-align: middle` styling by default. For alignment adjustments, utilize the `IconContext` to specify a `className` or apply an inline style directly.
 
-#### Global Inline Styling
+#### Set Global Inline Styling:
 
 ```tsx
 <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>
 ```
 
-#### Global `className` Styling
+#### Define Global `className` Styling:
 
-Component
+Component:
 
 ```tsx
 <IconContext.Provider value={{ className: 'react-icons-ng' }}>
 ```
 
-CSS
+CSS:
 
 ```css
-.react-icons {
+.react-icons-ng {
   vertical-align: middle;
 }
 ```
 
-### TypeScript native support
+## 💡 Contributing
 
-Dependencies on `@types/react-icons-ng` can be deleted.
+Execute `./build-script.sh` to build the entire project. For additional details, review the CI scripts.
 
-#### Yarn
-
-```bash
-yarn remove @types/react-icons-ng
-```
-
-#### NPM
-
-```bash
-npm remove @types/react-icons-ng
-```
-
-## Contributing
-
-`./build-script.sh` will build the whole project. See also CI scripts for more information.
-
-### Development
+### 🛠 Development Workflow:
 
 ```bash
 yarn
 cd packages/react-icons-ng
-yarn fetch  # fetch icon sources
+yarn fetch  # Retrieves icon sources
 yarn build
 ```
 
-### Preview
+### 📺 Preview Setup:
 
 ```bash
 cd packages/react-icons-ng
@@ -182,9 +198,9 @@ cd ../preview
 yarn start
 ```
 
-### Demo
+### 🎥 Demo Insights:
 
-The demo is a [Create React App](https://create-react-app.dev/) boilerplate with `react-icons-ng` added as a dependency for easy testing.
+Our demo utilizes the [Create React App](https://create-react-app.dev/) framework with [react-icons-ng](https://github.com/Onemind-Services-LLC/react-icons-ng) as an integrated dependency, allowing seamless testing.
 
 ```bash
 cd packages/react-icons-ng
@@ -195,17 +211,17 @@ cd ../demo
 yarn start
 ```
 
-## Why React SVG components instead of fonts?
+## 🖼 Why React SVG Components Over Fonts?
 
-SVG is [supported by all major browsers](http://caniuse.com/#search=svg). With `react-icons-ng`, you can serve only the needed icons instead of one big font file to the users, helping you to recognize which icons are used in your project.
+SVG enjoys [universal support across major browsers](http://caniuse.com/#search=svg). Using [react-icons-ng](https://github.com/Onemind-Services-LLC/react-icons-ng), you can deliver only required icons to users, reducing loading times and clearly identifying utilized icons in your project.
 
-## Related Projects
+## 🌐 Related Projects:
 
 - [react-svg-morph](https://github.com/gorangajic/react-svg-morph/)
 - [react-icons](https://github.com/react-icons/react-icons)
 
-## Licence
+## 📜 License:
 
-MIT
+Released under the MIT License.
 
-- Icons are taken from the other projects so please check each project licences accordingly.
+> **Note**: Icons originate from various projects, so it's crucial to review the respective project licenses.

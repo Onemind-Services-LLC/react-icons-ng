@@ -17,23 +17,59 @@ async function task(name, fn) {
 
 async function main() {
   try {
-    // @react-icons-ng/all
+    // react-icons-ng/all
     const allOpt = {
       rootDir: _rootDir,
-      DIST: path.resolve(_rootDir, "../_react-icons-ng_all"),
-      LIB: path.resolve(_rootDir, "../_react-icons-ng_all/lib"),
+      DIST: path.resolve(_rootDir, "../_react-icons-ng"),
+      LIB: path.resolve(_rootDir, "../_react-icons-ng/lib"),
     };
-    await task("@react-icons-ng/all initialize", async () => {
+    await task("react-icons-ng initialize", async () => {
       await taskAll.dirInit(allOpt);
       await taskCommon.writeEntryPoints(allOpt);
       await taskCommon.writeIconsManifest(allOpt);
       await taskCommon.writeLicense(allOpt);
-      await taskCommon.writePackageJson({ name: "react-icons-ng" }, allOpt);
+      await taskCommon.writePackageJson(
+        {
+          name: "@onemind-services-llc/react-icons-ng",
+          publishConfig: {
+            registry: "https://npm.pkg.github.com",
+          },
+        },
+        allOpt,
+      );
       await taskCommon.copyReadme(allOpt);
     });
-    await task("@react-icons-ng/all write icons", async () => {
+    await task("react-icons-ng write icons", async () => {
       for (const icon of icons) {
         await taskAll.writeIconModule(icon, allOpt);
+      }
+    });
+
+    // react-icons-ng-pack
+    const filesOpt = {
+      rootDir: _rootDir,
+      DIST: path.resolve(_rootDir, "../_react-icons-ng-pack"),
+      LIB: path.resolve(_rootDir, "../_react-icons-ng-pack/lib"),
+    };
+    await task("react-icons-ng-pack initialize", async () => {
+      await taskAll.dirInit(filesOpt);
+      await taskCommon.writeEntryPoints(filesOpt);
+      await taskCommon.writeIconsManifest(filesOpt);
+      await taskCommon.writeLicense(filesOpt);
+      await taskCommon.writePackageJson(
+        {
+          name: "@onemind-services-llc/react-icons-ng-pack",
+          publishConfig: {
+            registry: "https://npm.pkg.github.com",
+          },
+        },
+        filesOpt,
+      );
+      await taskCommon.copyReadme(filesOpt);
+    });
+    await task("react-icons-ng-pack write icons", async () => {
+      for (const icon of icons) {
+        await taskAll.writeIconModuleFiles(icon, filesOpt);
       }
     });
 

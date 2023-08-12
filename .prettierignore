@@ -2,7 +2,8 @@
 node_modules
 /dist/
 
-/packages/_react-icons-ng_all
+/packages/_react-icons-ng
+/packages/_react-icons-ng-pack
 
 /packages/react-icons-ng/build
 /packages/react-icons-ng/icons/*
@@ -12,3 +13,4 @@ node_modules
 /packages/preview/.next
 
 /lerna.json
+README.md

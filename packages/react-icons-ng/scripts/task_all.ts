@@ -5,6 +5,7 @@ import { icons } from "../src/icons";
 import { iconRowTemplate } from "./templates";
 import { getIconFiles, convertIconData, rmDirRecursive } from "./logics";
 import { svgo } from "./svgo";
+import { IconDefinition } from "./_types";
 
 export async function dirInit({ DIST, LIB }) {
   const ignore = (err) => {
@@ -124,6 +125,60 @@ export async function writeIconModule(icon, { DIST }) {
       await fs.appendFile(
         path.resolve(DIST, icon.id, "index.d.ts"),
         dtsRes,
+        "utf8",
+      );
+
+      exists.add(file);
+    }
+  }
+}
+
+export async function writeIconModuleFiles(icon: IconDefinition, { DIST }) {
+  console.log(`writeIconModuleFiles: ${icon.id} ${icon.name} ...`);
+  const exists = new Set(); // for remove duplicate
+
+  for (const content of icon.contents) {
+    const files = await getIconFiles(content);
+
+    for (const file of files) {
+      const svgStrRaw = await fs.readFile(file, "utf8");
+      const svgStr = content.processWithSVGO
+        ? await svgo.optimize(svgStrRaw).then((result) => result.data)
+        : svgStrRaw;
+
+      const iconData = await convertIconData(svgStr, content.multiColor);
+
+      const rawName = path.basename(file, path.extname(file));
+      const pascalName = camelcase(rawName, { pascalCase: true });
+      const name =
+        (content.formatter && content.formatter(pascalName, file)) ||
+        pascalName;
+      if (exists.has(name)) continue;
+      exists.add(name);
+
+      // write like: module/fa/FaBeer.esm.js
+      const modRes = iconRowTemplate(icon, name, iconData, "module");
+      const modHeader =
+        "// THIS FILE IS AUTO GENERATED\nimport { GenIcon } from '../lib';\n";
+      await fs.writeFile(
+        path.resolve(DIST, icon.id, `${name}.esm.js`),
+        modHeader + modRes,
+        "utf8",
+      );
+      const comRes = iconRowTemplate(icon, name, iconData, "common");
+      const comHeader =
+        "// THIS FILE IS AUTO GENERATED\nvar GenIcon = require('../lib').GenIcon\n";
+      await fs.writeFile(
+        path.resolve(DIST, icon.id, `${name}.js`),
+        comHeader + comRes,
+        "utf8",
+      );
+      const dtsRes = iconRowTemplate(icon, name, iconData, "dts");
+      const dtsHeader =
+        "// THIS FILE IS AUTO GENERATED\nimport { IconTree, IconType } from '../lib'\n";
+      await fs.writeFile(
+        path.resolve(DIST, icon.id, `${name}.d.ts`),
+        dtsHeader + dtsRes,
         "utf8",
       );
 
