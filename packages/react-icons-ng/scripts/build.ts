@@ -37,13 +37,13 @@ async function main() {
       }
     });
 
-    // react-icons-ng/all-files
+    // react-icons-ng-pack
     const filesOpt = {
       rootDir: _rootDir,
       DIST: path.resolve(_rootDir, "../_react-icons-ng-pack"),
       LIB: path.resolve(_rootDir, "../_react-icons-ng-pack/lib"),
     };
-    await task("react-icons-ng/all-files initialize", async () => {
+    await task("react-icons-ng-pack initialize", async () => {
       await taskAll.dirInit(filesOpt);
       await taskCommon.writeEntryPoints(filesOpt);
       await taskCommon.writeIconsManifest(filesOpt);
@@ -54,7 +54,7 @@ async function main() {
       );
       await taskCommon.copyReadme(filesOpt);
     });
-    await task("react-icons-ng/all-files write icons", async () => {
+    await task("react-icons-ng-pack write icons", async () => {
       for (const icon of icons) {
         await taskAll.writeIconModuleFiles(icon, filesOpt);
       }
