@@ -10,7 +10,7 @@
     "declaration": true,
     "strict": true,
     "noImplicitAny": true,
-    "noEmit": true,
+    "noEmit": true
   },
   "include": ["src/**/*.tsx"],
   "exclude": ["icons"]
