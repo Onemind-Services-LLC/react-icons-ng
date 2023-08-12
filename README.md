@@ -44,7 +44,7 @@ For example, to use an icon from **Material Design**, your import would be: `imp
 [//]: # START_VERSION
 
 | Icon Library                                                             | License                                                                                           | Version                                  | Count |
-|--------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|------------------------------------------|------:|
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- | ---------------------------------------- | ----: |
 | [Ant Design Icons](https://github.com/ant-design/ant-design-icons)       | [MIT](https://opensource.org/licenses/MIT)                                                        | @ant-design/icons-svg@4.0.0-168-g6db0ecb |   789 |
 | [BoxIcons](https://github.com/atisawd/boxicons)                          | [MIT](https://github.com/atisawd/boxicons/blob/master/LICENSE)                                    | 9ffa9136e8681886bb7bd2145cd4098717ce1c11 |  1634 |
 | [Bootstrap Icons](https://github.com/twbs/icons)                         | [MIT](https://opensource.org/licenses/MIT)                                                        | v1.10.5-30-gc83e870                      |  2592 |

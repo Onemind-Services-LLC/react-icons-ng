@@ -1,6 +1,12 @@
 import { ALL_ICONS } from "@utils/icon";
 import { useRouter } from "next/router";
-import React, {useState, useCallback, useMemo, useEffect, useRef} from "react";
+import React, {
+  useState,
+  useCallback,
+  useMemo,
+  useEffect,
+  useRef,
+} from "react";
 
 import ActiveLink from "../active-link";
 import Heading from "../heading";
