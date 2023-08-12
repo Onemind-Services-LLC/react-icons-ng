@@ -3,6 +3,7 @@ import { performance } from "perf_hooks";
 import { icons } from "../src/icons";
 import * as taskCommon from "./task_common";
 import * as taskAll from "./task_all";
+import * as taskFiles from "./task_files";
 
 // file path
 const _rootDir = path.resolve(__dirname, "../");
@@ -52,7 +53,7 @@ async function main() {
       LIB: path.resolve(_rootDir, "../_react-icons-ng-pack/lib"),
     };
     await task("react-icons-ng-pack initialize", async () => {
-      await taskAll.dirInit(filesOpt);
+      await taskFiles.dirInit(filesOpt);
       await taskCommon.writeEntryPoints(filesOpt);
       await taskCommon.writeIconsManifest(filesOpt);
       await taskCommon.writeLicense(filesOpt);
@@ -69,19 +70,20 @@ async function main() {
     });
     await task("react-icons-ng-pack write icons", async () => {
       for (const icon of icons) {
-        await taskAll.writeIconModuleFiles(icon, filesOpt);
+        await taskFiles.writeIconModuleFiles(icon, filesOpt);
       }
     });
 
     // write to VERSIONS file
     await task("react-icons-ng_builders write icon versions", async () => {
-      await taskCommon.writeIconVersions(allOpt);
+      await taskCommon.writeIconVersions(filesOpt);
     });
 
     // write to d.ts files
     await task("react-icons-ng_builders build common library", async () => {
-      await taskCommon.buildLib(allOpt);
+      await taskCommon.buildLib(filesOpt);
       await taskCommon.copyLib(allOpt);
+      await taskCommon.copyLib(filesOpt);
     });
 
     console.log("done");

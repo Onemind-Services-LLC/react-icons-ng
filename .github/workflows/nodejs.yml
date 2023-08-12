@@ -43,3 +43,12 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: ${{ contains(github.ref, 'snapshot') }}
         if: contains(github.ref, 'tags/')
+      - name: Publish NPM
+        if: contains(github.ref, 'tags/')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cp packages/_react-icons-ng*/*.tgz react-ng-icons.tgz
+          cp packages/_react-icons-ng-pack/*.tgz react-ng-icons-pack.tgz
+          npm publish react-ng-icons.tgz
+          npm publish react-ng-icons-pack.tgz
