@@ -18,6 +18,8 @@ Harness the power of ES6 imports and embed into your projects only the icons tha
 
 ## 🚀 Installation (for Modern Projects)
 
+Before proceeding, please note that the NPM registry for this package is hosted on GitHub. You need to configure your NPM client to use GitHub Packages registry for this package. For more information, see "[Configuring npm for use with GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#installing-a-package)".
+
 ```bash
 yarn add @onemind-services-llc/react-icons-ng
 # or
