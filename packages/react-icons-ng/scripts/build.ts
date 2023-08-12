@@ -40,8 +40,8 @@ async function main() {
     // react-icons-ng/all-files
     const filesOpt = {
       rootDir: _rootDir,
-      DIST: path.resolve(_rootDir, "../_react-icons-ng_all-files"),
-      LIB: path.resolve(_rootDir, "../_react-icons-ng_all-files/lib"),
+      DIST: path.resolve(_rootDir, "../_react-icons-ng-pack"),
+      LIB: path.resolve(_rootDir, "../_react-icons-ng-pack/lib"),
     };
     await task("react-icons-ng/all-files initialize", async () => {
       await taskAll.dirInit(filesOpt);
@@ -49,7 +49,7 @@ async function main() {
       await taskCommon.writeIconsManifest(filesOpt);
       await taskCommon.writeLicense(filesOpt);
       await taskCommon.writePackageJson(
-        { name: "react-icons-ng/all-files" },
+        { name: "react-icons-ng-pack" },
         filesOpt,
       );
       await taskCommon.copyReadme(filesOpt);

@@ -13,7 +13,7 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/_react-icons-ng_all" />
       <excludeFolder url="file://$MODULE_DIR$/packages/react-icons-ng/build" />
       <excludeFolder url="file://$MODULE_DIR$/packages/react-icons-ng/icons" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/_react-icons-ng_all-files" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/_react-icons-ng-pack" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
