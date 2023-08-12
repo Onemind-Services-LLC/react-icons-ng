@@ -2,7 +2,7 @@
 
 time (cd packages/react-icons-ng/ && yarn fetch)
 time (cd packages/react-icons-ng/ && yarn build)
-time (cd packages/react-icons-ng/ && yarn check)
+time (cd packages/react-icons-ng/ && yarn diff)
 (cd packages/_react-icons-ng_all/ && npm pack |& tail)
 
 (cd packages/preview/ && yarn build)

@@ -45,6 +45,6 @@
     "ts": "node -r esbuild-register",
     "build": "yarn ts ./scripts/build.ts",
     "fetch": "yarn ts ./scripts/fetcher.ts",
-    "check": "yarn ts ./scripts/check.ts"
+    "diff": "yarn ts ./scripts/check.ts"
   }
 }
