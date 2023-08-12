@@ -1,5 +1,6 @@
 {
   "name": "react-icons-ng-root",
+  "description": "Root configuration for react-icons-ng project with monorepo structure.",
   "private": true,
   "workspaces": [
     "packages/*"
@@ -10,18 +11,24 @@
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.3.0",
     "eslint": "^8.47.0",
-    "eslint-plugin-react": "latest",
+    "eslint-plugin-react": "^7.33.1",
     "lerna": "^7.1.5",
     "prettier": "^3.0.1"
   },
   "scripts": {
-    "lint": "yarn eslint .",
+    "clean": "yarn clean:root && yarn clean:demo && yarn clean:preview && yarn clean:react-icons && yarn clean:ts-test && yarn clean:webpack5",
+    "clean:root": "rm -rfv node_modules",
+    "clean:demo": "rm -rfv packages/{demo,demo-pack}/build",
+    "clean:preview": "rm -rfv packages/preview/{.next,out}",
+    "clean:react-icons": "rm -rfv packages/react-icons-ng/{build,icons,VERSIONS}",
+    "clean:ts-test": "rm -rfv packages/ts-test/build",
+    "clean:webpack5": "rm -rfv packages/webpack5-test/dist",
     "format": "prettier --write --ignore-unknown .",
     "format:ci": "prettier --check --ignore-unknown .",
-    "version-up": "lerna version",
-    "version-snapshot": "lerna version --no-push --no-git-tag-version --yes --preid snapshot prepatch --force-publish",
-    "version": "yarn install && git add .",
+    "lint": "eslint .",
     "lerna": "lerna",
-    "clean": "rm -rfv node_modules && rm -rfv packages/*/node_modules"
+    "version": "yarn install && git add .",
+    "version-snapshot": "lerna version --no-push --no-git-tag-version --yes --preid snapshot prepatch --force-publish",
+    "version-up": "lerna version"
   }
 }
