@@ -72,7 +72,7 @@ async function gitDiffCount(
       diffs: +count.stdout.trim(),
     };
   } catch (e) {
-    console.error(e);
+    console.error('Error while checking icon "%s", %s', source.localName, e);
     return {
       current: "error",
       diffs: 0,

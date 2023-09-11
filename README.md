@@ -77,7 +77,7 @@ function Question() {
 
 | Icon Library                                                             | License                                                                                           | Version                                     | Count |
 |--------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|---------------------------------------------|------:|
-| [Ant Design Icons](https://github.com/ant-design/ant-design-icons)       | [MIT](https://opensource.org/licenses/MIT)                                                        | @ant-design/icons-svg@4.0.0-170-g4ab94f3    |   789 |
+| [Ant Design Icons](https://github.com/ant-design/ant-design-icons)       | [MIT](https://opensource.org/licenses/MIT)                                                        | @ant-design/icons-svg@4.0.0-177-g54efdf0    |   789 |
 | [BoxIcons](https://github.com/atisawd/boxicons)                          | [MIT](https://github.com/atisawd/boxicons/blob/master/LICENSE)                                    | 9ffa9136e8681886bb7bd2145cd4098717ce1c11    |  1634 |
 | [Bootstrap Icons](https://github.com/twbs/icons)                         | [MIT](https://opensource.org/licenses/MIT)                                                        | v1.10.5-32-g24e7f7d                         |  2592 |
 | [css.gg](https://github.com/astrit/css.gg)                               | [MIT](https://opensource.org/licenses/MIT)                                                        | 2.1.1                                       |   704 |
@@ -88,36 +88,36 @@ function Question() {
 | [Font Awesome 5](https://fontawesome.com/)                               | [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/)                                 | 5.15.4-3-gafecf2a                           |  1612 |
 | [Font Awesome 6](https://fontawesome.com/)                               | [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/)                                 | 6.4.2                                       |  2025 |
 | [Flat Color Icons](https://github.com/icons8/flat-color-icons)           | [MIT](https://opensource.org/licenses/MIT)                                                        | v1.0.2-27-g8eccbbb                          |   329 |
-| [Feather](https://feathericons.com/)                                     | [MIT](https://github.com/feathericons/feather/blob/master/LICENSE)                                | v4.29.0-4-gdb2364f                          |   287 |
-| [Fluent System Icons](https://developer.microsoft.com/en-us/fluentui)    | [MIT](https://github.com/microsoft/fluentui-system-icons/blob/master/LICENSE)                     | 1.1.212                                     |  4085 |
-| [Github Octicons icons](https://octicons.github.com/)                    | [MIT](https://github.com/primer/octicons/blob/master/LICENSE)                                     | v19.6.0-4-g0298409                          |   272 |
+| [Feather](https://feathericons.com/)                                     | [MIT](https://github.com/feathericons/feather/blob/master/LICENSE)                                | v4.29.1-2-g593b3bf                          |   287 |
+| [Fluent System Icons](https://developer.microsoft.com/en-us/fluentui)    | [MIT](https://github.com/microsoft/fluentui-system-icons/blob/master/LICENSE)                     | 1.1.214                                     |  4091 |
+| [Github Octicons icons](https://octicons.github.com/)                    | [MIT](https://github.com/primer/octicons/blob/master/LICENSE)                                     | v19.7.0                                     |   272 |
 | [US Government Icons](http://govicons.io/)                               | [SIL OFL 1.1](https://github.com/540co/govicons/blob/develop/LICENSE.md)                          | 1.6.0-2-g1d9f467                            |   136 |
 | [Game Icons](https://game-icons.net/)                                    | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)                                         | 12920d6565588f0512542a3cb0cdfd36a497f910    |  4040 |
 | [Grommet-Icons](https://github.com/grommet/grommet-icons)                | [Apache License Version 2.0](https://www.apache.org/licenses/)                                    | v4.11.0-1-g3de6204                          |   621 |
 | [Heroicons](https://github.com/tailwindlabs/heroicons)                   | [MIT](https://opensource.org/licenses/MIT)                                                        | v2.0.18-1-geee05eb                          |   876 |
-| [Iconoir](https://iconoir.com/)                                          | [MIT](https://github.com/iconoir-icons/iconoir/blob/main/LICENSE)                                 | v6.11.0                                     |  1371 |
+| [Iconoir](https://iconoir.com/)                                          | [MIT](https://github.com/iconoir-icons/iconoir/blob/main/LICENSE)                                 | v6.11.0-1-ge6cbccd                          |  1371 |
 | [IcoMoon Free](https://github.com/Keyamoon/IcoMoon-Free)                 | [CC BY 4.0 License](https://github.com/Keyamoon/IcoMoon-Free/blob/master/License.txt)             | d006795ede82361e1bac1ee76f215cf1dc51e4ca    |   491 |
 | [Ionicons 5](https://ionicons.com/)                                      | [MIT](https://github.com/ionic-team/ionicons/blob/master/LICENSE)                                 | 5.5.4                                       |  1332 |
 | [Jam Icons](https://github.com/michaelampr/jam)                          | [MIT](https://github.com/michaelampr/jam/blob/master/LICENSE)                                     | 3.1.0-2-gc8501b1                            |   940 |
 | [Icons8 Line Awesome](https://icons8.com/line-awesome)                   | [MIT](https://github.com/icons8/line-awesome/blob/master/LICENSE.md)                              | v1.2.1-10-g78a1012                          |  1544 |
-| [Lucide](https://lucide.dev/)                                            | [ISC](https://github.com/lucide-icons/lucide/blob/main/LICENSE)                                   | 0.270.0                                     |  1240 |
+| [Lucide](https://lucide.dev/)                                            | [ISC](https://github.com/lucide-icons/lucide/blob/main/LICENSE)                                   | 0.276.0-2-ga4076db                          |  1256 |
 | [MingCute icons](https://github.com/Richard9394/MingCute.git)            | [Apache License Version 2.0](https://github.com/Richard9394/MingCute/blob/main/LICENSE)           | v2.86                                       |  2452 |
 | [Material Design icons](https://google.github.io/material-design-icons/) | [Apache License Version 2.0](https://github.com/google/material-design-icons/blob/master/LICENSE) | 4.0.0-86-g589092d9a7                        |  4341 |
 | [Material Design icons 2](https://materialdesignicons.com/)              | [Apache License Version 2.0](https://github.com/Templarian/MaterialDesign/blob/master/LICENSE)    | 9363cbecde77f1de821e5799457e89b6b2e82c26    |  7334 |
-| [Openmoji](https://openmoji.org/)                                        | [CC BY-SA 4.0](https://github.com/hfg-gmuend/openmoji/blob/master/LICENSE.txt)                    | 14.0.0-220-g9782be9                         |  4094 |
+| [Openmoji](https://openmoji.org/)                                        | [CC BY-SA 4.0](https://github.com/hfg-gmuend/openmoji/blob/master/LICENSE.txt)                    | 14.0.0-224-g972be85                         |  4095 |
 | [Phosphor Icons](https://github.com/phosphor-icons/core)                 | [MIT](https://github.com/phosphor-icons/core/blob/main/LICENSE)                                   | v2.0.2-2-gc67d7a8                           |  7488 |
-| [Polaris](https://polaris.shopify.com/)                                  | [MIT](https://github.com/Shopify/polaris/blob/main/LICENSE.md)                                    | @shopify/polaris-migrator@0.20.0-6-g1947b46 |   574 |
+| [Polaris](https://polaris.shopify.com/)                                  | [MIT](https://github.com/Shopify/polaris/blob/main/LICENSE.md)                                    | @shopify/polaris-migrator@0.22.1-2-ge5f88b8 |   577 |
 | [Remix Icon](https://github.com/Remix-Design/RemixIcon)                  | [Apache License Version 2.0](https://www.apache.org/licenses/)                                    | v3.5.0-1-g3c4f3ff                           |  2537 |
 | [Radix Icons](https://icons.radix-ui.com)                                | [MIT](https://github.com/radix-ui/icons/blob/master/LICENSE)                                      | @radix-ui/react-icons@1.3.0-1-g94b3fcf      |   318 |
-| [Simple Icons](https://simpleicons.org/)                                 | [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)                           | 4.14.0-1606-gc44c0a7                        |  2681 |
+| [Simple Icons](https://simpleicons.org/)                                 | [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)                           | 4.14.0-1666-gf4e1451                        |  2715 |
 | [Simple Line Icons](https://thesabbir.github.io/simple-line-icons/)      | [MIT](https://opensource.org/licenses/MIT)                                                        | v2.5.5                                      |   189 |
-| [Tabler Icons](https://github.com/tabler/tabler-icons)                   | [MIT](https://opensource.org/licenses/MIT)                                                        | v2.32.0-1-g8ee16c7                          |  4637 |
+| [Tabler Icons](https://github.com/tabler/tabler-icons)                   | [MIT](https://opensource.org/licenses/MIT)                                                        | v2.34.0                                     |  4673 |
 | [Themify Icons](https://github.com/lykmapipo/themify-icons)              | [MIT](https://github.com/thecreation/standard-icons/blob/master/modules/themify-icons/LICENSE)    | v0.1.2-2-g9600186                           |   352 |
 | [Typicons](https://s-ings.com/typicons/)                                 | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)                                   | v2.1.2                                      |   336 |
-| [VS Code Icons](https://github.com/microsoft/vscode-codicons)            | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)                                         | 0.0.31-59-gc07d2e5                          |   426 |
+| [VS Code Icons](https://github.com/microsoft/vscode-codicons)            | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)                                         | 0.0.31-61-ge0565f0                          |   427 |
 | [Weather Icons](https://erikflowers.github.io/weather-icons/)            | [SIL OFL 1.1](https://scripts.sil.org/OFL)                                                        | 2.0.12-7-gbb80982                           |   219 |
 
-Total Count of Icons: 66340
+Total Count of Icons: 66437
 
 [//]: # END_VERSION
 

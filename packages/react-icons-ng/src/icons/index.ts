@@ -39,7 +39,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "packages/icons-svg/svg/",
       url: "https://github.com/ant-design/ant-design-icons.git",
       branch: "master",
-      hash: "4ab94f341f63deccd1b7fa296f47ed88b818a3fe",
+      hash: "54efdf0c69ebd30f89194f24fa095a18a4ceb55d",
     },
   },
   {
@@ -328,8 +328,8 @@ export const icons: IconDefinition[] = [
       localName: "feather-icons",
       remoteDir: "icons/",
       url: "https://github.com/feathericons/feather.git",
-      branch: "master",
-      hash: "db2364f996e407cb933a37b6cafc96659debf771",
+      branch: "main",
+      hash: "593b3bf516087d07d362280b34ec1a5383e71572",
     },
   },
   {
@@ -363,7 +363,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "assets/",
       url: "https://github.com/microsoft/fluentui-system-icons",
       branch: "main",
-      hash: "6cdd7057c438eabd716b11bc9028ab6e853fe624",
+      hash: "40324b2ad621f0b9c7f9c66bb1a47e5e629b330c",
     },
   },
   {
@@ -384,7 +384,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "icons/",
       url: "https://github.com/primer/octicons.git",
       branch: "main",
-      hash: "0298409887254c3d42803f5f43f964bac47d68e7",
+      hash: "13c66aeddc0735279f9b68b5222d3e56baa5fcb9",
     },
   },
   {
@@ -512,7 +512,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "icons/",
       url: "https://github.com/iconoir-icons/iconoir.git",
       branch: "main",
-      hash: "03a415b18e8651b0ef085a02fce61fedc4cf5d4c",
+      hash: "e6cbccdadc018b939acefb6ee94ebc96d9fefc43",
     },
   },
   {
@@ -614,7 +614,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "icons/",
       url: "https://github.com/lucide-icons/lucide.git",
       branch: "main",
-      hash: "8b7ea73aa37c32406048a48cb3e7c354dcafb2f3",
+      hash: "a4076db69b52ff0debc383f76d4d671c3bad5345",
     },
   },
   {
@@ -744,7 +744,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "black/svg/",
       url: "https://github.com/hfg-gmuend/openmoji.git",
       branch: "master",
-      hash: "9782be9d240513a3d609a4bd6f1176f2d7e1b804",
+      hash: "972be8542435c3835cd43f2a35a5270708645042",
     },
   },
   {
@@ -793,7 +793,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "polaris-icons/icons/",
       url: "https://github.com/Shopify/polaris.git",
       branch: "main",
-      hash: "1947b469144f8e0567fb69f06391a3fecbfe5b11",
+      hash: "e5f88b8ce68857e9e35fcf60ee34b6a9e865d78d",
     },
   },
   {
@@ -859,7 +859,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "icons/",
       url: "https://github.com/simple-icons/simple-icons.git",
       branch: "develop",
-      hash: "c44c0a776bfab5924f0ecef7e595be8d8afda2be",
+      hash: "f4e1451502dc97a34b8669a5766dc08fb66b1af8",
     },
   },
   {
@@ -904,7 +904,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "icons/",
       url: "https://github.com/tabler/tabler-icons.git",
       branch: "master",
-      hash: "8ee16c7c4d3e48b88f7ab8d0ee6b9c1b4222196d",
+      hash: "f5abaad87d0de014e3a4259f4c9b2a20177aec56",
     },
   },
   {
@@ -971,7 +971,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "src/icons/",
       url: "https://github.com/microsoft/vscode-codicons.git",
       branch: "main",
-      hash: "c07d2e554d08217c6de5ed6b6b81a3df7d5d66e3",
+      hash: "e0565f0728c0b7f9e495e82d7338fd1e86f009c8",
     },
   },
   {
