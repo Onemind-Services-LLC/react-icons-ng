@@ -1,6 +1,6 @@
 {
   "name": "react-ts-test",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "private": true,
   "dependencies": {
     "@onemind-services-llc/react-icons-ng": "^5.0.2",
