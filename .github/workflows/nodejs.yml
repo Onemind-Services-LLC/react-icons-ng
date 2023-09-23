@@ -12,29 +12,38 @@ jobs:
         node-version: [18]
     steps:
       - uses: actions/checkout@v3
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: corepack
         run: corepack enable
+
       - name: Install dependencies
         run: yarn --immutable
+
       - name: Formatter
         run: yarn format:ci
+
       - name: Lint
         run: yarn lint
+
       - name: Build Packages
         run: BASE_PATH=/react-icons-ng ./build-script.sh
+
       - uses: actions/upload-artifact@v3
         with:
           path: packages/_react-icons-ng*/*.tgz
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./packages/preview/out
         if: contains(github.ref, 'tags/')
+
       - name: Release
         uses: ncipollo/release-action@v1
         with:
@@ -43,10 +52,15 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: ${{ contains(github.ref, 'snapshot') }}
         if: contains(github.ref, 'tags/')
-      - name: Publish NPM
+
+      - name: Publish react-icons-ng
         if: contains(github.ref, 'tags/')
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          npm publish packages/_react-icons-ng*/*.tgz
-          npm publish packages/_react-icons-ng-pack/*.tgz
+        run: npm publish packages/_react-icons-ng/*.tgz
+
+      - name: Publish react-icons-ng-pack
+        if: contains(github.ref, 'tags/')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm publish packages/_react-icons-ng-pack/*.tgz
