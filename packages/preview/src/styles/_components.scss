@@ -31,6 +31,7 @@ pre.code {
 a {
   color: var(--color-link);
   text-decoration: none;
+
   &:focus,
   &:active {
     text-decoration: dashed;
@@ -73,6 +74,7 @@ a {
     &:focus {
       border-color: rgba(var(--color-brand-rgb), 0.5);
       background: var(--color-gray-0);
+
       &::placeholder {
         opacity: 0;
       }
@@ -128,10 +130,12 @@ a {
     svg {
       width: 4rem;
     }
+
     span {
       margin-left: var(--space-2);
     }
   }
+
   .brand--navmenu {
     display: none;
   }
@@ -191,6 +195,7 @@ a {
         border-color: rgba(var(--color-brand-rgb), 0.5);
         background: rgba(var(--color-brand-rgb), 0.05);
       }
+
       .name {
         color: var(--color-brand);
       }
@@ -206,6 +211,7 @@ a {
 }
 
 @include respond-below(sm) {
+
   .container,
   .sidebar {
     min-height: auto;
@@ -219,7 +225,7 @@ a {
     padding-top: var(--space-2);
   }
 
-  .container > .p3 {
+  .container>.p3 {
     padding: var(--space-2);
   }
 
@@ -228,6 +234,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     .brand--navmenu {
       display: block;
     }
@@ -235,6 +242,7 @@ a {
 
   .sidebar--links {
     display: none;
+
     &.active {
       display: block;
     }
@@ -245,6 +253,124 @@ a {
   }
 }
 
-.icons:empty + .no-results:after {
+.icons:empty+.no-results:after {
   content: "No icons found";
+}
+
+// scroll bar
+::-webkit-scrollbar {
+  width: 3px;
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e91e63;
+}
+
+// Dark theme implementation start here
+
+.dark-theme {
+  ::-webkit-scrollbar {
+    width: 3px;
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #e91e63;
+  }
+
+  .sidebar {
+    background-color: #212529;
+  }
+
+  .sidebar--links {
+    a {
+      color: #e9ecef;
+    }
+
+    a.active {
+      background-color: rgba(173, 181, 189, .15);
+    }
+
+    a:focus {
+      border-color: rgba(var(--color-brand-rgb), 0.5);
+      background: rgba(var(--color-brand-rgb), 0.05);
+    }
+  }
+
+
+  .p3,
+  .container {
+    background-color: #1b1f22;
+    color: #f8f9fa;
+  }
+
+  .p3 {
+    a {
+      color: #5cb0ff;
+    }
+
+    .icon.h2:focus {
+      border-color: rgba(var(--color-brand-rgb), 0.5);
+      background: rgba(var(--color-brand-rgb), 0.05);
+    }
+  }
+
+  .icons .item .icon {
+    background-color: #1b1f22;
+    border: 1px solid #495057;
+
+  }
+
+  .item:focus .icon {
+    border: 1px solid #e91e63;
+    background: rgba(var(--color-brand-rgb), 0.05);
+  }
+
+  .item:focus~.box {
+    border: 1px solid #e91e63;
+  }
+}
+
+
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: #f39c12;
+}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.checkbox-label .ball {
+  transform: translateX(24px);
 }

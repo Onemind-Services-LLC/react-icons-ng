@@ -11,6 +11,9 @@ import React, {
 import ActiveLink from "../active-link";
 import Heading from "../heading";
 import { debounce } from "@utils/debounce";
+import { useDarkTheme } from "@context/DarkThemeContext";
+import { BsFillSunFill } from "@onemind-services-llc/react-icons-ng/bs";
+import { BsFillMoonStarsFill } from "@onemind-services-llc/react-icons-ng/bs";
 
 const searchPath = "/search";
 
@@ -23,6 +26,7 @@ export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const [inputQuery, setInputQuery] = useState("");
   const searchRef = useRef<HTMLInputElement>(null);
+  const { isDarkTheme, toggleTheme } = useDarkTheme();
 
   // search input stays in sync with the url query
   useEffect(() => {
@@ -67,41 +71,72 @@ export default function Sidebar() {
   }, []);
 
   return (
-    <div className="sidebar pt3">
-      <Heading isOpen={isOpen} setIsOpen={setIsOpen} />
+    <div className={`${isDarkTheme ? "dark-theme" : ""}`}>
+      <div className="sidebar pt3">
+        <Heading isOpen={isOpen} setIsOpen={setIsOpen} />
 
-      <div className="search p2">
+
         <input
-          type="text"
-          aria-label="search"
-          className="px2 py1"
-          placeholder="🔍 Search Icons (/)"
-          onChange={onSearch}
-          ref={searchRef}
-          value={inputQuery}
-          autoComplete="off"
-          autoCorrect="off"
-          autoCapitalize="off"
-          spellCheck="false"
+          type="checkbox"
+          className="checkbox"
+          id="checkbox"
+          onClick={() => {
+            console.log("vishal kumar");
+            toggleTheme();
+          }}
         />
-      </div>
+        <label htmlFor="checkbox" className="checkbox-label">
+          <BsFillSunFill
+            style={{
+              color: "white",
+            }}
+          />
+          <BsFillMoonStarsFill
+            style={{
+              color: "white",
+            }}
+          />
+          <span className="ball" />
+        </label>
 
-      <ul className={`sidebar--links ${isOpen && "active"}`}>
-        <li>
-          <ActiveLink href="/">
-            <a className="rounded px2 py1">Home</a>
-          </ActiveLink>
-        </li>
-        {iconsList.map((icon) => (
-          <li key={icon.id}>
-            <ActiveLink href={{ pathname: "icons", query: { name: icon.id } }}>
-              <a className="rounded px2 py1" onClick={() => setInputQuery("")}>
-                {icon.name}
-              </a>
+        <div className="search p2">
+          <input
+            type="text"
+            aria-label="search"
+            className="px2 py1"
+            placeholder="🔍 Search Icons (/)"
+            onChange={onSearch}
+            ref={searchRef}
+            value={inputQuery}
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck="false"
+          />
+        </div>
+
+        <ul className={`sidebar--links ${isOpen && "active"}`}>
+          <li>
+            <ActiveLink href="/">
+              <a className="rounded px2 py1">Home</a>
             </ActiveLink>
           </li>
-        ))}
-      </ul>
+          {iconsList.map((icon) => (
+            <li key={icon.id}>
+              <ActiveLink
+                href={{ pathname: "icons", query: { name: icon.id } }}
+              >
+                <a
+                  className="rounded px2 py1"
+                  onClick={() => setInputQuery("")}
+                >
+                  {icon.name}
+                </a>
+              </ActiveLink>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
