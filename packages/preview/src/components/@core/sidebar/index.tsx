@@ -12,8 +12,6 @@ import ActiveLink from "../active-link";
 import Heading from "../heading";
 import { debounce } from "@utils/debounce";
 import { useDarkTheme } from "@context/DarkThemeContext";
-import { BsFillSunFill } from "@onemind-services-llc/react-icons-ng/bs";
-import { BsFillMoonStarsFill } from "@onemind-services-llc/react-icons-ng/bs";
 
 const searchPath = "/search";
 
@@ -26,7 +24,7 @@ export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const [inputQuery, setInputQuery] = useState("");
   const searchRef = useRef<HTMLInputElement>(null);
-  const { isDarkTheme, toggleTheme } = useDarkTheme();
+  const { isDarkTheme } = useDarkTheme();
 
   // search input stays in sync with the url query
   useEffect(() => {
@@ -74,30 +72,6 @@ export default function Sidebar() {
     <div className={`${isDarkTheme ? "dark-theme" : ""}`}>
       <div className="sidebar pt3">
         <Heading isOpen={isOpen} setIsOpen={setIsOpen} />
-
-
-        <input
-          type="checkbox"
-          className="checkbox"
-          id="checkbox"
-          onClick={() => {
-            console.log("vishal kumar");
-            toggleTheme();
-          }}
-        />
-        <label htmlFor="checkbox" className="checkbox-label">
-          <BsFillSunFill
-            style={{
-              color: "white",
-            }}
-          />
-          <BsFillMoonStarsFill
-            style={{
-              color: "white",
-            }}
-          />
-          <span className="ball" />
-        </label>
 
         <div className="search p2">
           <input
