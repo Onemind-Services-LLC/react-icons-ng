@@ -35,7 +35,12 @@ export default function Container({ children }) {
               color: "#f39c12",
             }}
           />
-          <span className="ball" />
+          <span
+            className="ball"
+            style={{
+              transform: isDarkTheme ? "translateX(24px)" : "translateX(0px)",
+            }}
+          />
         </label>
       </div>
       <main className="container">{children}</main>

@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
 
 interface DarkThemeContextType {
   isDarkTheme: boolean;
@@ -16,8 +22,24 @@ interface DarkThemeProviderProps {
 const DarkThemeProvider = ({ children }: DarkThemeProviderProps) => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
+  useEffect(() => {
+    if (localStorage.getItem("darkTheme") === null) {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        setIsDarkTheme(true);
+        localStorage.setItem("darkTheme", "true");
+      } else localStorage.setItem("darkTheme", "false");
+    } else {
+      setIsDarkTheme(
+        localStorage.getItem("darkTheme") === "true" ? true : false,
+      );
+    }
+  }, []);
+
   const toggleTheme = () => {
-    setIsDarkTheme((prevIsDarkTheme) => !prevIsDarkTheme);
+    setIsDarkTheme((prevIsDarkTheme) => {
+      localStorage.setItem("darkTheme", (!prevIsDarkTheme).toString());
+      return !prevIsDarkTheme;
+    });
   };
 
   return (
