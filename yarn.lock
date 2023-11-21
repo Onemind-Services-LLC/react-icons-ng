@@ -2201,16 +2201,6 @@
   dependencies:
     "@octokit/openapi-types" "^18.0.0"
 
-"@onemind-services-llc/react-icons-ng-pack@^5.0.2":
-  version "5.0.3"
-  resolved "https://npm.pkg.github.com/download/@onemind-services-llc/react-icons-ng-pack/5.0.3/4ad0a30e5bd8e845cd393c8bfd2e8829837f4c31#4ad0a30e5bd8e845cd393c8bfd2e8829837f4c31"
-  integrity sha512-Sx37cql5/Ww9+/nX9CRsXVKkfWxzswQpOSYN+U9h5+B8fOAWARQ/UOiJhtcWoCwsUzJW0PEc4u7ksZqecBmGPA==
-
-"@onemind-services-llc/react-icons-ng@^5.0.2":
-  version "5.0.3"
-  resolved "https://npm.pkg.github.com/download/@onemind-services-llc/react-icons-ng/5.0.3/58eb8b20a9705a28e7deeec856a22fca0ae27a47#58eb8b20a9705a28e7deeec856a22fca0ae27a47"
-  integrity sha512-YLUZ8WODxYXGVbubsbxcoIyptCEV8gnF2Ex6rOhS6xWyn4IMzT1Ne1g+dpZljJIDiFno4y6zs/L3XhzLWo4/mw==
-
 "@parcel/watcher@2.0.4":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@parcel/watcher/-/watcher-2.0.4.tgz#f300fef4cc38008ff4b8c29d92588eced3ce014b"
@@ -2662,10 +2652,10 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@29.5.8":
-  version "29.5.8"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-29.5.8.tgz#ed5c256fe2bc7c38b1915ee5ef1ff24a3427e120"
-  integrity sha512-fXEFTxMV2Co8ZF5aYFJv+YeA08RTYJfhtN5c9JSv/mFEMe+xxjufCb+PHL+bJcMs/ebPUsBu+UNTEz+ydXrR6g==
+"@types/jest@29.5.9":
+  version "29.5.9"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-29.5.9.tgz#eb997ab4a201b7504662ac9ebb84a748e17f95ab"
+  integrity sha512-zJeWhqBwVoPm83sP8h1/SVntwWTu5lZbKQGCvBjxQOyEWnKnsaomt2y7SlV4KfwlrHAHHAn00Sh4IAWaIsGOgQ==
   dependencies:
     expect "^29.0.0"
     pretty-format "^29.0.0"
