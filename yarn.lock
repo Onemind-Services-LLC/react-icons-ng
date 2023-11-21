@@ -2201,16 +2201,6 @@
   dependencies:
     "@octokit/openapi-types" "^18.0.0"
 
-"@onemind-services-llc/react-icons-ng-pack@^5.0.2":
-  version "5.0.3"
-  resolved "https://npm.pkg.github.com/download/@onemind-services-llc/react-icons-ng-pack/5.0.3/4ad0a30e5bd8e845cd393c8bfd2e8829837f4c31#4ad0a30e5bd8e845cd393c8bfd2e8829837f4c31"
-  integrity sha512-Sx37cql5/Ww9+/nX9CRsXVKkfWxzswQpOSYN+U9h5+B8fOAWARQ/UOiJhtcWoCwsUzJW0PEc4u7ksZqecBmGPA==
-
-"@onemind-services-llc/react-icons-ng@^5.0.2":
-  version "5.0.3"
-  resolved "https://npm.pkg.github.com/download/@onemind-services-llc/react-icons-ng/5.0.3/58eb8b20a9705a28e7deeec856a22fca0ae27a47#58eb8b20a9705a28e7deeec856a22fca0ae27a47"
-  integrity sha512-YLUZ8WODxYXGVbubsbxcoIyptCEV8gnF2Ex6rOhS6xWyn4IMzT1Ne1g+dpZljJIDiFno4y6zs/L3XhzLWo4/mw==
-
 "@parcel/watcher@2.0.4":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@parcel/watcher/-/watcher-2.0.4.tgz#f300fef4cc38008ff4b8c29d92588eced3ce014b"
@@ -2712,17 +2702,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/node@*", "@types/node@^20.9.1":
+"@types/node@*", "@types/node@20.9.3", "@types/node@^20.9.1":
   version "20.9.3"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.9.3.tgz#e089e1634436f676ff299596c9531bd2b59fffc6"
   integrity sha512-nk5wXLAXGBKfrhLB0cyHGbSqopS+nz0BUgZkUQqSHSSgdee0kssp1IAqlQOu333bW+gMNs2QREx7iynm19Abxw==
-  dependencies:
-    undici-types "~5.26.4"
-
-"@types/node@20.9.1":
-  version "20.9.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.9.1.tgz#9d578c610ce1e984adda087f685ace940954fe19"
-  integrity sha512-HhmzZh5LSJNS5O8jQKpJ/3ZcrrlG6L70hpGqMIAoM9YVD0YBRNWYsfwcXq8VnSjlNpCpgLzMXdiPo+dxcvSmiA==
   dependencies:
     undici-types "~5.26.4"
 
