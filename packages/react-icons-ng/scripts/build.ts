@@ -41,9 +41,9 @@ async function main() {
       await taskCommon.copyReadme(allOpt);
     });
     await task("react-icons-ng write icons", async () => {
-      for (const icon of icons) {
-        await taskAll.writeIconModule(icon, allOpt);
-      }
+      await Promise.all(
+        icons.map((icon) => taskAll.writeIconModule(icon, allOpt)),
+      );
     });
 
     // react-icons-ng-pack
@@ -69,9 +69,9 @@ async function main() {
       await taskCommon.copyReadme(filesOpt);
     });
     await task("react-icons-ng-pack write icons", async () => {
-      for (const icon of icons) {
-        await taskFiles.writeIconModuleFiles(icon, filesOpt);
-      }
+      await Promise.all(
+        icons.map((icon) => taskFiles.writeIconModuleFiles(icon, filesOpt)),
+      );
     });
 
     // write to VERSIONS file
