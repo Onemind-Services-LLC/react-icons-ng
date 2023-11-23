@@ -110,7 +110,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "icons/",
       url: "https://github.com/twbs/icons.git",
       branch: "main",
-      hash: "1d4ece63a5a73c4619785b3e0b487b68bb5fd7ef",
+      hash: "9727a0d6343ab9595ab98c7c9c57ccc5de305c95",
     },
   },
   {
@@ -520,7 +520,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "icons/",
       url: "https://github.com/iconoir-icons/iconoir.git",
       branch: "main",
-      hash: "46e146f41eb87568fa915ec7e9af882540304919",
+      hash: "ea5ec6c43587ce18a5877c4ea41700d6f9aed5f9",
     },
   },
   {
@@ -776,7 +776,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "assets/",
       url: "https://github.com/phosphor-icons/core.git",
       branch: "main",
-      hash: "f0d270195c812c0d859290fb3af84e863b86b480",
+      hash: "21d20a910b38d36b31f9e1b2fd96fe7b9fc6ab0d",
     },
   },
   {
@@ -801,7 +801,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "polaris-icons/icons/",
       url: "https://github.com/Shopify/polaris.git",
       branch: "main",
-      hash: "899916812f9946a70d8034b75208c650c04ad08b",
+      hash: "358cd1853b7716fa270e056a798f6821712d42a6",
     },
   },
   {
@@ -867,7 +867,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "icons/",
       url: "https://github.com/simple-icons/simple-icons.git",
       branch: "develop",
-      hash: "79e83652b14dc4a450da05922e120785482eb108",
+      hash: "4f49347c5fe6793d8ed5b576bb21d4702b0556c1",
     },
   },
   {
@@ -912,7 +912,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "icons/",
       url: "https://github.com/tabler/tabler-icons.git",
       branch: "master",
-      hash: "2521627e1b28facf4fa37b89670ac179b815db4e",
+      hash: "551d78c55786f204935daf803fe148ce031385a8",
     },
   },
   {
