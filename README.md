@@ -79,7 +79,7 @@ function Question() {
 |--------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|-----------------------------------------------|------:|
 | [Ant Design Icons](https://github.com/ant-design/ant-design-icons)       | [MIT](https://opensource.org/licenses/MIT)                                                        | @ant-design/icons-svg@4.0.0-184-gd7c5ad5      |   789 |
 | [BoxIcons](https://github.com/atisawd/boxicons)                          | [MIT](https://github.com/atisawd/boxicons/blob/master/LICENSE)                                    | 9ffa9136e8681886bb7bd2145cd4098717ce1c11      |  1634 |
-| [Bootstrap Icons](https://github.com/twbs/icons)                         | [MIT](https://opensource.org/licenses/MIT)                                                        | v1.11.1-19-g1d4ece6                           |  2716 |
+| [Bootstrap Icons](https://github.com/twbs/icons)                         | [MIT](https://opensource.org/licenses/MIT)                                                        | v1.11.2-1-g9727a0d                            |  2716 |
 | [css.gg](https://github.com/astrit/css.gg)                               | [MIT](https://opensource.org/licenses/MIT)                                                        | 2.1.1-1-gdeea4fa                              |   704 |
 | [Circum Icons](https://circumicons.com/)                                 | [MPL-2.0 license](https://github.com/Klarr-Agency/Circum-Icons/blob/main/LICENSE)                 | v2.0.2-2-geeef620                             |   288 |
 | [Coolicons](https://github.com/krystonschwarze/coolicons)                | [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/)                                 | v4.1-1-g1a92717                               |   442 |
@@ -95,7 +95,7 @@ function Question() {
 | [Game Icons](https://game-icons.net/)                                    | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)                                         | 12920d6565588f0512542a3cb0cdfd36a497f910      |  4040 |
 | [Grommet-Icons](https://github.com/grommet/grommet-icons)                | [Apache License Version 2.0](https://www.apache.org/licenses/)                                    | v4.11.0-14-g2c16c9d                           |   635 |
 | [Heroicons](https://github.com/tailwindlabs/heroicons)                   | [MIT](https://opensource.org/licenses/MIT)                                                        | v2.0.18-5-gf937b6f                            |   885 |
-| [Iconoir](https://iconoir.com/)                                          | [MIT](https://github.com/iconoir-icons/iconoir/blob/main/LICENSE)                                 | v7.0.2-9-g46e146f                             |  1506 |
+| [Iconoir](https://iconoir.com/)                                          | [MIT](https://github.com/iconoir-icons/iconoir/blob/main/LICENSE)                                 | v7.0.3-3-gea5ec6c                             |  1506 |
 | [IcoMoon Free](https://github.com/Keyamoon/IcoMoon-Free)                 | [CC BY 4.0 License](https://github.com/Keyamoon/IcoMoon-Free/blob/master/License.txt)             | d006795ede82361e1bac1ee76f215cf1dc51e4ca      |   491 |
 | [Ionicons 5](https://ionicons.com/)                                      | [MIT](https://github.com/ionic-team/ionicons/blob/master/LICENSE)                                 | 5.5.4                                         |  1332 |
 | [Jam Icons](https://github.com/michaelampr/jam)                          | [MIT](https://github.com/michaelampr/jam/blob/master/LICENSE)                                     | 3.1.0-2-gc8501b1                              |   940 |
@@ -105,19 +105,19 @@ function Question() {
 | [Material Design icons](https://google.github.io/material-design-icons/) | [Apache License Version 2.0](https://github.com/google/material-design-icons/blob/master/LICENSE) | 4.0.0-91-ga90037f80d                          |  4341 |
 | [Material Design icons 2](https://materialdesignicons.com/)              | [Apache License Version 2.0](https://github.com/Templarian/MaterialDesign/blob/master/LICENSE)    | d35cbfb8a85be4214e8c5c157b7cd105193c8d3b      |  7367 |
 | [Openmoji](https://openmoji.org/)                                        | [CC BY-SA 4.0](https://github.com/hfg-gmuend/openmoji/blob/master/LICENSE.txt)                    | 14.0.0-256-gc3596a9                           |  4129 |
-| [Phosphor Icons](https://github.com/phosphor-icons/core)                 | [MIT](https://github.com/phosphor-icons/core/blob/main/LICENSE)                                   | v2.0.2-4-gf0d2701                             |  7488 |
-| [Polaris](https://polaris.shopify.com/)                                  | [MIT](https://github.com/Shopify/polaris/blob/main/LICENSE.md)                                    | @shopify/polaris-migrator@0.26.3-63-g89991681 |   578 |
+| [Phosphor Icons](https://github.com/phosphor-icons/core)                 | [MIT](https://github.com/phosphor-icons/core/blob/main/LICENSE)                                   | v2.0.2-6-g21d20a9                             |  7488 |
+| [Polaris](https://polaris.shopify.com/)                                  | [MIT](https://github.com/Shopify/polaris/blob/main/LICENSE.md)                                    | @shopify/polaris-migrator@0.26.3-71-g358cd185 |   578 |
 | [Remix Icon](https://github.com/Remix-Design/RemixIcon)                  | [Apache License Version 2.0](https://www.apache.org/licenses/)                                    | v3.5.0-1-g3c4f3ff                             |  2537 |
 | [Radix Icons](https://icons.radix-ui.com)                                | [MIT](https://github.com/radix-ui/icons/blob/master/LICENSE)                                      | @radix-ui/react-icons@1.3.0-1-g94b3fcf        |   318 |
-| [Simple Icons](https://simpleicons.org/)                                 | [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)                           | 4.14.0-1807-g79e8365                          |  2785 |
+| [Simple Icons](https://simpleicons.org/)                                 | [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)                           | 4.14.0-1868-g4f49347                          |  2754 |
 | [Simple Line Icons](https://thesabbir.github.io/simple-line-icons/)      | [MIT](https://opensource.org/licenses/MIT)                                                        | v2.5.5                                        |   189 |
-| [Tabler Icons](https://github.com/tabler/tabler-icons)                   | [MIT](https://opensource.org/licenses/MIT)                                                        | v2.41.0-1-g2521627                            |  4854 |
+| [Tabler Icons](https://github.com/tabler/tabler-icons)                   | [MIT](https://opensource.org/licenses/MIT)                                                        | v2.42.0                                       |  4872 |
 | [Themify Icons](https://github.com/lykmapipo/themify-icons)              | [MIT](https://github.com/thecreation/standard-icons/blob/master/modules/themify-icons/LICENSE)    | v0.1.2-2-g9600186                             |   352 |
 | [Typicons](https://s-ings.com/typicons/)                                 | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)                                   | v2.1.2                                        |   336 |
 | [VS Code Icons](https://github.com/microsoft/vscode-codicons)            | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)                                         | 0.0.35-6-g6d42d57                             |   441 |
 | [Weather Icons](https://erikflowers.github.io/weather-icons/)            | [SIL OFL 1.1](https://scripts.sil.org/OFL)                                                        | 2.0.12-7-gbb80982                             |   219 |
 
-Total Count of Icons: 67447
+Total Count of Icons: 67434
 
 [//]: # END_VERSION
 
