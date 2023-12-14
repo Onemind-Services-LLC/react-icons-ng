@@ -458,6 +458,57 @@ export const icons: IconDefinition[] = [
     },
   },
   {
+    id: "he",
+    name: "Health Icons",
+    contents: [
+      {
+        files: path.resolve(
+          __dirname,
+          "../../icons/healthicons/public/icons/svg/filled/*/*.svg",
+        ),
+        formatter: (name) =>
+          `HeFilled${camelcase(name, { pascalCase: true })}`.replace(
+            "!",
+            "ExclamationMark",
+          ),
+      },
+      {
+        files: path.resolve(
+          __dirname,
+          "../../icons/healthicons/public/icons/svg/negative/*/*.svg",
+        ),
+        formatter: (name) =>
+          `HeNegative${camelcase(name, { pascalCase: true })}`.replace(
+            "!",
+            "ExclamationMark",
+          ),
+      },
+      {
+        files: path.resolve(
+          __dirname,
+          "../../icons/healthicons/public/icons/svg/outline/*/*.svg",
+        ),
+        formatter: (name) =>
+          `HeOutline${camelcase(name, { pascalCase: true })}`.replace(
+            "!",
+            "ExclamationMark",
+          ),
+      },
+    ],
+    projectUrl: "https://healthicons.org/",
+    license: "MIT",
+    licenseUrl:
+      "https://github.com/resolvetosavelives/healthicons/blob/main/LICENSE",
+    source: {
+      type: "git",
+      localName: "healthicons",
+      remoteDir: "public/icons/svg/",
+      url: "https://github.com/resolvetosavelives/healthicons.git",
+      branch: "main",
+      hash: "57df21dda664a633479e4fc2fe50227dba963734",
+    },
+  },
+  {
     id: "hi",
     name: "Heroicons",
     contents: [
