@@ -801,7 +801,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "polaris-icons/icons/",
       url: "https://github.com/Shopify/polaris.git",
       branch: "main",
-      hash: "358cd1853b7716fa270e056a798f6821712d42a6",
+      hash: "bc4272a2e3b6d54065d8cad1364ad8612ced0a5d",
     },
   },
   {

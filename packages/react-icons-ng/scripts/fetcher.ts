@@ -1,3 +1,4 @@
+import { SingleBar } from "cli-progress";
 import util from "node:util";
 import { execFile as rawExecFile } from "node:child_process";
 import fs from "fs";
@@ -31,22 +32,37 @@ async function main() {
     recursive: true,
   });
 
+  const progressBar = new SingleBar({
+    format:
+      "Cloning Icons [{bar}] {percentage}% | ETA: {eta_formatted} | {value}/{total}",
+    barCompleteChar: "#",
+    barIncompleteChar: ".",
+    hideCursor: true,
+    stopOnComplete: true,
+    barsize: 100,
+    etaBuffer: 200,
+    fps: 3,
+    etaAsynchronousUpdate: true,
+  });
+  const totalIcons = icons.filter((icon) => icon.source).length;
+  progressBar.start(totalIcons, 0);
+
   const queue = new PQueue({ concurrency: os.cpus().length });
   for (const icon of icons) {
     if (!icon.source) {
       continue;
     }
     const { source } = icon;
-    queue.add(() => gitCloneIcon(source, ctx));
+    queue.add(async () => {
+      await gitCloneIcon(source, ctx);
+      progressBar.increment(); // Update the progress bar
+    });
   }
 
   await queue.onIdle();
 }
 
 async function gitCloneIcon(source: IconSetGitSource, ctx: Context) {
-  console.log(
-    `Cloning icon from: ${source.url}/${source.remoteDir} at branch: ${source.branch}`,
-  );
   await execFile(
     "git",
     ["clone", "--filter=tree:0", "--no-checkout", source.url, source.localName],
