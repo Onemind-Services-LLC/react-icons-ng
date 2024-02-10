@@ -19,7 +19,7 @@
     "basscss": "^8.1.0",
     "cogo-toast": "^4.2.3",
     "copy-to-clipboard": "^3.3.3",
-    "css-loader": "6.9.1",
+    "css-loader": "6.10.0",
     "ignore-loader": "^0.1.2",
     "lodash": "^4.17.21",
     "next": "^14.0.4",
