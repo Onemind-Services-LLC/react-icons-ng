@@ -51,6 +51,9 @@ export async function convertIconData(svg, multiColor) {
           case "dataName":
             break;
           default:
+            if (name.startsWith("data")) {
+              break;
+            }
             obj[newName] = attribs[name];
             break;
         }
