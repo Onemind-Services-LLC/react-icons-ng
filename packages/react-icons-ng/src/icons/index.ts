@@ -368,6 +368,35 @@ export const icons: IconDefinition[] = [
     },
   },
   {
+    id: "fp",
+    name: "Flagpack Icons",
+    contents: [
+      {
+        files: path.resolve(__dirname, "../../icons/flagpack-core/svg/l/*.svg"),
+        formatter: (name) => `FpLg${name}`,
+      },
+      {
+        files: path.resolve(__dirname, "../../icons/flagpack-core/svg/m/*.svg"),
+        formatter: (name) => `FpMd${name}`,
+      },
+      {
+        files: path.resolve(__dirname, "../../icons/flagpack-core/svg/s/*.svg"),
+        formatter: (name) => `FpSm${name}`,
+      },
+    ],
+    projectUrl: "https://flagpack.xyz/",
+    license: "MIT",
+    licenseUrl: "https://github.com/Yummygum/flagpack-core/blob/main/LICENSE",
+    source: {
+      type: "git",
+      localName: "flagpack-core",
+      remoteDir: "svg/",
+      url: "https://github.com/Yummygum/flagpack-core.git",
+      branch: "main",
+      hash: "21d7c2904af91ccde7b930b50ee342c5f169a964",
+    },
+  },
+  {
     id: "go",
     name: "Github Octicons icons",
     contents: [
