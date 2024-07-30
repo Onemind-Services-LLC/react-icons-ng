@@ -19,6 +19,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Setup NPMRC
+        env:
+          NPM_TOKEN: ${{ secrets.GIT_TOKEN }}
         run: cp .npmrc.ci .npmrc
 
       - name: corepack
