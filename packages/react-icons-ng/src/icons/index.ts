@@ -364,7 +364,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "assets/",
       url: "https://github.com/microsoft/fluentui-system-icons",
       branch: "main",
-      hash: "077da9296abbb15948892fb95bece405b732519f",
+      hash: "5b07d607e90dc0226b658ed050e07944b2bef5b2",
     },
   },
   {
@@ -505,7 +505,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "public/icons/svg/",
       url: "https://github.com/resolvetosavelives/healthicons.git",
       branch: "main",
-      hash: "62e25b1b818ed7099702edcfe34e2e9a53a1dc57",
+      hash: "0080186d2a55e828e2f3f0544d4abec4fa68c32e",
     },
   },
   {
@@ -871,7 +871,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "polaris-icons/icons/",
       url: "https://github.com/Shopify/polaris.git",
       branch: "main",
-      hash: "d07c5f1cb64a621aa53d587a0442a3f46922a368",
+      hash: "a9827635844e9c43093c901966dbe8b623380e96",
     },
   },
   {
@@ -1044,7 +1044,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "core/solid/",
       url: "https://github.com/webalys-hq/streamline-vectors.git",
       branch: "main",
-      hash: "4a2b4bae972606cdac5f0e03d96c9785ff566545",
+      hash: "54e5a69776a9bd1b5c9f94e7cd6b60ef01239a07",
     },
   },
   {
