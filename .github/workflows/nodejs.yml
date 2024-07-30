@@ -18,6 +18,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Setup NPMRC
+        run: cp .npmrc.ci .npmrc
+
       - name: corepack
         run: corepack enable
 
