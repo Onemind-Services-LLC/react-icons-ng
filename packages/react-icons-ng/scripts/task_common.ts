@@ -134,7 +134,7 @@ export async function writeIconVersions({ DIST, LIB, rootDir }) {
 
   const versionsStr =
     "| Icon Library | License | Version | Count |\n" +
-    "| --- | --- | --- | ---: |\n" +
+    "|:---:|:---:|:---:|:---:|\n" +
     versions
       .map(
         (v) =>
