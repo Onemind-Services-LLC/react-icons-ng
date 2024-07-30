@@ -4,6 +4,11 @@ name: Node.js CI
   - push
   - pull_request
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+  NODE_AUTH_TOKEN: ${{ secrets.GIT_TOKEN }}
+  NPM_TOKEN: ${{ secrets.GIT_TOKEN }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,16 +24,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Setup NPMRC
-        env:
-          NPM_TOKEN: ${{ secrets.GIT_TOKEN }}
         run: cp .npmrc.ci .npmrc
 
       - name: corepack
         run: corepack enable
 
       - name: Install dependencies
-        env:
-          NPM_TOKEN: ${{ secrets.GIT_TOKEN }}
         run: yarn --immutable
 
       - name: Formatter
@@ -62,16 +63,8 @@ jobs:
 
       - name: Publish react-icons-ng
         if: contains(github.ref, 'tags/')
-        env:
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.GIT_TOKEN }}
-          NPM_TOKEN: ${{ secrets.GIT_TOKEN }}
         run: npm publish packages/_react-icons-ng/*.tgz
 
       - name: Publish react-icons-ng-pack
         if: contains(github.ref, 'tags/')
-        env:
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.GIT_TOKEN }}
-          NPM_TOKEN: ${{ secrets.GIT_TOKEN }}
         run: npm publish packages/_react-icons-ng-pack/*.tgz
