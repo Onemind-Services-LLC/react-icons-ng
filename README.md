@@ -110,7 +110,7 @@ function Question() {
 |                 [Polaris](https://polaris.shopify.com/)                  |                  [MIT](https://github.com/Shopify/polaris/blob/main/LICENSE.md)                   |                  9.3.0                   |  534  |
 |         [Remix Icon](https://github.com/Remix-Design/RemixIcon)          |                  [Apache License Version 2.0](https://www.apache.org/licenses/)                   |                  4.5.0                   | 3020  |
 |                [Radix Icons](https://icons.radix-ui.com)                 |                   [MIT](https://github.com/radix-ui/icons/blob/master/LICENSE)                    |                  1.3.2                   |  318  |
-|                 [Simple Icons](https://simpleicons.org/)                 |              [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)              |                 13.20.0                  | 3288  |
+|                 [Simple Icons](https://simpleicons.org/)                 |              [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)              |                 13.20.0                  | 3289  |
 |   [Simple Line Icons](https://thesabbir.github.io/simple-line-icons/)    |                            [MIT](https://opensource.org/licenses/MIT)                             |                  2.5.5                   |  189  |
 |                [Streamline](https://www.streamlinehq.com)                |                 [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/)                 |              1.0-1-g54e5a69              | 1000  |
 |          [Tabler Icons](https://github.com/tabler/tabler-icons)          |                            [MIT](https://opensource.org/licenses/MIT)                             |                  3.24.0                  | 5754  |
@@ -119,7 +119,7 @@ function Question() {
 |      [VS Code Icons](https://github.com/microsoft/vscode-codicons)       |                     [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)                     |                  0.0.36                  |  469  |
 |      [Weather Icons](https://erikflowers.github.io/weather-icons/)       |                            [SIL OFL 1.1](https://scripts.sil.org/OFL)                             |                  2.0.12                  |  219  |
 
-Total Count of Icons: 77255
+Total Count of Icons: 77256
 
 [//]: # END_VERSION
 
