@@ -16,10 +16,10 @@ jobs:
       matrix:
         node-version: [18]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -41,7 +41,7 @@ jobs:
       - name: Build Packages
         run: BASE_PATH=/react-icons-ng ./build-script.sh
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           path: packages/_react-icons-ng*/*.tgz
 

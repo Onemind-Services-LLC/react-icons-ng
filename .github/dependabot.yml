@@ -14,8 +14,6 @@ updates:
       - "type: dependencies"
     schedule:
       interval: "daily"
-    reviewers:
-      - "VKumar786"
     open-pull-requests-limit: 10
     registries: "*"
 
@@ -25,8 +23,6 @@ updates:
       - "type: dependencies"
     schedule:
       interval: "daily"
-    reviewers:
-      - "VKumar786"
     open-pull-requests-limit: 10
     registries: "*"
 
@@ -36,8 +32,6 @@ updates:
       - "type: dependencies"
     schedule:
       interval: "daily"
-    reviewers:
-      - "VKumar786"
     open-pull-requests-limit: 10
     registries: "*"
 
@@ -47,8 +41,6 @@ updates:
       - "type: dependencies"
     schedule:
       interval: "daily"
-    reviewers:
-      - "VKumar786"
     open-pull-requests-limit: 10
     registries: "*"
 
@@ -58,8 +50,6 @@ updates:
       - "type: dependencies"
     schedule:
       interval: "daily"
-    reviewers:
-      - "VKumar786"
     open-pull-requests-limit: 10
     registries: "*"
 
@@ -69,8 +59,6 @@ updates:
       - "type: dependencies"
     schedule:
       interval: "daily"
-    reviewers:
-      - "VKumar786"
     open-pull-requests-limit: 10
     registries: "*"
 
@@ -80,7 +68,5 @@ updates:
       - "type: dependencies"
     schedule:
       interval: "daily"
-    reviewers:
-      - "VKumar786"
     open-pull-requests-limit: 10
     registries: "*"
