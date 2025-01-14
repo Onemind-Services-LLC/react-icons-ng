@@ -11916,9 +11916,9 @@ sass-loader@^12.3.0:
     neo-async "^2.6.2"
 
 sass@^1.77.8:
-  version "1.82.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.82.0.tgz#30da277af3d0fa6042e9ceabd0d984ed6d07df70"
-  integrity sha512-j4GMCTa8elGyN9A7x7bEglx0VgSpNUG4W4wNedQ33wSMdnkqQCT8HTwOaVSV4e6yQovcu/3Oc4coJP/l0xhL2Q==
+  version "1.83.4"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.83.4.tgz#5ccf60f43eb61eeec300b780b8dcb85f16eec6d1"
+  integrity sha512-B1bozCeNQiOgDcLd33e2Cs2U60wZwjUUXzh900ZyQF5qUasvMdDZYbQ566LJu7cqR+sAHlAfO6RMkaID5s6qpA==
   dependencies:
     chokidar "^4.0.0"
     immutable "^5.0.2"
