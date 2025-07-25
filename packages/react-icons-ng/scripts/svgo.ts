@@ -1,116 +1,64 @@
-import SVGO from "svgo";
+import { optimize } from "svgo";
 
-export const svgo = new SVGO({
-  plugins: [
-    {
-      cleanupAttrs: true,
-    },
-    {
-      removeDoctype: true,
-    },
-    {
-      removeXMLProcInst: true,
-    },
-    {
-      removeComments: true,
-    },
-    {
-      removeMetadata: true,
-    },
-    {
-      removeTitle: true,
-    },
-    {
-      removeDesc: true,
-    },
-    {
-      removeUselessDefs: true,
-    },
-    {
-      removeEditorsNSData: true,
-    },
-    {
-      removeEmptyAttrs: true,
-    },
-    {
-      removeHiddenElems: true,
-    },
-    {
-      removeEmptyText: true,
-    },
-    {
-      removeEmptyContainers: true,
-    },
-    {
-      removeViewBox: false,
-    },
-    {
-      cleanupEnableBackground: true,
-    },
-    {
-      convertStyleToAttrs: true,
-    },
-    {
-      convertColors: {
-        currentColor: true,
+export function optimizeSVG(svgStr: string) {
+  return optimize(svgStr, {
+     multipass: true,
+    plugins: [
+      "cleanupAttrs",
+      "removeDoctype",
+      "removeXMLProcInst",
+      "removeComments",
+      "removeMetadata",
+      "removeTitle",
+      "removeDesc",
+      "removeUselessDefs",
+      "removeEditorsNSData",
+      "removeEmptyAttrs",
+      "removeHiddenElems",
+      "removeEmptyText",
+      "removeEmptyContainers",
+      // {
+      //   name: "removeViewBox",
+      //   params: { active: false }
+      // },
+      "cleanupEnableBackground",
+      "convertStyleToAttrs",
+      {
+        name: "convertColors",
+        params: { currentColor: true },
       },
-    },
-    {
-      convertPathData: true,
-    },
-    {
-      convertTransform: true,
-    },
-    {
-      removeUnknownsAndDefaults: true,
-    },
-    {
-      removeNonInheritableGroupAttrs: true,
-    },
-    {
-      removeUselessStrokeAndFill: true,
-    },
-    {
-      removeUnusedNS: true,
-    },
-    {
-      cleanupIDs: true,
-    },
-    {
-      cleanupNumericValues: true,
-    },
-    {
-      moveElemsAttrsToGroup: true,
-    },
-    {
-      moveGroupAttrsToElems: true,
-    },
-    {
-      collapseGroups: true,
-    },
-    {
-      removeRasterImages: false,
-    },
-    {
-      mergePaths: true,
-    },
-    {
-      convertShapeToPath: true,
-    },
-    {
-      sortAttrs: true,
-    },
-    {
-      removeDimensions: true,
-    },
-    {
-      removeAttributesBySelector: {
-        selector: "*:not(svg)",
-        attributes: ["stroke"],
+      "convertPathData",
+      "convertTransform",
+      "removeUnknownsAndDefaults",
+      "removeNonInheritableGroupAttrs",
+      "removeUselessStrokeAndFill",
+      "removeUnusedNS",
+      "cleanupIds",
+      "cleanupNumericValues",
+      "moveElemsAttrsToGroup",
+      "moveGroupAttrsToElems",
+      "collapseGroups",
+      // {
+      //   name: "removeRasterImages",
+      //   params: { active: false }
+      // },
+      "mergePaths",
+      "convertShapeToPath",
+      "sortAttrs",
+      "removeDimensions",
+      {
+        name: "removeAttributesBySelector",
+        params: {
+          selector: "*:not(svg)",
+          attributes: ["stroke"],
+        },
       },
-    },
-    {
-      removeAttrs: { attrs: "data.*" },
-    },
-  ],
-});
+      {
+        name: "removeAttrs",
+        params: {
+          attrs: "data.*",
+        },
+      },
+    ],
+  });
+}
