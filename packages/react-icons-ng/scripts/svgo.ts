@@ -2,7 +2,7 @@ import { optimize } from "svgo";
 
 export function optimizeSVG(svgStr: string) {
   return optimize(svgStr, {
-     multipass: true,
+    multipass: true,
     plugins: [
       "cleanupAttrs",
       "removeDoctype",
