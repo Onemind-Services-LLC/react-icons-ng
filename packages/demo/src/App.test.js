@@ -1,22 +1,21 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
 import App from "./App";
 
 it("renders without crashing", () => {
-  const div = document.createElement("div");
-  const container = createRoot(div);
-  container.render(<App />);
+  render(<App />);
 });
 
 it("snapshot test", () => {
-  expect(shallow(<App />)).toMatchSnapshot();
+  const { container } = render(<App />);
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it("always includes a title", () => {
-  shallow(<App />);
-  const icons = document.getElementsByTagName("svg");
+  const { container } = render(<App />);
+  const icons = container.getElementsByTagName("svg");
   for (let i = 0; i < icons.length; i++) {
     expect(icons[i].getElementsByTagName("title").length).toBe(1);
   }
