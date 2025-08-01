@@ -1,4 +1,4 @@
-import cheerio from "cheerio";
+import * as cheerio from "cheerio";
 import camelcase from "camelcase";
 import { promises as fs } from "fs";
 import path from "path";
@@ -14,7 +14,8 @@ export async function getIconFiles(content: IconDefinitionContent) {
 }
 
 export async function convertIconData(svg, multiColor) {
-  const $svg = cheerio.load(svg, { xmlMode: true })("svg");
+  const $ = cheerio.load(svg, { xmlMode: true });
+  const $svg = $("svg");
 
   // filter/convert attributes
   // 1. remove class attr
@@ -69,7 +70,7 @@ export async function convertIconData(svg, multiColor) {
         attr: attrConverter(e.attribs, e.tagName),
         child:
           e.children && e.children.length
-            ? elementToTree(cheerio(e.children))
+            ? elementToTree($(e.children))
             : undefined,
       }))
       .get();
