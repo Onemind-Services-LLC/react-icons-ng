@@ -505,7 +505,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "public/icons/svg/",
       url: "https://github.com/resolvetosavelives/healthicons.git",
       branch: "main",
-      hash: "bc7796e77940901cb3da965486d7f360a5076316",
+      hash: "f1580913ddbb09549c6f473f05b86cda2b7bf800",
     },
   },
   {
@@ -752,7 +752,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "src/",
       url: "https://github.com/google/material-design-icons.git",
       branch: "master",
-      hash: "469cd83a0b7e3927dbec21182a4dd4968aef9478",
+      hash: "b2c0f61d8a99224bd99924f3d0471d9f146c9a54",
     },
   },
   {
@@ -850,7 +850,7 @@ export const icons: IconDefinition[] = [
       remoteDir: "polaris-icons/icons/",
       url: "https://github.com/Shopify/polaris.git",
       branch: "main",
-      hash: "c0e3158a796ea1a097870f64b77deff491f8ce45",
+      hash: "3713646e1b97d16da465b18a2df65c22045195b8",
     },
   },
   {
