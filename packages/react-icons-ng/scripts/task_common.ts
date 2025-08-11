@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import path from "path";
+import * as path from "path";
 import { promises as fs } from "fs";
 import findPackage from "find-package";
 import { promisify } from "util";

@@ -1,7 +1,7 @@
 import * as cheerio from "cheerio";
 import camelcase from "camelcase";
 import { promises as fs } from "fs";
-import path from "path";
+import * as path from "path";
 import { type IconDefinitionContent } from "./_types";
 import { glob } from "glob-promise";
 

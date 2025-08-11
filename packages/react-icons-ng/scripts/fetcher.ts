@@ -1,12 +1,12 @@
 import { SingleBar } from "cli-progress";
-import util from "node:util";
+import * as util from "node:util";
 import { execFile as rawExecFile } from "node:child_process";
-import fs from "fs";
-import path from "path";
+import * as fs from "fs"
+import * as path from "path";
 import { type IconSetGitSource } from "./_types";
 import { icons } from "../src/icons";
 import PQueue from "p-queue";
-import os from "os";
+import * as os from "os";
 const execFile = util.promisify(rawExecFile);
 
 interface Context {

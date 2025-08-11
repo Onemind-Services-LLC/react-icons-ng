@@ -1,4 +1,4 @@
-import path from "path";
+import * as path from "path";
 import { performance } from "perf_hooks";
 import { icons } from "../src/icons";
 import * as taskCommon from "./task_common";

@@ -1,6 +1,6 @@
-import util from "node:util";
+import * as util from "node:util";
 import { execFile as rawExecFile } from "node:child_process";
-import path from "path";
+import * as path from "path";
 import { type IconSetGitSource } from "./_types";
 import { icons } from "../src/icons";
 const execFile = util.promisify(rawExecFile);
