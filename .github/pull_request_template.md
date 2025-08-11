@@ -1,13 +1,14 @@
-
 ### 🎟️ Jira Issue
 
 <!-- Replace `OMS-XXXX` with the actual Jira ticket number. -->
+
 - Jira Ticket: [OMS-XXXX](https://onemindservices.atlassian.net/browse/OMS-XXXX)
 
 ### 🛠️ Type of Change
 
 <!-- Select all applicable types of changes. -->
-- [ ] Bug fix (a non-breaking change that fixes an issue)
+
+- [ ] Bugfix (a non-breaking change that fixes an issue)
 - [ ] New feature (a non-breaking change that adds functionality)
 - [ ] Improvement (enhancements or optimizations to existing functionality)
 - [ ] Documentation update (changes or additions to documentation)
@@ -17,6 +18,7 @@
 ### 🎯 Targeted Branch
 
 <!-- Specify the target branch, e.g., `main`, `development`, `release-v1.2`. -->
+
 - [ ] I have confirmed that this PR targets the correct branch.
 - **Target Branch:** `dev` <!-- Replace with the appropriate branch name -->
 
@@ -30,6 +32,7 @@
 ### 📋 Checklist
 
 <!-- Ensure all items are completed before requesting a review. -->
+
 - [ ] My code follows the project's coding standards.
 - [ ] I have performed a self-review of my own code.
 - [ ] I have commented my code where necessary.
