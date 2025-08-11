@@ -1,4 +1,4 @@
-import toast from "cogo-toast";
+import { toast } from "react-hot-toast";
 import copy from "copy-to-clipboard";
 import React from "react";
 
@@ -9,9 +9,7 @@ function Icon({ icon, name, highlightPattern = null }) {
 
     const copyToClipboardValue = `import { ${name} } from "@onemind-services-llc/react-icons-ng/${iconType[0].toLowerCase()}"`;
     copy(copyToClipboardValue);
-    toast.success(`Copied '${name}' to clipboard`, {
-      position: "bottom-center",
-    });
+    toast.success(`Copied '${name}' to clipboard`);
   };
 
   const highlightedName = () => {
