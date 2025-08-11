@@ -20,32 +20,36 @@ export async function writeIconModuleFiles(
 
   const cache = await loadPackCache(icon.id);
   const changedRef = { value: false };
-  await forEachIconEntry(icon, async ({ name, iconData }) => {
-    const modRes = iconRowTemplate(icon, name, iconData, "module");
-    const modHeader =
-      "// THIS FILE IS AUTO GENERATED\nimport { GenIcon } from '../lib';\n";
-    await fs.writeFile(
-      path.resolve(DIST, icon.id, `${name}.esm.js`),
-      modHeader + modRes,
-      "utf8",
-    );
-    const comRes = iconRowTemplate(icon, name, iconData, "common");
-    const comHeader =
-      "// THIS FILE IS AUTO GENERATED\nvar GenIcon = require('../lib').GenIcon\n";
-    await fs.writeFile(
-      path.resolve(DIST, icon.id, `${name}.js`),
-      comHeader + comRes,
-      "utf8",
-    );
-    const dtsRes = iconRowTemplate(icon, name, iconData, "dts");
-    const dtsHeader =
-      "// THIS FILE IS AUTO GENERATED\nimport { IconTree, IconType } from '../lib'\n";
-    await fs.writeFile(
-      path.resolve(DIST, icon.id, `${name}.d.ts`),
-      dtsHeader + dtsRes,
-      "utf8",
-    );
-  }, { cache, changedRef });
+  await forEachIconEntry(
+    icon,
+    async ({ name, iconData }) => {
+      const modRes = iconRowTemplate(icon, name, iconData, "module");
+      const modHeader =
+        "// THIS FILE IS AUTO GENERATED\nimport { GenIcon } from '../lib';\n";
+      await fs.writeFile(
+        path.resolve(DIST, icon.id, `${name}.esm.js`),
+        modHeader + modRes,
+        "utf8",
+      );
+      const comRes = iconRowTemplate(icon, name, iconData, "common");
+      const comHeader =
+        "// THIS FILE IS AUTO GENERATED\nvar GenIcon = require('../lib').GenIcon\n";
+      await fs.writeFile(
+        path.resolve(DIST, icon.id, `${name}.js`),
+        comHeader + comRes,
+        "utf8",
+      );
+      const dtsRes = iconRowTemplate(icon, name, iconData, "dts");
+      const dtsHeader =
+        "// THIS FILE IS AUTO GENERATED\nimport { IconTree, IconType } from '../lib'\n";
+      await fs.writeFile(
+        path.resolve(DIST, icon.id, `${name}.d.ts`),
+        dtsHeader + dtsRes,
+        "utf8",
+      );
+    },
+    { cache, changedRef },
+  );
   if (changedRef.value) {
     await savePackCache(icon.id, cache);
   }

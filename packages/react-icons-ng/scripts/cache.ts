@@ -27,7 +27,10 @@ export async function loadPackCache(packId: string): Promise<PackCache> {
   }
 }
 
-export async function savePackCache(packId: string, cache: PackCache): Promise<void> {
+export async function savePackCache(
+  packId: string,
+  cache: PackCache,
+): Promise<void> {
   const dir = cacheDir();
   await fs.promises.mkdir(dir, { recursive: true });
   const file = cacheFile(packId);
@@ -37,4 +40,3 @@ export async function savePackCache(packId: string, cache: PackCache): Promise<v
 export function hashString(input: string): string {
   return createHash("sha1").update(input).digest("hex");
 }
-

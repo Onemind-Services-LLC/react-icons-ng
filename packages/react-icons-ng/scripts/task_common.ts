@@ -133,7 +133,11 @@ export async function forEachIconEntry(
       const key = file;
       const svgHash = hashString(svgStr);
       let iconData: unknown;
-      if (opts?.cache && opts.cache[key] && opts.cache[key].svgHash === svgHash) {
+      if (
+        opts?.cache &&
+        opts.cache[key] &&
+        opts.cache[key].svgHash === svgHash
+      ) {
         iconData = opts.cache[key].iconData;
       } else {
         iconData = await convertIconData(svgStr, content.multiColor);

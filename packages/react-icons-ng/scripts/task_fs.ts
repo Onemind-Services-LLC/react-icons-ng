@@ -15,7 +15,7 @@ interface InitOptions {
 
 export async function initDistLib(ctx: DistCtx, opts: InitOptions) {
   const { DIST, LIB } = ctx;
-  const ignore = (err: { code: string; }) => {
+  const ignore = (err: { code: string }) => {
     if (err && (err.code === "EEXIST" || err.code === "ENOENT")) return;
     throw err;
   };

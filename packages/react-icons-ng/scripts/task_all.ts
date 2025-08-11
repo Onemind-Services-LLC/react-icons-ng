@@ -40,14 +40,26 @@ export async function writeIconModule(icon, { DIST, LIB, rootDir }) {
   let dtsBuf = "";
   const cache = await loadPackCache(icon.id);
   const changedRef = { value: false };
-  await forEachIconEntry(icon, ({ name, iconData }) => {
-    modBuf += iconRowTemplate(icon, name, iconData, "module");
-    comBuf += iconRowTemplate(icon, name, iconData, "common");
-    dtsBuf += iconRowTemplate(icon, name, iconData, "dts");
-  }, { cache, changedRef });
-  await fs.appendFile(path.resolve(DIST, icon.id, "index.esm.js"), modBuf, "utf8");
+  await forEachIconEntry(
+    icon,
+    ({ name, iconData }) => {
+      modBuf += iconRowTemplate(icon, name, iconData, "module");
+      comBuf += iconRowTemplate(icon, name, iconData, "common");
+      dtsBuf += iconRowTemplate(icon, name, iconData, "dts");
+    },
+    { cache, changedRef },
+  );
+  await fs.appendFile(
+    path.resolve(DIST, icon.id, "index.esm.js"),
+    modBuf,
+    "utf8",
+  );
   await fs.appendFile(path.resolve(DIST, icon.id, "index.js"), comBuf, "utf8");
-  await fs.appendFile(path.resolve(DIST, icon.id, "index.d.ts"), dtsBuf, "utf8");
+  await fs.appendFile(
+    path.resolve(DIST, icon.id, "index.d.ts"),
+    dtsBuf,
+    "utf8",
+  );
   if (changedRef.value) {
     await savePackCache(icon.id, cache);
   }
