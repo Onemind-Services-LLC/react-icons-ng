@@ -2,7 +2,9 @@ import { SingleBar } from "cli-progress";
 import PQueue from "p-queue";
 
 export function createBar(label: string, extraFormat?: string) {
-  const fmt = `${label} [{bar}] {percentage}% | ETA: {eta_formatted} | {value}/{total}` + (extraFormat ? ` | ${extraFormat}` : "");
+  const fmt =
+    `${label} [{bar}] {percentage}% | ETA: {eta_formatted} | {value}/{total}` +
+    (extraFormat ? ` | ${extraFormat}` : "");
   return new SingleBar({
     format: fmt,
     barCompleteChar: "#",
@@ -16,7 +18,10 @@ export function createBar(label: string, extraFormat?: string) {
   });
 }
 
-export async function runSequential(label: string, steps: Array<() => Promise<unknown>>) {
+export async function runSequential(
+  label: string,
+  steps: Array<() => Promise<unknown>>,
+) {
   const bar = createBar(label);
   bar.start(steps.length, 0);
   for (const step of steps) {
@@ -42,7 +47,10 @@ export async function runConcurrentWithRunning<T>(
 
   const update = () => {
     const list = Array.from(running).slice(0, concurrency).join(", ");
-    const trimmed = list.length > runningLimit ? list.slice(0, runningLimit - 3) + "..." : list;
+    const trimmed =
+      list.length > runningLimit
+        ? list.slice(0, runningLimit - 3) + "..."
+        : list;
     bar.update(done, { running: trimmed });
   };
 
@@ -63,4 +71,3 @@ export async function runConcurrentWithRunning<T>(
   await queue.onIdle();
   bar.stop();
 }
-

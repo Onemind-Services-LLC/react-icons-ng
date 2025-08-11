@@ -12,4 +12,3 @@ export function resolveIconConcurrency(): number {
 }
 
 export const ICON_CONCURRENCY = resolveIconConcurrency();
-

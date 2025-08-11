@@ -96,7 +96,9 @@ async function main() {
     await task("react-icons-ng_builders write icon versions", async () => {
       const bar = createBar("Versions");
       bar.start(icons.length, 0);
-      await taskCommon.writeIconVersions(filesOpt, (current) => bar.update(current));
+      await taskCommon.writeIconVersions(filesOpt, (current) =>
+        bar.update(current),
+      );
       bar.stop();
     });
 

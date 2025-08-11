@@ -82,11 +82,15 @@ async function main() {
           `../icons/${item.localName}`,
         );
         try {
-          const rev = execFileSync("git", ["rev-parse", `origin/${item.branch}`], {
-            cwd: localRepoDir,
-            encoding: "utf8",
-            stdio: ["ignore", "pipe", "ignore"],
-          })
+          const rev = execFileSync(
+            "git",
+            ["rev-parse", `origin/${item.branch}`],
+            {
+              cwd: localRepoDir,
+              encoding: "utf8",
+              stdio: ["ignore", "pipe", "ignore"],
+            },
+          )
             .toString()
             .trim();
           newHash = rev.split(/[\t\s]/)[0];
