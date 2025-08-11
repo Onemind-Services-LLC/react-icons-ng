@@ -89,10 +89,15 @@ interface IconSetVersion {
   count: number;
 }
 
-export async function writeIconVersions({ DIST, LIB, rootDir }) {
+export async function writeIconVersions(
+  { DIST, LIB, rootDir },
+  progress?: (current: number, total: number) => void,
+) {
   const versions: IconSetVersion[] = [];
 
   // searching for icon versions from package.json and git describe command
+  const total = icons.length;
+  let current = 0;
   for (const icon of icons) {
     const files = (
       await Promise.all(icon.contents.map((content) => getIconFiles(content)))
@@ -123,6 +128,9 @@ export async function writeIconVersions({ DIST, LIB, rootDir }) {
       version,
       count: files.length,
     });
+
+    current += 1;
+    if (progress) progress(current, total);
   }
 
   const emptyVersions = versions.filter((v) => v.count === 0);

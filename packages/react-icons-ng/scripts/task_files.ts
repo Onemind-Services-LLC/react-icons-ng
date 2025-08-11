@@ -40,7 +40,9 @@ export async function writeIconModuleFiles(
   icon: IconDefinition,
   { DIST, LIB, rootDir }, // eslint-disable-line @typescript-eslint/no-unused-vars
 ) {
-  console.log(`writeIconModuleFiles: ${icon.id} ${icon.name} ...`);
+  if (process.env.VERBOSE_ICON_LOG === "1") {
+    console.log(`writeIconModuleFiles: ${icon.id} ${icon.name} ...`);
+  }
 
   const exists = new Set(); // for remove duplicate
 

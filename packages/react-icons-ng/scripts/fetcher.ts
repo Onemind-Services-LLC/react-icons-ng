@@ -1,12 +1,11 @@
-import { SingleBar } from "cli-progress";
+import { runConcurrentWithRunning } from "./progress";
 import * as util from "node:util";
 import { execFile as rawExecFile } from "node:child_process";
 import * as fs from "fs";
 import * as path from "path";
 import { type IconSetGitSource } from "./_types";
 import { icons } from "../src/icons";
-import PQueue from "p-queue";
-import * as os from "os";
+import { ICON_CONCURRENCY } from "./concurrency";
 const execFile = util.promisify(rawExecFile);
 
 interface Context {
@@ -32,34 +31,17 @@ async function main() {
     recursive: true,
   });
 
-  const progressBar = new SingleBar({
-    format:
-      "Cloning Icons [{bar}] {percentage}% | ETA: {eta_formatted} | {value}/{total}",
-    barCompleteChar: "#",
-    barIncompleteChar: ".",
-    hideCursor: true,
-    stopOnComplete: true,
-    barsize: 100,
-    etaBuffer: 200,
-    fps: 3,
-    etaAsynchronousUpdate: true,
-  });
-  const totalIcons = icons.filter((icon) => icon.source).length;
-  progressBar.start(totalIcons, 0);
-
-  const queue = new PQueue({ concurrency: os.cpus().length });
-  for (const icon of icons) {
-    if (!icon.source) {
-      continue;
-    }
-    const { source } = icon;
-    queue.add(async () => {
-      await gitCloneIcon(source, ctx);
-      progressBar.increment(); // Update the progress bar
-    });
-  }
-
-  await queue.onIdle();
+  const items = icons.filter((icon) => icon.source);
+  const worker = async (icon) => {
+    await gitCloneIcon(icon.source as IconSetGitSource, ctx);
+  };
+  await runConcurrentWithRunning(
+    "Cloning Icons",
+    items,
+    worker,
+    ICON_CONCURRENCY,
+    (icon) => icon.id,
+  );
 }
 
 async function gitCloneIcon(source: IconSetGitSource, ctx: Context) {
