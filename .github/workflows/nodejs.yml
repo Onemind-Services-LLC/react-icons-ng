@@ -10,7 +10,7 @@ env:
   NPM_TOKEN: ${{ secrets.GIT_TOKEN }}
 
 permissions:
-  contents: read
+  contents: write
   packages: write
   id-token: write
 
