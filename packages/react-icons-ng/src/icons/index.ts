@@ -2,7 +2,6 @@ import * as path from "path";
 import camelcase from "camelcase";
 import { type IconDefinition } from "../../scripts/_types";
 import { glob } from "glob-promise";
-
 export const icons: IconDefinition[] = [
   {
     id: "ai",
@@ -399,6 +398,30 @@ export const icons: IconDefinition[] = [
     },
   },
   {
+    id: "gi",
+    name: "Game Icons",
+    contents: [
+      {
+        files: path.resolve(
+          __dirname,
+          "../../icons/game-icons-inverted/all-icons/*.svg",
+        ),
+        formatter: (name) => `Gi${name}`,
+      },
+    ],
+    projectUrl: "https://game-icons.net/",
+    license: "CC BY 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
+    source: {
+      type: "git",
+      localName: "game-icons-inverted",
+      remoteDir: "all-icons/",
+      url: "https://github.com/delacannon/game-icons-inverted.git",
+      branch: "master",
+      hash: "12920d6565588f0512542a3cb0cdfd36a497f910",
+    },
+  },
+  {
     id: "go",
     name: "Github Octicons icons",
     contents: [
@@ -438,30 +461,6 @@ export const icons: IconDefinition[] = [
       url: "https://github.com/540co/govicons.git",
       branch: "develop",
       hash: "1d9f4673de0d3f7b4a9d300c2359e806730f196b",
-    },
-  },
-  {
-    id: "gi",
-    name: "Game Icons",
-    contents: [
-      {
-        files: path.resolve(
-          __dirname,
-          "../../icons/game-icons-inverted/all-icons/*.svg",
-        ),
-        formatter: (name) => `Gi${name}`,
-      },
-    ],
-    projectUrl: "https://game-icons.net/",
-    license: "CC BY 3.0",
-    licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
-    source: {
-      type: "git",
-      localName: "game-icons-inverted",
-      remoteDir: "all-icons/",
-      url: "https://github.com/delacannon/game-icons-inverted.git",
-      branch: "master",
-      hash: "12920d6565588f0512542a3cb0cdfd36a497f910",
     },
   },
   {
@@ -727,7 +726,6 @@ export const icons: IconDefinition[] = [
               "../../icons/material-design-icons/src/*/*/materialicons/24px.svg",
             ),
           );
-
           const twotone = await glob.glob(
             path.resolve(
               __dirname,
@@ -742,10 +740,7 @@ export const icons: IconDefinition[] = [
           ];
         },
         formatter: (name, file) =>
-          `Md${camelcase(
-            file.replace(/^.*\/([^/]+)\/materialicons[^/]*\/24px.svg$/i, "$1"),
-            { pascalCase: true },
-          )}`,
+          `Md${camelcase(file.replace(/^.*\/([^/]+)\/materialicons[^/]*\/24px.svg$/i, "$1"), { pascalCase: true })}`,
         processWithSVGO: true,
       },
       {
@@ -754,10 +749,7 @@ export const icons: IconDefinition[] = [
           "../../icons/material-design-icons/src/*/*/materialiconsoutlined/24px.svg",
         ),
         formatter: (name, file) =>
-          `MdOutline${camelcase(
-            file.replace(/^.*\/([^/]+)\/materialicons[^/]*\/24px.svg$/i, "$1"),
-            { pascalCase: true },
-          )}`,
+          `MdOutline${camelcase(file.replace(/^.*\/([^/]+)\/materialicons[^/]*\/24px.svg$/i, "$1"), { pascalCase: true })}`,
         processWithSVGO: true,
       },
       {
@@ -766,10 +758,7 @@ export const icons: IconDefinition[] = [
           "../../icons/material-design-icons/src/*/*/materialiconsround/24px.svg",
         ),
         formatter: (name, file) =>
-          `MdRound${camelcase(
-            file.replace(/^.*\/([^/]+)\/materialicons[^/]*\/24px.svg$/i, "$1"),
-            { pascalCase: true },
-          )}`,
+          `MdRound${camelcase(file.replace(/^.*\/([^/]+)\/materialicons[^/]*\/24px.svg$/i, "$1"), { pascalCase: true })}`,
         processWithSVGO: true,
       },
     ],
