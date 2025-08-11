@@ -15,4 +15,3 @@ export function getDistDirs(kind: "all" | "pack") {
   const LIB = path.resolve(rootDir, "../_react-icons-ng-pack/lib");
   return { rootDir, DIST, LIB };
 }
-

@@ -2,11 +2,16 @@
 
 import * as path from "path";
 import { promises as fs } from "fs";
-import findPackage from "find-package";
 import { promisify } from "util";
 const exec = promisify(require("child_process").exec);
 import { icons } from "../src/icons";
-import { getIconFiles, copyRecursive, rmDirRecursive, convertIconData } from "./logics";
+import {
+  getIconFiles,
+  copyRecursive,
+  rmDirRecursive,
+  convertIconData,
+} from "./logics";
+import { computeIconVersions, renderVersionsTable } from "./versions";
 import { optimizeSVG } from "./svgo";
 import camelcase from "camelcase";
 import { IconDefinition } from "./_types";
@@ -85,79 +90,18 @@ export default m
   );
 }
 
-interface IconSetVersion {
-  icon: IconDefinition;
-  version: string;
-  count: number;
-}
-
 export async function writeIconVersions(
   { DIST, LIB, rootDir },
   progress?: (current: number, total: number) => void,
 ) {
-  const versions: IconSetVersion[] = [];
-
-  // searching for icon versions from package.json and git describe command
-  const total = icons.length;
-  let current = 0;
-  for (const icon of icons) {
-    const files = (
-      await Promise.all(icon.contents.map((content) => getIconFiles(content)))
-    ).flat();
-
-    if (files.length === 0) {
-      throw new Error(`Missing path for: ${icon.name}`);
-    }
-
-    const firstDir = path.dirname(files[0]);
-    const packageJson = findPackage(firstDir, true);
-
-    let version: string;
-    if (packageJson.version && !packageJson.name.includes("react-icons-ng")) {
-      version = packageJson.version;
-    } else {
-      const { stdout } = await exec(
-        `git describe --tags || git rev-parse HEAD`,
-        {
-          cwd: firstDir,
-        },
-      );
-      version = stdout.trim();
-    }
-
-    versions.push({
-      icon,
-      version,
-      count: files.length,
-    });
-
-    current += 1;
-    if (progress) progress(current, total);
-  }
-
+  const versions = await computeIconVersions(icons, progress);
   const emptyVersions = versions.filter((v) => v.count === 0);
   if (emptyVersions.length !== 0) {
     throw Error(
       `empty icon sets: ${emptyVersions.map((v) => v.icon).join(", ")}`,
     );
   }
-
-  const versionsStr =
-    "| Icon Library | License | Version | Count |\n" +
-    "|:---:|:---:|:---:|:---:|\n" +
-    versions
-      .map(
-        (v) =>
-          `| ${[
-            `[${v.icon.name}](${v.icon.projectUrl})`,
-            `[${v.icon.license}](${v.icon.licenseUrl})`,
-            v.version,
-            v.count,
-          ].join(" | ")} |`,
-      )
-      .join("\n") +
-    "\n";
-
+  const versionsStr = renderVersionsTable(versions);
   await fs.writeFile(path.resolve(rootDir, "VERSIONS"), versionsStr, "utf8");
 }
 
@@ -169,7 +113,11 @@ export async function writeIconVersions(
 // - de-duplicating by final name
 export async function forEachIconEntry(
   icon: IconDefinition,
-  handler: (args: { name: string; iconData: unknown; file: string }) => Promise<void> | void,
+  handler: (args: {
+    name: string;
+    iconData: unknown;
+    file: string;
+  }) => Promise<void> | void,
 ) {
   const seen = new Set<string>();
   for (const content of icon.contents) {
@@ -184,7 +132,9 @@ export async function forEachIconEntry(
 
       const rawName = path.basename(file, path.extname(file));
       const pascalName = camelcase(rawName, { pascalCase: true });
-      const name = (content.formatter && content.formatter(pascalName, file)) || pascalName;
+      const name =
+        (content.formatter && content.formatter(pascalName, file)) ||
+        pascalName;
       if (seen.has(name)) continue;
       seen.add(name);
 

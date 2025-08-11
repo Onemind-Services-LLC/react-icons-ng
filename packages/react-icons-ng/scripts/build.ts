@@ -1,6 +1,11 @@
 import { icons } from "../src/icons";
 import { ICON_CONCURRENCY } from "./concurrency";
-import { createBar, runSequential, forEachWithProgress, timeTask } from "./progress";
+import {
+  createBar,
+  runSequential,
+  forEachWithProgress,
+  timeTask,
+} from "./progress";
 import * as taskCommon from "./task_common";
 import * as taskAll from "./task_all";
 import * as taskFiles from "./task_files";

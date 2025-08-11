@@ -1,39 +1,13 @@
 import * as path from "path";
 import { promises as fs } from "fs";
-import { icons } from "../src/icons";
 import { iconRowTemplate } from "./templates";
-import { rmDirRecursive } from "./logics";
 import { forEachIconEntry } from "./task_common";
 import { IconDefinition } from "./_types";
+import { initDistLib } from "./task_fs";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function dirInit({ DIST, LIB, rootDir }) {
-  const ignore = (err) => {
-    if (err.code === "EEXIST") return;
-    throw err;
-  };
-
-  await rmDirRecursive(DIST).catch((err) => {
-    if (err.code === "ENOENT") return;
-    throw err;
-  });
-  await fs.mkdir(DIST, { recursive: true }).catch(ignore);
-  await fs.mkdir(LIB).catch(ignore);
-  await fs.mkdir(path.resolve(LIB, "esm")).catch(ignore);
-  await fs.mkdir(path.resolve(LIB, "cjs")).catch(ignore);
-
-  const write = (filePath, str) =>
-    fs.writeFile(path.resolve(DIST, ...filePath), str, "utf8").catch(ignore);
-
-  const initFiles = ["index.d.ts", "index.esm.js", "index.js"];
-
-  for (const icon of icons) {
-    await fs.mkdir(path.resolve(DIST, icon.id)).catch(ignore);
-  }
-
-  for (const file of initFiles) {
-    await write([file], "// THIS FILE IS AUTO GENERATED\n");
-  }
+  await initDistLib({ DIST, LIB, rootDir }, { packLayout: true });
 }
 export async function writeIconModuleFiles(
   icon: IconDefinition,

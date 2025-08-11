@@ -2,57 +2,29 @@ import * as path from "path";
 import { promises as fs } from "fs";
 import { icons } from "../src/icons";
 import { iconRowTemplate } from "./templates";
-import { rmDirRecursive } from "./logics";
 import { forEachIconEntry } from "./task_common";
+import { initDistLib } from "./task_fs";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function dirInit({ DIST, LIB, rootDir }) {
   const ignore = (err) => {
-    if (err.code === "EEXIST") return;
+    if (err && (err.code === "EEXIST" || err.code === "ENOENT")) return;
     throw err;
   };
-
-  await rmDirRecursive(DIST);
-  await fs.mkdir(DIST, { recursive: true }).catch(ignore);
-  await fs.mkdir(LIB).catch(ignore);
-  await fs.mkdir(path.resolve(LIB, "esm")).catch(ignore);
-  await fs.mkdir(path.resolve(LIB, "cjs")).catch(ignore);
-
-  const write = (filePath, str) =>
-    fs.writeFile(path.resolve(DIST, ...filePath), str, "utf8").catch(ignore);
-
-  const initFiles = ["index.d.ts", "index.esm.js", "index.js"];
-
+  await initDistLib({ DIST, LIB, rootDir }, { packLayout: false });
+  // Add per-pack package.json files (kept from previous behavior)
   for (const icon of icons) {
-    await fs.mkdir(path.resolve(DIST, icon.id)).catch(ignore);
-
-    await write(
-      [icon.id, "index.js"],
-      "// THIS FILE IS AUTO GENERATED\nvar GenIcon = require('../lib').GenIcon\n",
-    );
-    await write(
-      [icon.id, "index.esm.js"],
-      "// THIS FILE IS AUTO GENERATED\nimport { GenIcon } from '../lib';\n",
-    );
-    await write(
-      [icon.id, "index.d.ts"],
-      "// THIS FILE IS AUTO GENERATED\nimport { IconTree, IconType } from '../lib'\n",
-    );
-    await write(
-      [icon.id, "package.json"],
-      JSON.stringify(
-        {
-          sideEffects: false,
-          module: "./index.esm.js",
-        },
-        null,
-        2,
-      ) + "\n",
-    );
-  }
-
-  for (const file of initFiles) {
-    await write([file], "// THIS FILE IS AUTO GENERATED\n");
+    await fs
+      .writeFile(
+        path.resolve(DIST, icon.id, "package.json"),
+        JSON.stringify(
+          { sideEffects: false, module: "./index.esm.js" },
+          null,
+          2,
+        ) + "\n",
+        "utf8",
+      )
+      .catch(ignore);
   }
 }
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
