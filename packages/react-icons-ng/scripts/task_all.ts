@@ -4,6 +4,7 @@ import { icons } from "../src/icons";
 import { iconRowTemplate } from "./templates";
 import { forEachIconEntry } from "./task_common";
 import { initDistLib } from "./task_fs";
+import { loadPackCache, savePackCache } from "./cache";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function dirInit({ DIST, LIB, rootDir }) {
@@ -33,24 +34,21 @@ export async function writeIconModule(icon, { DIST, LIB, rootDir }) {
     console.log(`writeIconModule: ${icon.id} ${icon.name} ...`);
   }
 
-  await forEachIconEntry(icon, async ({ name, iconData }) => {
-    const modRes = iconRowTemplate(icon, name, iconData, "module");
-    await fs.appendFile(
-      path.resolve(DIST, icon.id, "index.esm.js"),
-      modRes,
-      "utf8",
-    );
-    const comRes = iconRowTemplate(icon, name, iconData, "common");
-    await fs.appendFile(
-      path.resolve(DIST, icon.id, "index.js"),
-      comRes,
-      "utf8",
-    );
-    const dtsRes = iconRowTemplate(icon, name, iconData, "dts");
-    await fs.appendFile(
-      path.resolve(DIST, icon.id, "index.d.ts"),
-      dtsRes,
-      "utf8",
-    );
-  });
+  // Batch content and append once to reduce file I/O
+  let modBuf = "";
+  let comBuf = "";
+  let dtsBuf = "";
+  const cache = await loadPackCache(icon.id);
+  const changedRef = { value: false };
+  await forEachIconEntry(icon, ({ name, iconData }) => {
+    modBuf += iconRowTemplate(icon, name, iconData, "module");
+    comBuf += iconRowTemplate(icon, name, iconData, "common");
+    dtsBuf += iconRowTemplate(icon, name, iconData, "dts");
+  }, { cache, changedRef });
+  await fs.appendFile(path.resolve(DIST, icon.id, "index.esm.js"), modBuf, "utf8");
+  await fs.appendFile(path.resolve(DIST, icon.id, "index.js"), comBuf, "utf8");
+  await fs.appendFile(path.resolve(DIST, icon.id, "index.d.ts"), dtsBuf, "utf8");
+  if (changedRef.value) {
+    await savePackCache(icon.id, cache);
+  }
 }

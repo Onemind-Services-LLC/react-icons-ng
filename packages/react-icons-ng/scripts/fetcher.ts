@@ -24,11 +24,7 @@ async function main() {
     },
   };
 
-  // rm all icons and mkdir dist
-  await fs.promises.rm(distBaseDir, {
-    recursive: true,
-    force: true,
-  });
+  // Ensure base dir exists (avoid deleting to allow incremental fetch)
   await fs.promises.mkdir(distBaseDir, {
     recursive: true,
   });
@@ -53,9 +49,34 @@ async function main() {
 }
 
 async function gitCloneIcon(source: IconSetGitSource, ctx: Context) {
-  await gitCloneNoCheckout(source.url, source.localName, ctx.distBaseDir);
-  await gitSparseCheckoutSet(ctx.iconDir(source.localName), source.remoteDir);
-  await gitCheckout(ctx.iconDir(source.localName), source.hash);
+  const repoDir = ctx.iconDir(source.localName);
+  const exists = await fs.promises
+    .stat(repoDir)
+    .then(() => true)
+    .catch(() => false);
+
+  if (!exists) {
+    // Fresh clone
+    await gitCloneNoCheckout(source.url, source.localName, ctx.distBaseDir);
+    await gitSparseCheckoutSet(repoDir, source.remoteDir);
+  } else {
+    // Repo exists: ensure sparse-checkout is set (idempotent) and fetch latest
+    try {
+      await gitSparseCheckoutSet(repoDir, source.remoteDir);
+    } catch {
+      // ignore sparse-checkout failures and continue
+    }
+    // Best-effort fetch to update local refs without recloning
+    try {
+      const { runGit } = await import("./git-utils");
+      await runGit(["fetch", "--filter=tree:0", "--prune", "origin"], {
+        cwd: repoDir,
+      });
+    } catch {
+      // ignore fetch failures (e.g., offline); we'll still attempt checkout
+    }
+  }
+  await gitCheckout(repoDir, source.hash);
 }
 
 main().catch((err) => {

@@ -4,6 +4,7 @@ import { iconRowTemplate } from "./templates";
 import { forEachIconEntry } from "./task_common";
 import { IconDefinition } from "./_types";
 import { initDistLib } from "./task_fs";
+import { loadPackCache, savePackCache } from "./cache";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function dirInit({ DIST, LIB, rootDir }) {
@@ -17,6 +18,8 @@ export async function writeIconModuleFiles(
     console.log(`writeIconModuleFiles: ${icon.id} ${icon.name} ...`);
   }
 
+  const cache = await loadPackCache(icon.id);
+  const changedRef = { value: false };
   await forEachIconEntry(icon, async ({ name, iconData }) => {
     const modRes = iconRowTemplate(icon, name, iconData, "module");
     const modHeader =
@@ -42,5 +45,8 @@ export async function writeIconModuleFiles(
       dtsHeader + dtsRes,
       "utf8",
     );
-  });
+  }, { cache, changedRef });
+  if (changedRef.value) {
+    await savePackCache(icon.id, cache);
+  }
 }

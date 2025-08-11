@@ -15,6 +15,7 @@ import { computeIconVersions, renderVersionsTable } from "./versions";
 import { optimizeSVG } from "./svgo";
 import camelcase from "camelcase";
 import { IconDefinition } from "./_types";
+import { PackCache, hashString } from "./cache";
 
 export async function writeIconsManifest({ DIST, LIB, rootDir }) {
   const writeObj = icons.map((icon) => ({
@@ -118,6 +119,7 @@ export async function forEachIconEntry(
     iconData: unknown;
     file: string;
   }) => Promise<void> | void,
+  opts?: { cache?: PackCache; changedRef?: { value: boolean } },
 ) {
   const seen = new Set<string>();
   for (const content of icon.contents) {
@@ -128,7 +130,18 @@ export async function forEachIconEntry(
         ? optimizeSVG(svgStrRaw).data
         : svgStrRaw;
 
-      const iconData = await convertIconData(svgStr, content.multiColor);
+      const key = file;
+      const svgHash = hashString(svgStr);
+      let iconData: unknown;
+      if (opts?.cache && opts.cache[key] && opts.cache[key].svgHash === svgHash) {
+        iconData = opts.cache[key].iconData;
+      } else {
+        iconData = await convertIconData(svgStr, content.multiColor);
+        if (opts?.cache) {
+          opts.cache[key] = { svgHash, iconData };
+          if (opts.changedRef) opts.changedRef.value = true;
+        }
+      }
 
       const rawName = path.basename(file, path.extname(file));
       const pascalName = camelcase(rawName, { pascalCase: true });
