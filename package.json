@@ -25,7 +25,6 @@
     "clean:webpack5": "rm -rfv packages/webpack5-test/dist",
     "preformat": "yarn workspace react-icons-ng_builders sort-icons",
     "format": "prettier --write --ignore-unknown .",
-    "preformat:ci": "yarn workspace react-icons-ng_builders sort-icons",
     "format:ci": "prettier --check --ignore-unknown .",
     "lint": "eslint .",
     "lerna": "lerna",
