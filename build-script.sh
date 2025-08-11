@@ -36,6 +36,3 @@ awk "BEGIN{p=0}/$END_COMMENT/{p=1}p" README.md >> "$TEMP_FILE"
 
 # Replace README.md with temp file
 mv "$TEMP_FILE" README.md
-
-# Run formatter
-yarn format
