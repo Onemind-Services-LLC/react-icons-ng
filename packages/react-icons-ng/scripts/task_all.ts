@@ -8,8 +8,9 @@ import { loadPackCache, savePackCache } from "./cache";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function dirInit({ DIST, LIB, rootDir }) {
-  const ignore = (err) => {
-    if (err && (err.code === "EEXIST" || err.code === "ENOENT")) return;
+  const ignore = (err: unknown) => {
+    const e = err as NodeJS.ErrnoException | undefined;
+    if (e && (e.code === "EEXIST" || e.code === "ENOENT")) return;
     throw err;
   };
   await initDistLib({ DIST, LIB, rootDir }, { packLayout: false });

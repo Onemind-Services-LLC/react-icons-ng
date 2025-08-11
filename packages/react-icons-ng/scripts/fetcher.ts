@@ -71,6 +71,8 @@ async function gitCloneIcon(source: IconSetGitSource, ctx: Context) {
       const { runGit } = await import("./git-utils");
       await runGit(["fetch", "--filter=tree:0", "--prune", "origin"], {
         cwd: repoDir,
+        label: `${source.localName} fetch`,
+        retries: 2,
       });
     } catch {
       // ignore fetch failures (e.g., offline); we'll still attempt checkout
