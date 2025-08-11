@@ -4,14 +4,14 @@
   "private": true,
   "dependencies": {
     "@onemind-services-llc/react-icons-ng": "^5.3.0",
-    "@types/jest": "29.5.14",
-    "@types/node": "22.13.10",
-    "@types/react": "^19.0.1",
+    "@types/jest": "30.0.0",
+    "@types/node": "24.2.1",
+    "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "react-scripts": "5.0.1",
-    "typescript": "^5.5.4"
+    "typescript": "^5.9.2"
   },
   "scripts": {
     "start": "react-scripts start",

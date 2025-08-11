@@ -7,13 +7,13 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^22.0.0",
-    "@typescript-eslint/eslint-plugin": "^8.0.0",
-    "@typescript-eslint/parser": "^8.0.0",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react": "^7.35.0",
-    "lerna": "^8.1.7",
-    "prettier": "^3.3.3"
+    "@types/node": "^24.2.1",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "@typescript-eslint/parser": "^8.39.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.5",
+    "lerna": "^8.2.3",
+    "prettier": "^3.6.2"
   },
   "scripts": {
     "clean": "yarn clean:root && yarn clean:demo && yarn clean:preview && yarn clean:react-icons && yarn clean:ts-test && yarn clean:webpack5",
