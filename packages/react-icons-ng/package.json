@@ -48,6 +48,7 @@
     "build": "yarn ts ./scripts/build.ts",
     "fetch": "yarn ts ./scripts/fetcher.ts",
     "diff": "yarn ts ./scripts/check.ts",
-    "update-hashes": "yarn ts ./scripts/update-hashes.ts"
+    "update-hashes": "yarn ts ./scripts/update-hashes.ts",
+    "sort-icons": "yarn ts ./scripts/sort-icons.ts"
   }
 }

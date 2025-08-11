@@ -2,6 +2,10 @@
 node_modules
 /dist/
 
+# Ignore cache directories
+.cache
+**/.cache
+
 /packages/_react-icons-ng
 /packages/_react-icons-ng-pack
 
