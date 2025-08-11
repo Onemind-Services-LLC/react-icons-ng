@@ -9,7 +9,8 @@
     "baseUrl": ".",
     "declaration": true,
     "strict": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "skipLibCheck": true
   },
   "include": ["src/**/*.tsx"],
   "exclude": ["icons"]

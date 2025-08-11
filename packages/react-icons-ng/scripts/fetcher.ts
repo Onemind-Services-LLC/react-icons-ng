@@ -1,7 +1,7 @@
 import { SingleBar } from "cli-progress";
 import * as util from "node:util";
 import { execFile as rawExecFile } from "node:child_process";
-import * as fs from "fs"
+import * as fs from "fs";
 import * as path from "path";
 import { type IconSetGitSource } from "./_types";
 import { icons } from "../src/icons";

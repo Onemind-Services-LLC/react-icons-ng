@@ -7,10 +7,8 @@ const filePath = path.resolve(__dirname, "../src/icons/index.ts");
 console.log(`[update-hashes] Scanning icon sources in: ${filePath}`);
 let src = fs.readFileSync(filePath, "utf8");
 
-// Match each `source: { ... url: "..." ... branch: "..." ... hash: "..." ... }` block
-// and capture url, branch, and hash. Non-greedy to avoid spanning multiple blocks.
-const sourceRe =
-  /source:\s*{[\s\S]*?url:\s*"([^"]+)"[\s\S]*?branch:\s*"([^"]+)"[\s\S]*?hash:\s*"([a-f0-9]+)"[\s\S]*?}/g;
+// Match each `source: { ... }` block non-greedily, then pick fields from inside.
+const sourceRe = /source:\s*{[\s\S]*?}/g;
 
 let updated = 0;
 let scanned = 0;
@@ -22,7 +20,15 @@ let match: RegExpExecArray | null;
 const replacements: { start: number; end: number; text: string }[] = [];
 
 while ((match = sourceRe.exec(src))) {
-  const [block, url, branch, currentHash] = match;
+  const [block] = match;
+  const url = (block.match(/url:\s*"([^"]+)"/) || [])[1];
+  const branch = (block.match(/branch:\s*"([^"]+)"/) || [])[1];
+  const currentHash = (block.match(/hash:\s*"([a-f0-9]+)"/) || [])[1];
+  const localName = (block.match(/localName:\s*"([^"]+)"/) || [])[1];
+
+  if (!url || !currentHash) {
+    continue;
+  }
   scanned += 1;
   if (!branch || !branch.trim()) {
     skippedNoBranch += 1;
@@ -34,17 +40,33 @@ while ((match = sourceRe.exec(src))) {
     console.log(
       `[update-hashes] Checking ${url}#${branch} (current: ${currentHash})`,
     );
-    const ref = execSync(`git ls-remote ${url} ${branch}`, {
-      encoding: "utf8",
-    }).trim();
-    if (!ref) {
+    // Prefer local clone (consistent with check.ts) and avoid network hiccups.
+    let newHash = "";
+    if (localName) {
+      const localRepoDir = path.resolve(__dirname, `../icons/${localName}`);
+      try {
+        const rev = execSync(`git rev-parse origin/${branch}`, {
+          cwd: localRepoDir,
+          encoding: "utf8",
+        }).trim();
+        newHash = rev.split(/[\t\s]/)[0];
+      } catch (_) {
+        // Fall back to remote lookup if local repo missing
+      }
+    }
+    if (!newHash) {
+      const ref = execSync(`git ls-remote ${url} ${branch}`, {
+        encoding: "utf8",
+      }).trim();
+      if (ref) newHash = ref.split(/[\t\s]/)[0];
+    }
+    if (!newHash) {
       notFound += 1;
       console.log(
         `[update-hashes] No ref found for ${url}#${branch}; skipping`,
       );
       continue; // No match for that branch
     }
-    const newHash = ref.split(/[\t\s]/)[0];
     if (!newHash || newHash === currentHash) {
       unchanged += 1;
       console.log(`[update-hashes] Up-to-date ${url}#${branch}`);
