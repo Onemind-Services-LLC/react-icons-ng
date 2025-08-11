@@ -112,10 +112,13 @@ export async function gitCloneNoCheckout(
 }
 
 export async function gitSparseCheckoutSet(cwd: string, remoteDir: string) {
-  await runGit(["sparse-checkout", "set", "--cone", "--skip-checks", remoteDir], {
-    cwd,
-    label: `sparse-checkout set ${remoteDir}`,
-  });
+  await runGit(
+    ["sparse-checkout", "set", "--cone", "--skip-checks", remoteDir],
+    {
+      cwd,
+      label: `sparse-checkout set ${remoteDir}`,
+    },
+  );
 }
 
 export async function gitCheckout(cwd: string, ref: string) {
@@ -128,10 +131,13 @@ export async function gitRevListCount(
   rangeTo: string,
 ): Promise<number> {
   try {
-    const { stdout } = await runGit(["rev-list", "--count", `${rangeFrom}..${rangeTo}`], {
-      cwd,
-      label: `rev-list --count ${rangeFrom}..${rangeTo}`,
-    });
+    const { stdout } = await runGit(
+      ["rev-list", "--count", `${rangeFrom}..${rangeTo}`],
+      {
+        cwd,
+        label: `rev-list --count ${rangeFrom}..${rangeTo}`,
+      },
+    );
     return Number(stdout.trim()) || 0;
   } catch {
     return 0;
