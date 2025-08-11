@@ -33,7 +33,13 @@ async function main() {
 
   const items = icons.filter((icon) => icon.source);
   const worker = async (icon) => {
-    await gitCloneIcon(icon.source as IconSetGitSource, ctx);
+    try {
+      await gitCloneIcon(icon.source as IconSetGitSource, ctx);
+    } catch (e: unknown) {
+      const label = `${icon.id} (${icon.source?.localName})`;
+      const message = e instanceof Error ? e.message : String(e);
+      throw new Error(`[clone] Failed for ${label}\n${message}`);
+    }
   };
   await runConcurrentWithRunning(
     "Cloning Icons",
@@ -44,24 +50,48 @@ async function main() {
   );
 }
 
+async function runGit(label: string, args: string[], options: { cwd: string }) {
+  try {
+    return await execFile("git", args, options);
+  } catch (e: unknown) {
+    const pick = (k: "stderr" | "stdout"): string => {
+      if (typeof e === "object" && e && k in (e as Record<string, unknown>)) {
+        const v = (e as Record<string, unknown>)[k];
+        return typeof v === "string" ? v : String(v ?? "");
+      }
+      return "";
+    };
+    const stderr = pick("stderr");
+    const stdout = pick("stdout");
+    const cmd = `git ${args.join(" ")}`;
+    const details = [
+      `label=${label}`,
+      `cwd=${options.cwd}`,
+      `cmd=${cmd}`,
+      stderr && `stderr=${String(stderr).trim()}`,
+      stdout && `stdout=${String(stdout).trim()}`,
+    ]
+      .filter(Boolean)
+      .join("\n");
+    throw new Error(`[fetch] git command failed\n${details}`);
+  }
+}
+
 async function gitCloneIcon(source: IconSetGitSource, ctx: Context) {
-  await execFile(
-    "git",
+  const label = `${source.localName} (${source.url}#${source.branch}@${source.hash})`;
+  await runGit(
+    label,
     ["clone", "--filter=tree:0", "--no-checkout", source.url, source.localName],
-    {
-      cwd: ctx.distBaseDir,
-    },
+    { cwd: ctx.distBaseDir },
   );
 
-  await execFile(
-    "git",
+  await runGit(
+    label,
     ["sparse-checkout", "set", "--cone", "--skip-checks", source.remoteDir],
-    {
-      cwd: ctx.iconDir(source.localName),
-    },
+    { cwd: ctx.iconDir(source.localName) },
   );
 
-  await execFile("git", ["checkout", source.hash], {
+  await runGit(label, ["checkout", source.hash], {
     cwd: ctx.iconDir(source.localName),
   });
 }
