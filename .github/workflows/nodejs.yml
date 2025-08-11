@@ -9,6 +9,11 @@ env:
   NODE_AUTH_TOKEN: ${{ secrets.GIT_TOKEN }}
   NPM_TOKEN: ${{ secrets.GIT_TOKEN }}
 
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
