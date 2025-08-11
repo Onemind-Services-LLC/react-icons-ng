@@ -50,7 +50,7 @@ while ((match = sourceRe.exec(src))) {
           encoding: "utf8",
         }).trim();
         newHash = rev.split(/[\t\s]/)[0];
-      } catch (_) {
+      } catch {
         // Fall back to remote lookup if local repo missing
       }
     }
