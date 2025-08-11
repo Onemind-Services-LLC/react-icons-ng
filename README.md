@@ -87,6 +87,7 @@ function Question() {
 |                   [EOS Icons](https://eos-icons.com/)                    |                [MIT](https://gitlab.com/SUSE-UIUX/eos-icons/-/blob/master/LICENSE)                |                  5.4.0                   |  156  |
 |                [Font Awesome 5](https://fontawesome.com/)                |                 [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/)                 |            5.15.4-3-gafecf2a             | 1612  |
 |                [Font Awesome 6](https://fontawesome.com/)                |                 [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/)                 |                  6.7.2                   | 2060  |
+|                [Font Awesome 7](https://fontawesome.com/)                |                 [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/)                 |             7.0.0-2-gc482aa2             | 2806  |
 |      [Flat Color Icons](https://github.com/icons8/flat-color-icons)      |                            [MIT](https://opensource.org/licenses/MIT)                             |                  1.0.2                   |  329  |
 |                   [Feather](https://feathericons.com/)                   |                [MIT](https://github.com/feathericons/feather/blob/master/LICENSE)                 |                  4.29.2                  |  287  |
 |  [Fluent System Icons](https://developer.microsoft.com/en-us/fluentui)   |           [MIT](https://github.com/microsoft/fluentui-system-icons/blob/master/LICENSE)           |                  1.0.0                   | 4794  |
@@ -118,7 +119,7 @@ function Question() {
 |      [VS Code Icons](https://github.com/microsoft/vscode-codicons)       |                     [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)                     |                  0.0.39                  |  493  |
 |      [Weather Icons](https://erikflowers.github.io/weather-icons/)       |                            [SIL OFL 1.1](https://scripts.sil.org/OFL)                             |                  2.0.12                  |  219  |
 
-Total Count of Icons: 77189
+Total Count of Icons: 79995
 
 [//]: # END_VERSION
 
