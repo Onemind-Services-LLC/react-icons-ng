@@ -1,9 +1,9 @@
 {
   "name": "demo-pack",
-  "version": "5.4.0",
+  "version": "5.4.1",
   "private": true,
   "dependencies": {
-    "@onemind-services-llc/react-icons-ng-pack": "^5.4.0",
+    "@onemind-services-llc/react-icons-ng-pack": "^5.4.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-scripts": "^5.0.1"
