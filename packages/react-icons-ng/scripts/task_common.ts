@@ -6,7 +6,9 @@ import findPackage from "find-package";
 import { promisify } from "util";
 const exec = promisify(require("child_process").exec);
 import { icons } from "../src/icons";
-import { getIconFiles, copyRecursive, rmDirRecursive } from "./logics";
+import { getIconFiles, copyRecursive, rmDirRecursive, convertIconData } from "./logics";
+import { optimizeSVG } from "./svgo";
+import camelcase from "camelcase";
 import { IconDefinition } from "./_types";
 
 export async function writeIconsManifest({ DIST, LIB, rootDir }) {
@@ -157,6 +159,38 @@ export async function writeIconVersions(
     "\n";
 
   await fs.writeFile(path.resolve(rootDir, "VERSIONS"), versionsStr, "utf8");
+}
+
+// Shared iterator for icon entries that handles:
+// - discovering files per content
+// - reading + optional SVGO optimize
+// - converting to tree data
+// - computing the final export name (with formatter)
+// - de-duplicating by final name
+export async function forEachIconEntry(
+  icon: IconDefinition,
+  handler: (args: { name: string; iconData: unknown; file: string }) => Promise<void> | void,
+) {
+  const seen = new Set<string>();
+  for (const content of icon.contents) {
+    const files = await getIconFiles(content);
+    for (const file of files) {
+      const svgStrRaw = await fs.readFile(file, "utf8");
+      const svgStr = content.processWithSVGO
+        ? optimizeSVG(svgStrRaw).data
+        : svgStrRaw;
+
+      const iconData = await convertIconData(svgStr, content.multiColor);
+
+      const rawName = path.basename(file, path.extname(file));
+      const pascalName = camelcase(rawName, { pascalCase: true });
+      const name = (content.formatter && content.formatter(pascalName, file)) || pascalName;
+      if (seen.has(name)) continue;
+      seen.add(name);
+
+      await handler({ name, iconData, file });
+    }
+  }
 }
 
 export async function writePackageJson(override, { DIST, LIB, rootDir }) {

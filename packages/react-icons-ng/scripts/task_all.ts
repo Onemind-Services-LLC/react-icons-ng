@@ -1,10 +1,9 @@
 import * as path from "path";
 import { promises as fs } from "fs";
-import camelcase from "camelcase";
 import { icons } from "../src/icons";
 import { iconRowTemplate } from "./templates";
-import { getIconFiles, convertIconData, rmDirRecursive } from "./logics";
-import { optimizeSVG } from "./svgo";
+import { rmDirRecursive } from "./logics";
+import { forEachIconEntry } from "./task_common";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function dirInit({ DIST, LIB, rootDir }) {
@@ -62,47 +61,24 @@ export async function writeIconModule(icon, { DIST, LIB, rootDir }) {
     console.log(`writeIconModule: ${icon.id} ${icon.name} ...`);
   }
 
-  const exists = new Set(); // for remove duplicate
-  for (const content of icon.contents) {
-    const files = await getIconFiles(content);
-
-    for (const file of files) {
-      const svgStrRaw = await fs.readFile(file, "utf8");
-      const svgStr = content.processWithSVGO
-        ? optimizeSVG(svgStrRaw).data
-        : svgStrRaw;
-
-      const iconData = await convertIconData(svgStr, content.multiColor);
-
-      const rawName = path.basename(file, path.extname(file));
-      const pascalName = camelcase(rawName, { pascalCase: true });
-      const name =
-        (content.formatter && content.formatter(pascalName, file)) ||
-        pascalName;
-      if (exists.has(name)) continue;
-      exists.add(name);
-
-      // write like: module/fa/index.esm.js
-      const modRes = iconRowTemplate(icon, name, iconData, "module");
-      await fs.appendFile(
-        path.resolve(DIST, icon.id, "index.esm.js"),
-        modRes,
-        "utf8",
-      );
-      const comRes = iconRowTemplate(icon, name, iconData, "common");
-      await fs.appendFile(
-        path.resolve(DIST, icon.id, "index.js"),
-        comRes,
-        "utf8",
-      );
-      const dtsRes = iconRowTemplate(icon, name, iconData, "dts");
-      await fs.appendFile(
-        path.resolve(DIST, icon.id, "index.d.ts"),
-        dtsRes,
-        "utf8",
-      );
-
-      exists.add(file);
-    }
-  }
+  await forEachIconEntry(icon, async ({ name, iconData }) => {
+    const modRes = iconRowTemplate(icon, name, iconData, "module");
+    await fs.appendFile(
+      path.resolve(DIST, icon.id, "index.esm.js"),
+      modRes,
+      "utf8",
+    );
+    const comRes = iconRowTemplate(icon, name, iconData, "common");
+    await fs.appendFile(
+      path.resolve(DIST, icon.id, "index.js"),
+      comRes,
+      "utf8",
+    );
+    const dtsRes = iconRowTemplate(icon, name, iconData, "dts");
+    await fs.appendFile(
+      path.resolve(DIST, icon.id, "index.d.ts"),
+      dtsRes,
+      "utf8",
+    );
+  });
 }

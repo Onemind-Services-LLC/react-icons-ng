@@ -1,32 +1,16 @@
-import * as path from "path";
-import { performance } from "perf_hooks";
 import { icons } from "../src/icons";
 import { ICON_CONCURRENCY } from "./concurrency";
-import { createBar, runSequential, runConcurrentWithRunning } from "./progress";
+import { createBar, runSequential, forEachWithProgress, timeTask } from "./progress";
 import * as taskCommon from "./task_common";
 import * as taskAll from "./task_all";
 import * as taskFiles from "./task_files";
-
-// file path
-const _rootDir = path.resolve(__dirname, "../");
-
-async function task(name, fn) {
-  const start = performance.now();
-  console.log(`================= ${name} =================`);
-  await fn();
-  const end = performance.now();
-  console.log(`${name}: `, Math.floor(end - start) / 1000, "sec\n\n");
-}
+import { getDistDirs } from "./paths";
 
 async function main() {
   try {
     // react-icons-ng/all
-    const allOpt = {
-      rootDir: _rootDir,
-      DIST: path.resolve(_rootDir, "../_react-icons-ng"),
-      LIB: path.resolve(_rootDir, "../_react-icons-ng/lib"),
-    };
-    await task("react-icons-ng initialize", async () => {
+    const allOpt = getDistDirs("all");
+    await timeTask("react-icons-ng initialize", async () => {
       const steps = [
         () => taskAll.dirInit(allOpt),
         () => taskCommon.writeEntryPoints(allOpt),
@@ -46,8 +30,8 @@ async function main() {
       ];
       await runSequential("Initialize", steps);
     });
-    await task("react-icons-ng write icons", async () => {
-      await runConcurrentWithRunning(
+    await timeTask("react-icons-ng write icons", async () => {
+      await forEachWithProgress(
         "Write Icons",
         icons,
         (icon) => taskAll.writeIconModule(icon, allOpt),
@@ -57,12 +41,8 @@ async function main() {
     });
 
     // react-icons-ng-pack
-    const filesOpt = {
-      rootDir: _rootDir,
-      DIST: path.resolve(_rootDir, "../_react-icons-ng-pack"),
-      LIB: path.resolve(_rootDir, "../_react-icons-ng-pack/lib"),
-    };
-    await task("react-icons-ng-pack initialize", async () => {
+    const filesOpt = getDistDirs("pack");
+    await timeTask("react-icons-ng-pack initialize", async () => {
       const steps = [
         () => taskFiles.dirInit(filesOpt),
         () => taskCommon.writeEntryPoints(filesOpt),
@@ -82,8 +62,8 @@ async function main() {
       ];
       await runSequential("Initialize", steps);
     });
-    await task("react-icons-ng-pack write icons", async () => {
-      await runConcurrentWithRunning(
+    await timeTask("react-icons-ng-pack write icons", async () => {
+      await forEachWithProgress(
         "Write Pack Icons",
         icons,
         (icon) => taskFiles.writeIconModuleFiles(icon, filesOpt),
@@ -93,7 +73,7 @@ async function main() {
     });
 
     // write to VERSIONS file
-    await task("react-icons-ng_builders write icon versions", async () => {
+    await timeTask("react-icons-ng_builders write icon versions", async () => {
       const bar = createBar("Versions");
       bar.start(icons.length, 0);
       await taskCommon.writeIconVersions(filesOpt, (current) =>
@@ -103,7 +83,7 @@ async function main() {
     });
 
     // write to d.ts files
-    await task("react-icons-ng_builders build common library", async () => {
+    await timeTask("react-icons-ng_builders build common library", async () => {
       const steps = [
         () => taskCommon.buildLib(filesOpt),
         () => taskCommon.copyLib(allOpt),

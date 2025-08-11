@@ -71,3 +71,22 @@ export async function runConcurrentWithRunning<T>(
   await queue.onIdle();
   bar.stop();
 }
+
+export async function timeTask<T>(label: string, fn: () => Promise<T>) {
+  const start = Date.now();
+  console.log(`================= ${label} =================`);
+  const res = await fn();
+  const end = Date.now();
+  console.log(`${label}:`, Math.floor(end - start) / 1000, "sec\n\n");
+  return res;
+}
+
+export async function forEachWithProgress<T>(
+  label: string,
+  items: T[],
+  worker: (item: T) => Promise<void>,
+  concurrency: number,
+  key?: (item: T) => string,
+) {
+  await runConcurrentWithRunning(label, items, worker, concurrency, key);
+}
