@@ -1,9 +1,7 @@
-import * as util from "node:util";
-import { execFile as rawExecFile } from "node:child_process";
 import * as path from "path";
 import { type IconSetGitSource } from "./_types";
 import { icons } from "../src/icons";
-const execFile = util.promisify(rawExecFile);
+import { gitRevListCount, gitRevParse } from "./git-utils";
 
 interface Context {
   distBaseDir: string;
@@ -50,27 +48,11 @@ async function gitDiffCount(
   ctx: Context,
 ): Promise<{ current: string; diffs: number }> {
   try {
-    const hashRes = await execFile(
-      "git",
-      ["rev-parse", `origin/${source.branch}`],
-      {
-        cwd: ctx.iconDir(source.localName),
-      },
-    );
-    const currentHash = hashRes.stdout.trim();
-
-    const count = await execFile(
-      "git",
-      ["rev-list", "--count", `${source.hash}..${currentHash}`],
-      {
-        cwd: ctx.iconDir(source.localName),
-      },
-    );
-
-    return {
-      current: currentHash,
-      diffs: +count.stdout.trim(),
-    };
+    const cwd = ctx.iconDir(source.localName);
+    const currentHash =
+      (await gitRevParse(cwd, `origin/${source.branch}`)) || "";
+    const diffs = await gitRevListCount(cwd, source.hash, currentHash);
+    return { current: currentHash, diffs };
   } catch (e) {
     console.error('Error while checking icon "%s", %s', source.localName, e);
     return {

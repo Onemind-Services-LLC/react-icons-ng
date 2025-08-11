@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import * as fs from "fs";
 import * as path from "path";
-import { execFileSync } from "child_process";
+import { gitFetchOrigin, gitLsRemote, gitRevParse } from "./git-utils";
 import { ICON_CONCURRENCY } from "./concurrency";
 import { runConcurrentWithRunning } from "./progress";
 
@@ -69,90 +69,29 @@ async function main() {
           __dirname,
           `../icons/${item.localName}`,
         );
-        try {
-          const rev = execFileSync(
-            "git",
-            ["rev-parse", `origin/${item.branch}`],
-            {
-              cwd: localRepoDir,
-              encoding: "utf8",
-              stdio: ["ignore", "pipe", "ignore"],
-            },
-          )
-            .toString()
-            .trim();
-          if (rev) newHash = rev.split(/[\t\s]/)[0];
-        } catch {
-          // ignore; will try other strategies below
-        }
+        const rev = await gitRevParse(localRepoDir, `origin/${item.branch}`);
+        if (rev) newHash = rev.split(/[\t\s]/)[0];
       }
       // Fallback: remote lookup so results are independent of local clone freshness
       if (!newHash) {
-        try {
-          const ref = execFileSync(
-            "git",
-            ["ls-remote", item.url, item.branch],
-            {
-              encoding: "utf8",
-              stdio: ["ignore", "pipe", "ignore"],
-            },
-          )
-            .toString()
-            .trim();
-          if (ref) newHash = ref.split(/[\t\s]/)[0];
-        } catch {
-          // ignore; fallback to local clone if available
-        }
+        const ref = await gitLsRemote(item.url, item.branch);
+        if (ref) newHash = ref;
       }
       if (!newHash && item.localName) {
         const localRepoDir = path.resolve(
           __dirname,
           `../icons/${item.localName}`,
         );
-        try {
-          // Ensure the remote tracking branch is up to date
-          execFileSync(
-            "git",
-            ["fetch", "--prune", "--quiet", "origin", item.branch],
-            {
-              cwd: localRepoDir,
-              stdio: ["ignore", "ignore", "ignore"],
-            },
-          );
-        } catch {
-          // ignore fetch issues; we'll still rely on local refs
-        }
+        await gitFetchOrigin(localRepoDir, item.branch);
         // Prefer origin/<branch> reference
-        try {
-          const rev = execFileSync(
-            "git",
-            ["rev-parse", `origin/${item.branch}`],
-            {
-              cwd: localRepoDir,
-              encoding: "utf8",
-              stdio: ["ignore", "pipe", "ignore"],
-            },
-          )
-            .toString()
-            .trim();
-          if (rev) newHash = rev.split(/[\t\s]/)[0];
-        } catch {
-          // ignore
+        {
+          const rev2 = await gitRevParse(localRepoDir, `origin/${item.branch}`);
+          if (rev2) newHash = rev2.split(/[\t\s]/)[0];
         }
         // Fallback to FETCH_HEAD if available
         if (!newHash) {
-          try {
-            const fetched = execFileSync("git", ["rev-parse", "FETCH_HEAD"], {
-              cwd: localRepoDir,
-              encoding: "utf8",
-              stdio: ["ignore", "pipe", "ignore"],
-            })
-              .toString()
-              .trim();
-            if (fetched) newHash = fetched.split(/[\t\s]/)[0];
-          } catch {
-            // ignore
-          }
+          const fetched = await gitRevParse(localRepoDir, "FETCH_HEAD");
+          if (fetched) newHash = fetched.split(/[\t\s]/)[0];
         }
       }
       if (!newHash) {
