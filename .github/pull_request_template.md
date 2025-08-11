@@ -8,7 +8,7 @@
 
 <!-- Select all applicable types of changes. -->
 
-- [ ] Bug fix (a non-breaking change that fixes an issue)
+- [ ] Bugfix (a non-breaking change that fixes an issue)
 - [ ] New feature (a non-breaking change that adds functionality)
 - [ ] Improvement (enhancements or optimizations to existing functionality)
 - [ ] Documentation update (changes or additions to documentation)
