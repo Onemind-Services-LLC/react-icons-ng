@@ -5,9 +5,7 @@ name: Node.js CI
   - pull_request
 
 env:
-  GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
-  NODE_AUTH_TOKEN: ${{ secrets.GIT_TOKEN }}
-  NPM_TOKEN: ${{ secrets.GIT_TOKEN }}
+  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 permissions:
   contents: write
@@ -27,9 +25,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-
-      - name: Setup NPMRC
-        run: cp .npmrc.ci .npmrc
+          registry-url: https://npm.pkg.github.com
+          scope: '@onemind-services-llc'
 
       - name: corepack
         run: corepack enable
