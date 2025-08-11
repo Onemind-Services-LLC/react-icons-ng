@@ -1,5 +1,5 @@
 import "@styles/global.scss";
-
+import { Toaster } from "react-hot-toast";
 import Container from "@components/@core/content";
 import Sidebar from "@components/@core/sidebar";
 import { BRAND_TITLE } from "@utils/constants";
@@ -25,6 +25,7 @@ class App extends NextApp<Props> {
           <Container>
             <Component {...pageProps} />
           </Container>
+          <Toaster position="bottom-center" />
         </DarkThemeProvider>
       </>
     );

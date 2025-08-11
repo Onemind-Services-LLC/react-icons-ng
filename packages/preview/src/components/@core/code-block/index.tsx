@@ -1,4 +1,4 @@
-import toast from "cogo-toast";
+import { toast } from "react-hot-toast";
 import copy from "copy-to-clipboard";
 import { Highlight, themes } from "prism-react-renderer";
 import React from "react";
@@ -7,9 +7,7 @@ import { IoClipboard } from "@onemind-services-llc/react-icons-ng/io5";
 export default function CodeBlock({ code, language }) {
   const copyToClipboard = () => {
     copy(code);
-    toast.success(`Copied to clipboard`, {
-      position: "bottom-center",
-    });
+    toast.success(`Copied to clipboard`);
   };
 
   return (
