@@ -1,9 +1,9 @@
 {
   "name": "react-ts-test",
-  "version": "5.4.0-alpha.0",
+  "version": "5.4.0-alpha.2",
   "private": true,
   "dependencies": {
-    "@onemind-services-llc/react-icons-ng": "^5.4.0-alpha.0",
+    "@onemind-services-llc/react-icons-ng": "^5.4.0-alpha.2",
     "@types/jest": "30.0.0",
     "@types/node": "24.2.1",
     "@types/react": "^19.1.9",
