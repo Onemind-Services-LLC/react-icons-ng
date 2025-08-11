@@ -23,7 +23,6 @@ interface Item {
 type Result = { start: number; end: number; text: string } | null;
 
 async function main() {
-  console.log(`[update-hashes] Scanning icon sources in: ${filePath}`);
   let src = fs.readFileSync(filePath, "utf8");
 
   let updated = 0;
@@ -64,19 +63,8 @@ async function main() {
   const worker = async (item: Item) => {
     try {
       let newHash = "";
-      // Prefer remote lookup so results are independent of local clone freshness
-      try {
-        const ref = execFileSync("git", ["ls-remote", item.url, item.branch], {
-          encoding: "utf8",
-          stdio: ["ignore", "pipe", "ignore"],
-        })
-          .toString()
-          .trim();
-        if (ref) newHash = ref.split(/[\t\s]/)[0];
-      } catch {
-        // ignore; fallback to local clone if available
-      }
-      if (!newHash && item.localName) {
+      // Try local origin/<branch> first (aligns with check.ts)
+      if (item.localName) {
         const localRepoDir = path.resolve(
           __dirname,
           `../icons/${item.localName}`,
@@ -93,9 +81,78 @@ async function main() {
           )
             .toString()
             .trim();
-          newHash = rev.split(/[\t\s]/)[0];
+          if (rev) newHash = rev.split(/[\t\s]/)[0];
+        } catch {
+          // ignore; will try other strategies below
+        }
+      }
+      // Fallback: remote lookup so results are independent of local clone freshness
+      if (!newHash) {
+        try {
+          const ref = execFileSync(
+            "git",
+            ["ls-remote", item.url, item.branch],
+            {
+              encoding: "utf8",
+              stdio: ["ignore", "pipe", "ignore"],
+            },
+          )
+            .toString()
+            .trim();
+          if (ref) newHash = ref.split(/[\t\s]/)[0];
+        } catch {
+          // ignore; fallback to local clone if available
+        }
+      }
+      if (!newHash && item.localName) {
+        const localRepoDir = path.resolve(
+          __dirname,
+          `../icons/${item.localName}`,
+        );
+        try {
+          // Ensure the remote tracking branch is up to date
+          execFileSync(
+            "git",
+            ["fetch", "--prune", "--quiet", "origin", item.branch],
+            {
+              cwd: localRepoDir,
+              stdio: ["ignore", "ignore", "ignore"],
+            },
+          );
+        } catch {
+          // ignore fetch issues; we'll still rely on local refs
+        }
+        // Prefer origin/<branch> reference
+        try {
+          const rev = execFileSync(
+            "git",
+            ["rev-parse", `origin/${item.branch}`],
+            {
+              cwd: localRepoDir,
+              encoding: "utf8",
+              stdio: ["ignore", "pipe", "ignore"],
+            },
+          )
+            .toString()
+            .trim();
+          if (rev) newHash = rev.split(/[\t\s]/)[0];
         } catch {
           // ignore
+        }
+        // Fallback to FETCH_HEAD if available
+        if (!newHash) {
+          try {
+            const fetched = execFileSync("git", ["rev-parse", "FETCH_HEAD"], {
+              cwd: localRepoDir,
+              encoding: "utf8",
+              stdio: ["ignore", "pipe", "ignore"],
+            })
+              .toString()
+              .trim();
+            if (fetched) newHash = fetched.split(/[\t\s]/)[0];
+          } catch {
+            // ignore
+          }
         }
       }
       if (!newHash) {
@@ -103,7 +160,8 @@ async function main() {
         results.push(null);
         return;
       }
-      if (!newHash || newHash === item.currentHash) {
+      // No-op: hash is already current
+      if (newHash === item.currentHash) {
         unchanged += 1;
         results.push(null);
         return;
