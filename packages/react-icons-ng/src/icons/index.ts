@@ -1,7 +1,7 @@
 import * as path from "path";
 import camelcase from "camelcase";
 import { type IconDefinition } from "../../scripts/_types";
-import { glob } from "glob-promise";
+import { glob } from "glob";
 export const icons: IconDefinition[] = [
   {
     id: "ai",
@@ -720,13 +720,13 @@ export const icons: IconDefinition[] = [
     contents: [
       {
         files: async () => {
-          const normal = await glob.glob(
+          const normal = await glob(
             path.resolve(
               __dirname,
               "../../icons/material-design-icons/src/*/*/materialicons/24px.svg",
             ),
           );
-          const twotone = await glob.glob(
+          const twotone = await glob(
             path.resolve(
               __dirname,
               "../../icons/material-design-icons/src/*/*/materialiconstwotone/24px.svg",
