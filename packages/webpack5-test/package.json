@@ -1,6 +1,6 @@
 {
   "name": "webpack5-test",
-  "version": "5.4.3",
+  "version": "5.4.4",
   "main": "index.js",
   "private": true,
   "license": "MIT",
@@ -14,6 +14,6 @@
     "webpack-cli": "^6.0.1"
   },
   "dependencies": {
-    "@onemind-services-llc/react-icons-ng": "^5.4.3"
+    "@onemind-services-llc/react-icons-ng": "^5.4.4"
   }
 }
