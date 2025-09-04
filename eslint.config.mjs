@@ -49,13 +49,9 @@ export default defineConfig([
     },
     plugins: {
       "@typescript-eslint": tsPlugin,
-      react: reactPlugin,
-      "react-hooks": reactHooksPlugin,
     },
     rules: {
       ...tsPlugin.configs.recommended.rules,
-      ...reactPlugin.configs.recommended.rules,
-      ...reactHooksPlugin.configs.recommended.rules,
       "no-unused-vars": "off",
     },
   },
