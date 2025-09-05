@@ -1,7 +1,6 @@
 import { defineConfig } from "eslint/config";
 import js from "@eslint/js";
-import parser from "@typescript-eslint/parser";
-import tsPlugin from "@typescript-eslint/eslint-plugin";
+import typescriptEslint from "typescript-eslint";
 import babelParser from "@babel/eslint-parser";
 import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
@@ -27,7 +26,7 @@ export default defineConfig([
     ],
   },
 
-  // JavaScript recommended
+  // JavaScript
   {
     files: ["**/*.{js,mjs,cjs}"],
     plugins: { js },
@@ -38,7 +37,7 @@ export default defineConfig([
   {
     files: ["*.ts", "*.tsx"],
     languageOptions: {
-      parser,
+      parser: typescriptEslint.parser,
       parserOptions: {
         project: [
           "./packages/react-icons-ng/tsconfig.json",
@@ -48,10 +47,10 @@ export default defineConfig([
       },
     },
     plugins: {
-      "@typescript-eslint": tsPlugin,
+      "@typescript-eslint": typescriptEslint,
     },
     rules: {
-      ...tsPlugin.configs.recommended.rules,
+      ...typescriptEslint.configs.recommended.rules,
       "no-unused-vars": "off",
     },
   },
