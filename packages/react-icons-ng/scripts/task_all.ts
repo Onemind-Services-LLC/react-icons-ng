@@ -6,7 +6,6 @@ import { forEachIconEntry } from "./task_common";
 import { initDistLib } from "./task_fs";
 import { loadPackCache, savePackCache } from "./cache";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function dirInit({ DIST, LIB, rootDir }) {
   const ignore = (err: unknown) => {
     const e = err as NodeJS.ErrnoException | undefined;

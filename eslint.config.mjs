@@ -1,9 +1,9 @@
 import { defineConfig } from "eslint/config";
 import js from "@eslint/js";
-import typescriptEslint from "typescript-eslint";
-import babelParser from "@babel/eslint-parser";
-import reactPlugin from "eslint-plugin-react";
-import reactHooksPlugin from "eslint-plugin-react-hooks";
+import tslint from "typescript-eslint";
+import globals from "globals";
+import pluginReact from "eslint-plugin-react";
+import reactHooks from "eslint-plugin-react-hooks";
 
 export default defineConfig([
   // Ignore files/folders
@@ -23,77 +23,38 @@ export default defineConfig([
       "!packages/react-icons-ng/icons/index.js",
       "packages/_react-icons-ng/**",
       "packages/_react-icons-ng-pack/**",
+      "**/next-env.d.ts",
     ],
   },
 
   // JavaScript
   {
-    files: ["**/*.{js,mjs,cjs}"],
+    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     plugins: { js },
     extends: ["js/recommended"],
   },
 
   // TypeScript
+  tslint.configs.recommended,
+  // globals
   {
-    files: ["*.ts", "*.tsx"],
+    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     languageOptions: {
-      parser: typescriptEslint.parser,
-      parserOptions: {
-        project: [
-          "./packages/react-icons-ng/tsconfig.json",
-          "./packages/ts-test/tsconfig.json",
-          "./packages/preview/tsconfig.json",
-        ],
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        ...globals.commonjs,
+        ...globals.jest,
       },
-    },
-    plugins: {
-      "@typescript-eslint": typescriptEslint,
-    },
-    rules: {
-      ...typescriptEslint.configs.recommended.rules,
-      "no-unused-vars": "off",
     },
   },
-
   // React
   {
-    files: [
-      "packages/demo/src/**/*.{js,jsx}",
-      "packages/demo-pack/src/**/*.{js,jsx}",
-      "packages/preview/src/**/*.{js,jsx}",
-    ],
-    languageOptions: {
-      ecmaVersion: 2022,
-      sourceType: "module",
-      parser: babelParser,
-      parserOptions: {
-        requireConfigFile: false,
-        babelOptions: {
-          presets: ["@babel/preset-react"],
-        },
-      },
-      globals: {
-        window: true,
-        document: true,
-        navigator: true,
-        console: true,
-        fetch: true,
-        process: true,
-        module: true,
-        require: true,
-        __dirname: true,
-        URL: true,
-      },
-    },
-    plugins: {
-      react: reactPlugin,
-      "react-hooks": reactHooksPlugin,
-    },
+    ...pluginReact.configs.flat.recommended,
     rules: {
-      ...reactPlugin.configs.recommended.rules,
-      ...reactHooksPlugin.configs.recommended.rules,
-      "no-unused-vars": "off",
-      "no-undef": "off",
+      ...pluginReact.configs.flat.recommended.rules,
+      ...pluginReact.configs["jsx-runtime"].rules,
+      "react/prop-types": "off",
     },
     settings: {
       react: {
@@ -101,31 +62,13 @@ export default defineConfig([
       },
     },
   },
-
-  // Node / config files
+  // react hooks
+  reactHooks.configs["recommended-latest"],
+  //common rules
   {
-    files: [
-      "packages/webpack5-test/src/**/*.js",
-      "packages/**/webpack*.js",
-      "packages/**/webpack*.mjs",
-      "packages/**/plugin/**/*.js",
-      "packages/**/plugin/**/*.mjs",
-      "**/*.config.js",
-      "**/*.config.mjs",
-      "**/*.cjs",
-      "**/*.mjs",
-    ],
-    languageOptions: {
-      ecmaVersion: 2022,
-      sourceType: "module",
-      globals: {
-        process: true,
-        module: true,
-        require: true,
-        __dirname: true,
-        console: true,
-      },
+    rules: {
+      "@typescript-eslint/no-require-imports": "off",
+      "react/display-name": "off",
     },
-    rules: {},
   },
 ]);

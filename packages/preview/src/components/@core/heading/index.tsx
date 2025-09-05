@@ -14,7 +14,7 @@ export default function Heading({ isOpen, setIsOpen }) {
 
   useEffect(() => {
     setIsOpen(false);
-  }, [router]);
+  }, [router, setIsOpen]);
 
   return (
     <div className="brand">
