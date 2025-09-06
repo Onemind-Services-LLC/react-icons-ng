@@ -25,7 +25,6 @@ export async function runSequential(
   const bar = createBar(label);
   bar.start(steps.length, 0);
   for (const step of steps) {
-    // eslint-disable-next-line no-await-in-loop
     await step();
     bar.increment();
   }

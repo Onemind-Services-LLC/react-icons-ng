@@ -32,6 +32,7 @@ export default function Sidebar() {
     setInputQuery((q as string) || "");
   }, [router]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const debounceOnSearch = useCallback(
     debounce((query: string) => {
       router.push({ pathname: searchPath, query: query ? { q: query } : null });

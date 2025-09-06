@@ -21,7 +21,6 @@ function Tree2Element(tree: IconTree[]): React.ReactElement[] {
   );
 }
 export function GenIcon(data: IconTree) {
-  // eslint-disable-next-line react/display-name
   return (props: IconBaseProps) => (
     <IconBase attr={{ ...data.attr }} {...props}>
       {Tree2Element(data.child)}
