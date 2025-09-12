@@ -2,6 +2,7 @@
   "name": "preview",
   "description": "",
   "scripts": {
+    "dev": "next dev",
     "start": "next",
     "build": "next build",
     "serve": "next start"

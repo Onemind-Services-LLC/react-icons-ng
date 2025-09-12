@@ -1,17 +1,23 @@
+"use client";
+import React from "react";
 import { toast } from "react-hot-toast";
 import copy from "copy-to-clipboard";
 import { Highlight, themes } from "prism-react-renderer";
-import React from "react";
 import { IoClipboard } from "@onemind-services-llc/react-icons-ng/io5";
 
-export default function CodeBlock({ code, language }) {
+interface CodeBlockProps {
+  code: string;
+  language: string;
+}
+
+export default function CodeBlock({ code, language }: CodeBlockProps) {
   const copyToClipboard = () => {
     copy(code);
     toast.success(`Copied to clipboard`);
   };
 
   return (
-    <Highlight theme={themes.nightOwl} code={code.trim()} language={language}>
+    <Highlight code={code.trim()} language={language} theme={themes.nightOwl}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={`${className} code`} style={style}>
           <a onClick={copyToClipboard} className="prism-code--copy">

@@ -1,3 +1,4 @@
+"use client";
 import { useDarkTheme } from "@context/DarkThemeContext";
 import React from "react";
 import { BsFillSunFill } from "@onemind-services-llc/react-icons-ng/bs";
@@ -20,7 +21,6 @@ export default function Container({ children }) {
           className="checkbox"
           id="checkbox"
           onClick={() => {
-            console.log("vishal kumar");
             toggleTheme();
           }}
         />

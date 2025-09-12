@@ -1,5 +1,6 @@
+"use client";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 const ActiveLink = ({
@@ -8,13 +9,15 @@ const ActiveLink = ({
   activeClassName = "active",
   ...props
 }) => {
-  const router = useRouter();
+
+  const path = usePathname();
+
 
   const child = React.Children.only(children);
 
   let className = child.props.className || "";
 
-  if (router.asPath === href && activeClassName) {
+  if (path === href && activeClassName) {
     className = `${className} ${activeClassName}`.trim();
   }
 

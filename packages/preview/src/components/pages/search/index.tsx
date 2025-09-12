@@ -1,6 +1,6 @@
+"use client";
 import { ALL_ICONS } from "@utils/icon";
 import React from "react";
-
 import SearchIconSet from "./search-iconset";
 import { useSearchParams } from "next/navigation";
 import escapeRegExp from "lodash/escapeRegExp";

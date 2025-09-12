@@ -1,5 +1,6 @@
+"use client";
 import { ALL_ICONS } from "@utils/icon";
-import { useRouter } from "next/router";
+import { useRouter, useSearchParams } from "next/navigation";
 import React, {
   useState,
   useCallback,
@@ -21,6 +22,7 @@ export default function Sidebar() {
     [],
   );
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
   const [inputQuery, setInputQuery] = useState("");
   const searchRef = useRef<HTMLInputElement>(null);
@@ -28,14 +30,17 @@ export default function Sidebar() {
 
   // search input stays in sync with the url query
   useEffect(() => {
-    const { q } = router.query;
-    setInputQuery((q as string) || "");
-  }, [router]);
+    const q = searchParams.get("q") ?? "";
+    setInputQuery(q);
+  }, [searchParams]);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const debounceOnSearch = useCallback(
     debounce((query: string) => {
-      router.push({ pathname: searchPath, query: query ? { q: query } : null });
+      const url = query
+        ? `${searchPath}?q=${encodeURIComponent(query)}`
+        : searchPath;
+      router.push(url);
     }, 500),
     [],
   );
