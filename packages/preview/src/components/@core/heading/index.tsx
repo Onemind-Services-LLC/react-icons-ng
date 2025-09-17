@@ -20,10 +20,10 @@ export default function Heading({ isOpen, setIsOpen }) {
   return (
     <div className="brand">
       <ActiveLink href="/">
-        <a>
+        <span>
           <BrandIcon />
           <span>{BRAND_TITLE_MONO}</span>
-        </a>
+        </span>
       </ActiveLink>
       <div className="brand--navmenu">
         <button className={`menu ${isOpen && "active"}`} onClick={toggleMenu}>

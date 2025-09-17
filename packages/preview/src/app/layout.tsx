@@ -1,3 +1,4 @@
+import React, { ReactNode, Suspense } from "react";
 import "@styles/global.scss";
 import { Toaster } from "react-hot-toast";
 import Container from "@components/@core/content";
@@ -8,17 +9,20 @@ import {
   BRAND_KEYWORDS,
 } from "@utils/constants";
 import { DarkThemeProvider } from "@context/DarkThemeContext";
-import React, { ReactNode } from "react";
+import type { Metadata, Viewport } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: BRAND_TITLE,
   description: BRAND_DESCRIPTION,
   keywords: BRAND_KEYWORDS,
-  themeColor: "#e91e63",
   icons: {
     icon: "/favicon.png",
   },
   manifest: "/manifest.json",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#e91e63",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -26,8 +30,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body>
         <DarkThemeProvider>
-          <Sidebar />
-          <Container>{children}</Container>
+          <Suspense>
+            <Sidebar />
+          </Suspense>
+          <Container>
+            <Suspense>{children}</Suspense>
+          </Container>
           <Toaster position="bottom-center" />
         </DarkThemeProvider>
       </body>

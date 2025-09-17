@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -9,9 +8,7 @@ const ActiveLink = ({
   activeClassName = "active",
   ...props
 }) => {
-
   const path = usePathname();
-
 
   const child = React.Children.only(children);
 
@@ -22,7 +19,7 @@ const ActiveLink = ({
   }
 
   return (
-    <Link href={href} {...props} legacyBehavior>
+    <Link href={href} {...props}>
       {React.cloneElement(child, { className })}
     </Link>
   );

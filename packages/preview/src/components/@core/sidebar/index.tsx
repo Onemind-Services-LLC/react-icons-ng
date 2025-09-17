@@ -98,7 +98,7 @@ export default function Sidebar() {
         <ul className={`sidebar--links ${isOpen && "active"}`}>
           <li>
             <ActiveLink href="/">
-              <a className="rounded px2 py1">Home</a>
+              <span className="rounded px2 py1">Home</span>
             </ActiveLink>
           </li>
           {iconsList.map((icon) => (
@@ -106,12 +106,12 @@ export default function Sidebar() {
               <ActiveLink
                 href={{ pathname: "icons", query: { name: icon.id } }}
               >
-                <a
+                <span
                   className="rounded px2 py1"
                   onClick={() => setInputQuery("")}
                 >
                   {icon.name}
-                </a>
+                </span>
               </ActiveLink>
             </li>
           ))}

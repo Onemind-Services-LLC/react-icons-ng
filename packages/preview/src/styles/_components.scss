@@ -14,7 +14,6 @@ pre.code {
 
 pre.code {
   border-radius: var(--border-radius-md);
-  padding: var(--space-2);
   position: relative;
   overflow: auto;
 
@@ -25,6 +24,9 @@ pre.code {
     padding: var(--space-1);
     color: var(--color-white);
     cursor: pointer;
+  }
+  .hljs > span {
+    font-style: normal;
   }
 }
 

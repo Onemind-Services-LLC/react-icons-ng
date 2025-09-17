@@ -1,3 +1,4 @@
+"use client";
 import CodeBlock from "@components/@core/code-block";
 import Container from "@components/@core/container";
 import Badges from "@components/pages/home/badges";
