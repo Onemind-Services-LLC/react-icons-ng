@@ -6,6 +6,9 @@ node_modules
 .cache
 **/.cache
 
+# Ignore GitHub files
+.github
+
 /packages/_react-icons-ng
 /packages/_react-icons-ng-pack
 
