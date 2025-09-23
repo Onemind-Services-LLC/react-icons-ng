@@ -12,7 +12,6 @@ import React, {
 import ActiveLink from "../active-link";
 import Heading from "../heading";
 import { debounce } from "@utils/debounce";
-import { useDarkTheme } from "@context/DarkThemeContext";
 
 const searchPath = "/search";
 
@@ -26,7 +25,6 @@ export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const [inputQuery, setInputQuery] = useState("");
   const searchRef = useRef<HTMLInputElement>(null);
-  const { isDarkTheme } = useDarkTheme();
 
   // search input stays in sync with the url query
   useEffect(() => {
@@ -75,7 +73,7 @@ export default function Sidebar() {
   }, []);
 
   return (
-    <div className={`${isDarkTheme ? "dark-theme" : ""}`}>
+    <div className="sidebar-container">
       <div className="sidebar pt3">
         <Heading isOpen={isOpen} setIsOpen={setIsOpen} />
 

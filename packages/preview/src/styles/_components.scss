@@ -92,11 +92,11 @@ a {
   width: 100%;
 
   li,
-  a {
+  span {
     display: block;
   }
 
-  a {
+  span {
     line-height: 1.7rem;
     color: var(--color-black);
     border: 2px solid transparent;
@@ -122,7 +122,7 @@ a {
 }
 
 .brand {
-  a {
+  span {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -269,78 +269,7 @@ a {
   background: #e91e63;
 }
 
-// Dark theme implementation start here
-
-.dark-theme {
-  ::-webkit-scrollbar {
-    width: 3px;
-    background-color: transparent;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #e91e63;
-  }
-
-  .sidebar {
-    background-color: #212529;
-  }
-
-  .sidebar--links {
-    a {
-      color: #e9ecef;
-    }
-
-    a.active {
-      background-color: rgba(173, 181, 189, 0.15);
-    }
-
-    a:focus {
-      border-color: rgba(var(--color-brand-rgb), 0.5);
-      background: rgba(var(--color-brand-rgb), 0.05);
-    }
-  }
-
-  .p3,
-  .container {
-    background-color: #1b1f22;
-    color: #f8f9fa;
-  }
-
-  .p3 {
-    a {
-      color: cyan;
-      // color: #ADD8E6;
-    }
-
-    .icon.h2:focus {
-      border-color: rgba(var(--color-brand-rgb), 0.5);
-      background: rgba(var(--color-brand-rgb), 0.05);
-    }
-  }
-
-  .icons .item .icon {
-    background-color: #1b1f22;
-    border: 1px solid #495057;
-  }
-
-  .item:hover .icon {
-    background-color: (var(--color-brand));
-  }
-
-  .item:focus .icon {
-    border: 1px solid #e91e63;
-    background: rgba(var(--color-brand-rgb), 0.05);
-  }
-
-  .item:focus ~ .box {
-    border: 1px solid #e91e63;
-  }
-
-  pre.code .prism-code--copy {
-    // color: #5cb0ff;
-    color: white;
-  }
-}
+//  THEME TOGGLE STYLES
 
 .checkbox {
   opacity: 0;
@@ -348,7 +277,6 @@ a {
 }
 
 .checkbox-label {
-  // background-color: #111;
   background-color: rgb(1, 22, 39);
   width: 50px;
   height: 26px;
@@ -384,4 +312,140 @@ a {
 
 .checkbox:checked + .checkbox-label .ball {
   transform: translateX(24px);
+}
+
+//  DARK THEME STYLES - html.dark
+html.dark {
+  ::-webkit-scrollbar {
+    width: 3px;
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #e91e63;
+  }
+
+  .sidebar {
+    background-color: #212529;
+  }
+
+  .sidebar--links {
+    span {
+      color: #e9ecef;
+    }
+
+    span.active {
+      background-color: rgba(173, 181, 189, 0.15);
+    }
+
+    span:focus {
+      border-color: rgba(var(--color-brand-rgb), 0.5);
+      background: rgba(var(--color-brand-rgb), 0.05);
+    }
+  }
+
+  .p3,
+  .container {
+    background-color: #1b1f22;
+    color: #f8f9fa;
+  }
+
+  .p3 {
+    a {
+      color: cyan;
+    }
+
+    .icon.h2:focus {
+      border-color: rgba(var(--color-brand-rgb), 0.5);
+      background: rgba(var(--color-brand-rgb), 0.05);
+    }
+  }
+
+  .icons .item .icon {
+    background-color: #1b1f22;
+    border: 1px solid #495057;
+  }
+
+  .item:hover .icon {
+    background-color: var(--color-brand);
+  }
+
+  .item:focus .icon {
+    border: 1px solid #e91e63;
+    background: rgba(var(--color-brand-rgb), 0.05);
+  }
+
+  .item:focus ~ .box {
+    border: 1px solid #e91e63;
+  }
+
+  pre.code .prism-code--copy {
+    color: white;
+  }
+
+  .search input {
+    color: #f8f9fa;
+    background: #495057;
+    border-color: #6c757d;
+
+    &::placeholder {
+      color: #adb5bd;
+    }
+
+    &:focus {
+      background: #343a40;
+      border-color: rgba(var(--color-brand-rgb), 0.5);
+    }
+  }
+}
+
+//  LIGHT THEME STYLES - html.light (explicit)
+html.light {
+  ::-webkit-scrollbar {
+    width: 3px;
+    background-color: white;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #e91e63;
+  }
+
+  .sidebar {
+    background: var(--color-gray-1);
+  }
+
+  .sidebar--links {
+    span {
+      color: var(--color-black);
+    }
+
+    span.active {
+      background: var(--color-gray-2);
+    }
+  }
+
+  .p3,
+  .container {
+    background: var(--color-gray-0);
+    color: var(--color-black);
+  }
+
+  .icons .item .icon {
+    background: var(--color-white);
+    border: 2px solid transparent;
+  }
+
+  .item:hover .icon {
+    background: var(--color-gray-2);
+  }
+
+  pre.code .prism-code--copy {
+    color: var(--color-white);
+  }
+
+  .search input {
+    color: var(--color-black);
+    background: var(--color-gray-2);
+    border-color: var(--color-gray-3);
+  }
 }
