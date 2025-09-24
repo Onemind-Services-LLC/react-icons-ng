@@ -101,9 +101,7 @@ export default function Sidebar() {
           </li>
           {iconsList.map((icon) => (
             <li key={icon.id}>
-              <ActiveLink
-                href={{ pathname: "icons", query: { name: icon.id } }}
-              >
+              <ActiveLink href={`/icons?name=${encodeURIComponent(icon.id)}`}>
                 <span
                   className="rounded px2 py1"
                   onClick={() => setInputQuery("")}
