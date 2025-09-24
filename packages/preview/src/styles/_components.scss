@@ -384,13 +384,10 @@ html.dark {
   }
 
   .search input {
-    color: #f8f9fa;
-    background: #495057;
-    border-color: #6c757d;
-
-    &::placeholder {
-      color: #adb5bd;
-    }
+    color: var(--color-black);
+    border-radius: var(--border-radius-md);
+    border: 2px solid var(--color-gray-3);
+    background: var(--color-gray-2);
 
     &:focus {
       background: #343a40;
