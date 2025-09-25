@@ -3,7 +3,6 @@ import copy from "copy-to-clipboard";
 import hljs from "highlight.js/lib/core";
 import bash from "highlight.js/lib/languages/bash";
 import javascript from "highlight.js/lib/languages/javascript";
-import "highlight.js/styles/night-owl.css";
 import React, { useEffect, useRef } from "react";
 import { IoClipboard } from "@onemind-services-llc/react-icons-ng/io5";
 

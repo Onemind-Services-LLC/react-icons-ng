@@ -1,5 +1,6 @@
 import React, { ReactNode, Suspense } from "react";
 import "@styles/global.scss";
+import "highlight.js/styles/night-owl.css";
 import { Toaster } from "react-hot-toast";
 import Container from "@components/@core/content";
 import Sidebar from "@components/@core/sidebar";
