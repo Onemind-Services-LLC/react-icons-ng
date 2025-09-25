@@ -4,7 +4,7 @@
   "scripts": {
     "start": "next",
     "build": "next build",
-    "serve": "next start"
+    "serve": "npx serve@latest out"
   },
   "keywords": [],
   "author": "",
