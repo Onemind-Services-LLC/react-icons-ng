@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 const ActiveLink = ({
@@ -8,18 +8,18 @@ const ActiveLink = ({
   activeClassName = "active",
   ...props
 }) => {
-  const router = useRouter();
+  const path = usePathname();
 
   const child = React.Children.only(children);
 
   let className = child.props.className || "";
 
-  if (router.asPath === href && activeClassName) {
+  if (path === href && activeClassName) {
     className = `${className} ${activeClassName}`.trim();
   }
 
   return (
-    <Link href={href} {...props} legacyBehavior>
+    <Link href={href} {...props}>
       {React.cloneElement(child, { className })}
     </Link>
   );

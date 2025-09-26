@@ -1,6 +1,5 @@
 import { ALL_ICONS } from "@utils/icon";
 import React from "react";
-
 import SearchIconSet from "./search-iconset";
 import { useSearchParams } from "next/navigation";
 import escapeRegExp from "lodash/escapeRegExp";
@@ -32,5 +31,6 @@ export default function SearchPageComponent() {
       </>
     );
   }
+
   return <h2>Please enter at least 2 characters to search...</h2>;
 }

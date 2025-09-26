@@ -1,12 +1,12 @@
-import { useDarkTheme } from "@context/DarkThemeContext";
+"use client";
 import React from "react";
-import { BsFillSunFill } from "@onemind-services-llc/react-icons-ng/bs";
-import { BsFillMoonStarsFill } from "@onemind-services-llc/react-icons-ng/bs";
+import dynamic from "next/dynamic";
 
-export default function Container({ children }) {
-  const { isDarkTheme, toggleTheme } = useDarkTheme();
+const ThemeToggle = dynamic(() => import("./theme-toggle"), { ssr: false });
+
+export default function Container({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`${isDarkTheme ? "dark-theme" : ""}`}>
+    <div>
       <div
         style={{
           position: "absolute",
@@ -15,34 +15,9 @@ export default function Container({ children }) {
           padding: "calc(var(--space-3) + 10px)",
         }}
       >
-        <input
-          type="checkbox"
-          className="checkbox"
-          id="checkbox"
-          onClick={() => {
-            console.log("vishal kumar");
-            toggleTheme();
-          }}
-        />
-        <label htmlFor="checkbox" className="checkbox-label">
-          <BsFillSunFill
-            style={{
-              color: "#f1c40f",
-            }}
-          />
-          <BsFillMoonStarsFill
-            style={{
-              color: "#f39c12",
-            }}
-          />
-          <span
-            className="ball"
-            style={{
-              transform: isDarkTheme ? "translateX(24px)" : "translateX(0px)",
-            }}
-          />
-        </label>
+        <ThemeToggle />
       </div>
+
       <main className="container">{children}</main>
     </div>
   );

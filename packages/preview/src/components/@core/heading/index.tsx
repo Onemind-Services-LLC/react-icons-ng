@@ -1,5 +1,6 @@
+"use client";
 import { BRAND_TITLE_MONO } from "@utils/constants";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 
 import ActiveLink from "../active-link";
@@ -19,10 +20,10 @@ export default function Heading({ isOpen, setIsOpen }) {
   return (
     <div className="brand">
       <ActiveLink href="/">
-        <a>
+        <span>
           <BrandIcon />
           <span>{BRAND_TITLE_MONO}</span>
-        </a>
+        </span>
       </ActiveLink>
       <div className="brand--navmenu">
         <button className={`menu ${isOpen && "active"}`} onClick={toggleMenu}>

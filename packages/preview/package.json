@@ -4,7 +4,7 @@
   "scripts": {
     "start": "next",
     "build": "next build",
-    "serve": "next start"
+    "serve": "npx serve@latest out"
   },
   "keywords": [],
   "author": "",
@@ -19,11 +19,11 @@
     "basscss": "^8.1.0",
     "copy-to-clipboard": "^3.3.3",
     "css-loader": "7.1.2",
+    "highlight.js": "^11.11.1",
     "ignore-loader": "^0.1.2",
     "lodash": "^4.17.21",
     "next": "^15.4.6",
     "next-pwa": "^5.6.0",
-    "prism-react-renderer": "^2.4.1",
     "prop-types": "^15.8.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
