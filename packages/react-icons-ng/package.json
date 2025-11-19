@@ -37,7 +37,7 @@
     "esbuild": "^0.25.8",
     "esbuild-register": "^3.6.0",
     "find-package": "^1.0.0",
-    "glob": "^11.0.3",
+    "glob": "^13.0.0",
     "ionicons-5": "npm:ionicons@5",
     "lerna": "^8.2.3",
     "p-queue": "^8.1.0",
