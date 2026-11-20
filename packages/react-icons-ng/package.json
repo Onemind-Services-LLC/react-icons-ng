@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^8.1.0",
-    "@babel/core": "^7.28.0",
+    "@babel/core": "^8.1.0",
     "@types/cli-progress": "^3.11.6",
     "@types/normalize-package-data": "^2.4.4",
     "@types/prismjs": "^1.26.5",
