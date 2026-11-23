@@ -5,13 +5,13 @@
   "dependencies": {
     "@onemind-services-llc/react-icons-ng": "^5.4.4",
     "@types/jest": "30.0.0",
-    "@types/node": "24.3.0",
+    "@types/node": "^22.0.0",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-scripts": "5.0.1",
-    "typescript": "^5.9.2"
+    "typescript": "^7.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

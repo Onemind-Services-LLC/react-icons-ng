@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable react-hooks/set-state-in-effect, react-hooks/use-memo */
 import { ALL_ICONS } from "@utils/icon";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, {

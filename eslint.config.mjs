@@ -63,7 +63,10 @@ export default defineConfig([
     },
   },
   // react hooks
-  reactHooks.configs["recommended-latest"],
+  {
+    plugins: { "react-hooks": reactHooks },
+    rules: reactHooks.configs["recommended-latest"].rules,
+  },
   //common rules
   {
     rules: {
