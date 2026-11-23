@@ -39,7 +39,7 @@
     "find-package": "^1.0.0",
     "glob": "^14.0.6",
     "ionicons-5": "npm:ionicons@5",
-    "lerna": "^10.1.1",
+    "lerna": "^10.1.2",
     "p-queue": "^8.1.1",
     "prettier": "^3.6.2",
     "svgo": "^4.0.0",
