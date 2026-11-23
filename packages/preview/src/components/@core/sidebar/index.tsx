@@ -1,52 +1,42 @@
 "use client";
-/* eslint-disable react-hooks/set-state-in-effect, react-hooks/use-memo */
 import { ALL_ICONS } from "@utils/icon";
 import { useRouter, useSearchParams } from "next/navigation";
-import React, {
-  useState,
-  useCallback,
-  useMemo,
-  useEffect,
-  useRef,
-} from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 
 import ActiveLink from "../active-link";
 import Heading from "../heading";
 import { debounce } from "@utils/debounce";
 
 const searchPath = "/search";
+const iconsList = [...ALL_ICONS].sort((a, b) => (a.name > b.name ? 1 : -1));
 
 export default function Sidebar() {
-  const iconsList = useMemo(
-    () => ALL_ICONS.sort((a, b) => (a.name > b.name ? 1 : -1)),
-    [],
-  );
   const router = useRouter();
   const searchParams = useSearchParams();
+  const queryFromUrl = searchParams.get("q") ?? "";
   const [isOpen, setIsOpen] = useState(false);
-  const [inputQuery, setInputQuery] = useState("");
+  const [queryState, setQueryState] = useState({
+    source: queryFromUrl,
+    value: queryFromUrl,
+  });
+  const inputQuery =
+    queryState.source === queryFromUrl ? queryState.value : queryFromUrl;
   const searchRef = useRef<HTMLInputElement>(null);
 
-  // search input stays in sync with the url query
-  useEffect(() => {
-    const q = searchParams.get("q") ?? "";
-    setInputQuery(q);
-  }, [searchParams]);
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const debounceOnSearch = useCallback(
-    debounce((query: string) => {
-      const url = query
-        ? `${searchPath}?q=${encodeURIComponent(query)}`
-        : searchPath;
-      router.push(url);
-    }, 500),
-    [],
+  const debounceOnSearch = useMemo(
+    () =>
+      debounce((query: string) => {
+        const url = query
+          ? `${searchPath}?q=${encodeURIComponent(query)}`
+          : searchPath;
+        router.push(url);
+      }, 500),
+    [router],
   );
 
   const onSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value.toLowerCase();
-    setInputQuery(query);
+    setQueryState({ source: queryFromUrl, value: query });
     debounceOnSearch(query);
   };
 
@@ -105,7 +95,9 @@ export default function Sidebar() {
               <ActiveLink href={`/icons?name=${encodeURIComponent(icon.id)}`}>
                 <span
                   className="rounded px2 py1"
-                  onClick={() => setInputQuery("")}
+                  onClick={() =>
+                    setQueryState({ source: queryFromUrl, value: "" })
+                  }
                 >
                   {icon.name}
                 </span>

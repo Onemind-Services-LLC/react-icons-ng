@@ -8,8 +8,15 @@ function Icon({ icon, name, highlightPattern = null }) {
     const iconType = name.match(pattern);
 
     const copyToClipboardValue = `import { ${name} } from "@onemind-services-llc/react-icons-ng/${iconType[0].toLowerCase()}"`;
-    await copy(copyToClipboardValue);
-    toast.success(`Copied '${name}' to clipboard`);
+    try {
+      if (!(await copy(copyToClipboardValue))) {
+        toast.error("Unable to copy to clipboard");
+        return;
+      }
+      toast.success(`Copied '${name}' to clipboard`);
+    } catch {
+      toast.error("Unable to copy to clipboard");
+    }
   };
 
   const highlightedName = () => {

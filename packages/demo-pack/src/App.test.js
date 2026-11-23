@@ -9,7 +9,19 @@ it("renders without crashing", () => {
   render(<App />);
 });
 
-it("snapshot test", () => {
+it("renders icons and applies IconContext values", () => {
   const { container } = render(<App />);
-  expect(container.firstChild).toMatchSnapshot();
+  const icons = Array.from(container.querySelectorAll("svg"));
+  const iconTitles = icons.map(
+    (icon) => icon.querySelector("title")?.textContent,
+  );
+  const folderIcon = icons.find(
+    (icon) => icon.querySelector("title")?.textContent === "folder icon",
+  );
+
+  expect(icons).toHaveLength(6);
+  expect(iconTitles).toContain("arrow down icon");
+  expect(folderIcon).toBeDefined();
+  expect(folderIcon).toHaveClass("global-class-name additional-class-name");
+  expect(folderIcon).toHaveStyle({ color: "red" });
 });

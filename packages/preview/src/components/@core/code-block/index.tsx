@@ -23,8 +23,15 @@ export default function CodeBlock({ code, language }: CodeBlockProps) {
   }, [code, language]);
 
   const copyToClipboard = async () => {
-    await copy(code);
-    toast.success("Copied to clipboard");
+    try {
+      if (!(await copy(code))) {
+        toast.error("Unable to copy to clipboard");
+        return;
+      }
+      toast.success("Copied to clipboard");
+    } catch {
+      toast.error("Unable to copy to clipboard");
+    }
   };
 
   return (
