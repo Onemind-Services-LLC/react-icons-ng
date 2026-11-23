@@ -3,12 +3,12 @@ import copy from "copy-to-clipboard";
 import React from "react";
 
 function Icon({ icon, name, highlightPattern = null }) {
-  const copyToClipboard = () => {
+  const copyToClipboard = async () => {
     const pattern = /[A-Z][a-z]{1,3}/g;
     const iconType = name.match(pattern);
 
     const copyToClipboardValue = `import { ${name} } from "@onemind-services-llc/react-icons-ng/${iconType[0].toLowerCase()}"`;
-    copy(copyToClipboardValue);
+    await copy(copyToClipboardValue);
     toast.success(`Copied '${name}' to clipboard`);
   };
 
