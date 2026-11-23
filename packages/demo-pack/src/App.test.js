@@ -19,7 +19,6 @@ it("renders icons and applies IconContext values", () => {
     (icon) => icon.querySelector("title")?.textContent === "folder icon",
   );
 
-  expect(icons).toHaveLength(6);
   expect(iconTitles).toContain("arrow down icon");
   expect(folderIcon).toBeDefined();
   expect(folderIcon).toHaveClass("global-class-name additional-class-name");

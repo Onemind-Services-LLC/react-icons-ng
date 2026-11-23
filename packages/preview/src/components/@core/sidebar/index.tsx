@@ -34,6 +34,10 @@ export default function Sidebar() {
     [router],
   );
 
+  useEffect(() => {
+    return () => debounceOnSearch.cancel();
+  }, [debounceOnSearch]);
+
   const onSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value.toLowerCase();
     setQueryState({ source: queryFromUrl, value: query });
