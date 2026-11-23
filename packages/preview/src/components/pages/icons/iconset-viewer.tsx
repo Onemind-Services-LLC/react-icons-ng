@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/static-components */
 import Icon from "@components/@core/icon";
 import loadable from "@loadable/component";
 import { getIcons } from "@utils/getIcons";
