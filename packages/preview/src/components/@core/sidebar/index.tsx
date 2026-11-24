@@ -54,12 +54,10 @@ export default function Sidebar() {
       const url = query
         ? `${searchPath}?${new URLSearchParams({ q: query }).toString()}`
         : searchPath;
-      if (url !== currentRouteRef.current) {
-        setQueryState((state) => ({
-          ...state,
-          pendingRoute: url,
-        }));
-      }
+      setQueryState((state) => ({
+        ...state,
+        pendingRoute: url === currentRouteRef.current ? null : url,
+      }));
       routerRef.current.push(url);
     }, 500);
 
