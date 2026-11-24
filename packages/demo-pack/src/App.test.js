@@ -27,6 +27,14 @@ it("renders icons and applies IconContext values", () => {
       "grommet icon",
     ]),
   );
+  const accessibilityIcon = icons.find(
+    (icon) => icon.querySelector("title")?.textContent === "accessibility icon",
+  );
+  expect(accessibilityIcon).toBeDefined();
+  expect(accessibilityIcon).toHaveClass("global-class-name");
+  expect(accessibilityIcon).toHaveStyle({ color: "blue" });
+  expect(accessibilityIcon).toHaveAttribute("focusable", "false");
+
   expect(folderIcon).toBeDefined();
   expect(folderIcon).toHaveClass("global-class-name additional-class-name");
   expect(folderIcon).toHaveStyle({ color: "red" });
