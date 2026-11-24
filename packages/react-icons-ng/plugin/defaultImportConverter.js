@@ -5,7 +5,7 @@ module.exports = (babel, options) => {
       ImportDeclaration(path) {
         path.node.specifiers = path.node.specifiers.map((spec) =>
           options.keys.includes(spec.local.name)
-            ? babel.types.ImportDefaultSpecifier(spec.local)
+            ? babel.types.importDefaultSpecifier(spec.local)
             : spec,
         );
       },

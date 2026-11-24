@@ -1,6 +1,6 @@
 "use client";
 import { ALL_ICONS } from "@utils/icon";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React, { useState, useMemo, useEffect, useRef } from "react";
 
 import ActiveLink from "../active-link";
@@ -12,35 +12,74 @@ const iconsList = [...ALL_ICONS].sort((a, b) => (a.name > b.name ? 1 : -1));
 
 export default function Sidebar() {
   const router = useRouter();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
+  const search = searchParams.toString();
   const queryFromUrl = searchParams.get("q") ?? "";
+  const currentRoute = `${pathname}${search ? `?${search}` : ""}`;
   const [isOpen, setIsOpen] = useState(false);
   const [queryState, setQueryState] = useState({
-    source: queryFromUrl,
+    route: currentRoute,
     value: queryFromUrl,
+    pendingRoutes: [] as string[],
+    fromHistory: false,
   });
-  const inputQuery =
-    queryState.source === queryFromUrl ? queryState.value : queryFromUrl;
   const searchRef = useRef<HTMLInputElement>(null);
+
+  if (queryState.fromHistory || queryState.route !== currentRoute) {
+    const isPendingRoute =
+      !queryState.fromHistory &&
+      queryState.pendingRoutes.includes(currentRoute);
+    setQueryState({
+      route: currentRoute,
+      value: isPendingRoute ? queryState.value : queryFromUrl,
+      pendingRoutes: isPendingRoute
+        ? queryState.pendingRoutes.filter((route) => route !== currentRoute)
+        : [],
+      fromHistory: false,
+    });
+  }
 
   const debounceOnSearch = useMemo(
     () =>
       debounce((query: string) => {
         const url = query
-          ? `${searchPath}?q=${encodeURIComponent(query)}`
+          ? `${searchPath}?${new URLSearchParams({ q: query }).toString()}`
           : searchPath;
+        if (url !== currentRoute) {
+          setQueryState((state) => ({
+            ...state,
+            pendingRoutes: state.pendingRoutes.includes(url)
+              ? state.pendingRoutes
+              : [...state.pendingRoutes, url],
+          }));
+        }
         router.push(url);
       }, 500),
-    [router],
+    [currentRoute, router],
   );
 
   useEffect(() => {
     return () => debounceOnSearch.cancel();
   }, [debounceOnSearch]);
 
+  useEffect(() => {
+    const onPopState = () => {
+      debounceOnSearch.cancel();
+      setQueryState((state) => ({ ...state, fromHistory: true }));
+    };
+
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, [debounceOnSearch]);
+
   const onSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value.toLowerCase();
-    setQueryState({ source: queryFromUrl, value: query });
+    setQueryState((state) => ({
+      ...state,
+      route: currentRoute,
+      value: query,
+    }));
     debounceOnSearch(query);
   };
 
@@ -80,7 +119,7 @@ export default function Sidebar() {
             placeholder="🔍 Search Icons (/)"
             onChange={onSearch}
             ref={searchRef}
-            value={inputQuery}
+            value={queryState.value}
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="off"
@@ -99,9 +138,15 @@ export default function Sidebar() {
               <ActiveLink href={`/icons?name=${encodeURIComponent(icon.id)}`}>
                 <span
                   className="rounded px2 py1"
-                  onClick={() =>
-                    setQueryState({ source: queryFromUrl, value: "" })
-                  }
+                  onClick={() => {
+                    debounceOnSearch.cancel();
+                    setQueryState({
+                      route: currentRoute,
+                      value: "",
+                      pendingRoutes: [],
+                      fromHistory: false,
+                    });
+                  }}
                 >
                   {icon.name}
                 </span>

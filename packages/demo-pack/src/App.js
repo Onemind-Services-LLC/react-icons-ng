@@ -25,7 +25,7 @@ class App extends Component {
               attr: { focusable: "false" },
             }}
           >
-            <MdAccessibility />
+            <MdAccessibility title="accessibility icon" />
             <FaFolder
               color="red"
               title="folder icon"
@@ -33,9 +33,9 @@ class App extends Component {
             />
           </IconContext.Provider>
           <MdAccessibility />
-          <FaFolder />
+          <FaFolder title="folder outside provider" />
           <TiArrowDown title="arrow down icon" />
-          <GrGrommet />
+          <GrGrommet title="grommet icon" />
         </p>
       </div>
     );

@@ -19,8 +19,25 @@ it("renders icons and applies IconContext values", () => {
     (icon) => icon.querySelector("title")?.textContent === "folder icon",
   );
 
-  expect(iconTitles).toContain("arrow down icon");
+  expect(iconTitles).toEqual(
+    expect.arrayContaining([
+      "accessibility icon",
+      "arrow down icon",
+      "folder outside provider",
+      "grommet icon",
+    ]),
+  );
   expect(folderIcon).toBeDefined();
   expect(folderIcon).toHaveClass("global-class-name additional-class-name");
   expect(folderIcon).toHaveStyle({ color: "red" });
+  expect(folderIcon).toHaveAttribute("focusable", "false");
+
+  const outsideProviderFolder = icons.find(
+    (icon) =>
+      icon.querySelector("title")?.textContent === "folder outside provider",
+  );
+  expect(outsideProviderFolder).toBeDefined();
+  expect(icons).toHaveLength(6);
+  expect(outsideProviderFolder).not.toHaveClass("global-class-name");
+  expect(outsideProviderFolder).not.toHaveStyle({ color: "blue" });
 });
