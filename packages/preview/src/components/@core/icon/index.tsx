@@ -9,7 +9,7 @@ function Icon({ icon, name, highlightPattern = null }) {
 
     const copyToClipboardValue = `import { ${name} } from "@onemind-services-llc/react-icons-ng/${iconType[0].toLowerCase()}"`;
     try {
-      if (!(await copy(copyToClipboardValue))) {
+      if (!(await copy(copyToClipboardValue, { fallbackToPrompt: true }))) {
         toast.error("Unable to copy to clipboard");
         return;
       }

@@ -42,5 +42,5 @@
 
 ## Security & Environment
 
-- Node 20.19+ and Yarn 1.x required; monorepo managed by Lerna + Yarn workspaces.
+- Node 22.22.2+, 24.15.0+, or 26+ and Yarn 1.x required; monorepo managed by Lerna + Yarn workspaces.
 - Publishing uses GitHub Packages; local builds do not require auth. Do not commit packed tarballs.

@@ -24,7 +24,7 @@ export default function CodeBlock({ code, language }: CodeBlockProps) {
 
   const copyToClipboard = async () => {
     try {
-      if (!(await copy(code))) {
+      if (!(await copy(code, { fallbackToPrompt: true }))) {
         toast.error("Unable to copy to clipboard");
         return;
       }
