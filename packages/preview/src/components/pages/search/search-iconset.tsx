@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/static-components -- IconSet must be created with runtime icon.id to lazy-load the selected pack. */
 import Icon from "@components/@core/icon";
 import loadable from "@loadable/component";
 import React from "react";

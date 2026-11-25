@@ -22,9 +22,16 @@ export default function CodeBlock({ code, language }: CodeBlockProps) {
     if (codeRef.current) hljs.highlightElement(codeRef.current);
   }, [code, language]);
 
-  const copyToClipboard = () => {
-    copy(code);
-    toast.success("Copied to clipboard");
+  const copyToClipboard = async () => {
+    try {
+      if (!(await copy(code, { fallbackToPrompt: true }))) {
+        toast.error("Unable to copy to clipboard");
+        return;
+      }
+      toast.success("Copied to clipboard");
+    } catch {
+      toast.error("Unable to copy to clipboard");
+    }
   };
 
   return (

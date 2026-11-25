@@ -1,52 +1,99 @@
 "use client";
 import { ALL_ICONS } from "@utils/icon";
-import { useRouter, useSearchParams } from "next/navigation";
-import React, {
-  useState,
-  useCallback,
-  useMemo,
-  useEffect,
-  useRef,
-} from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import React, { useState, useEffect, useRef } from "react";
 
 import ActiveLink from "../active-link";
 import Heading from "../heading";
 import { debounce } from "@utils/debounce";
 
 const searchPath = "/search";
+const iconsList = [...ALL_ICONS].sort((a, b) => (a.name > b.name ? 1 : -1));
 
 export default function Sidebar() {
-  const iconsList = useMemo(
-    () => ALL_ICONS.sort((a, b) => (a.name > b.name ? 1 : -1)),
-    [],
-  );
   const router = useRouter();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
+  const search = searchParams.toString();
+  const queryFromUrl = searchParams.get("q") ?? "";
+  const currentRoute = `${pathname}${search ? `?${search}` : ""}`;
   const [isOpen, setIsOpen] = useState(false);
-  const [inputQuery, setInputQuery] = useState("");
+  const [queryState, setQueryState] = useState({
+    route: currentRoute,
+    value: queryFromUrl,
+    pendingRoute: null as string | null,
+    fromHistory: false,
+  });
   const searchRef = useRef<HTMLInputElement>(null);
+  const routerRef = useRef(router);
+  const currentRouteRef = useRef(currentRoute);
+  const debounceOnSearch = useRef<ReturnType<
+    typeof debounce<(query: string) => void>
+  > | null>(null);
 
-  // search input stays in sync with the url query
   useEffect(() => {
-    const q = searchParams.get("q") ?? "";
-    setInputQuery(q);
-  }, [searchParams]);
+    routerRef.current = router;
+    currentRouteRef.current = currentRoute;
+  });
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const debounceOnSearch = useCallback(
-    debounce((query: string) => {
+  if (queryState.fromHistory || queryState.route !== currentRoute) {
+    const isPendingRoute =
+      !queryState.fromHistory && queryState.pendingRoute === currentRoute;
+    setQueryState({
+      route: currentRoute,
+      value: isPendingRoute ? queryState.value : queryFromUrl,
+      pendingRoute: null,
+      fromHistory: false,
+    });
+  }
+
+  // Created once; reads changing values through refs so a navigation never
+  // cancels a pending search.
+  useEffect(() => {
+    debounceOnSearch.current = debounce((query: string) => {
       const url = query
-        ? `${searchPath}?q=${encodeURIComponent(query)}`
+        ? `${searchPath}?${new URLSearchParams({ q: query }).toString()}`
         : searchPath;
-      router.push(url);
-    }, 500),
-    [],
-  );
+      setQueryState((state) => ({
+        ...state,
+        pendingRoute: url === currentRouteRef.current ? null : url,
+      }));
+      routerRef.current.push(url);
+    }, 500);
+
+    return () => debounceOnSearch.current?.cancel();
+  }, []);
+
+  // Back/Forward: drop pending work and resync the input from the URL.
+  useEffect(() => {
+    const onPopState = () => {
+      debounceOnSearch.current?.cancel();
+      setQueryState((state) => ({ ...state, fromHistory: true }));
+    };
+
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
 
   const onSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value.toLowerCase();
-    setInputQuery(query);
-    debounceOnSearch(query);
+    setQueryState((state) => ({
+      ...state,
+      route: currentRoute,
+      value: query,
+    }));
+    debounceOnSearch.current?.(query);
+  };
+
+  // Used by Home and icon links: cancel any pending search and clear the input.
+  const resetSearch = () => {
+    debounceOnSearch.current?.cancel();
+    setQueryState({
+      route: currentRoute,
+      value: "",
+      pendingRoute: null,
+      fromHistory: false,
+    });
   };
 
   useEffect(() => {
@@ -85,7 +132,7 @@ export default function Sidebar() {
             placeholder="🔍 Search Icons (/)"
             onChange={onSearch}
             ref={searchRef}
-            value={inputQuery}
+            value={queryState.value}
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="off"
@@ -93,19 +140,18 @@ export default function Sidebar() {
           />
         </div>
 
-        <ul className={`sidebar--links ${isOpen && "active"}`}>
+        <ul className={`sidebar--links ${isOpen ? "active" : ""}`}>
           <li>
             <ActiveLink href="/">
-              <span className="rounded px2 py1">Home</span>
+              <span className="rounded px2 py1" onClick={resetSearch}>
+                Home
+              </span>
             </ActiveLink>
           </li>
           {iconsList.map((icon) => (
             <li key={icon.id}>
               <ActiveLink href={`/icons?name=${encodeURIComponent(icon.id)}`}>
-                <span
-                  className="rounded px2 py1"
-                  onClick={() => setInputQuery("")}
-                >
+                <span className="rounded px2 py1" onClick={resetSearch}>
                   {icon.name}
                 </span>
               </ActiveLink>

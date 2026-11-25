@@ -31,6 +31,9 @@ module.exports = withPWA({
     config.resolve.alias["@styles"] = path.join(__dirname, "src/styles");
     config.resolve.alias["@utils"] = path.join(__dirname, "src/utils");
 
+    config.resolve.alias["copy-to-clipboard$"] =
+      require.resolve("copy-to-clipboard");
+
     return config;
   },
 });

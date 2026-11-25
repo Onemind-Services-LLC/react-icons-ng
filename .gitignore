@@ -13,3 +13,4 @@ module
 !.yarn/sdks
 !.yarn/versions
 packages/react-icons-ng/VERSIONS
+packages/preview/next-env.d.ts
